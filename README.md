@@ -1,102 +1,201 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Foody Family</h1>
 
-Welcome USER_NAME,
+<img src="" height="400px"> TBC
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+**Live Site:**
+[Foody Family Repository](put website here!)
 
-## Gitpod Reminders
+**Repository:**
+[Foody Family Live Site](https://github.com/SamanthaBooth81/foody-family)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# About
 
-`python3 -m http.server`
+Recipe website where users can find, view and share recipies with the world! ADD MORE DETAIL HERE!
 
-A blue button should appear to click: _Make Public_,
+# Table of Contents
 
-Another blue button should appear to click: _Open Browser_.
+[User Experience](#user-experience)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+[Features](#features)
 
-A blue button should appear to click: _Make Public_,
+[Features to be Implemented](#features-to-be-implemented)
 
-Another blue button should appear to click: _Open Browser_.
+[Technologies Used](#technologies-used)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+[Testing](#testing)
 
-To log into the Heroku toolbelt CLI:
+[Validator Testing](#validator-testing)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[Bugs Found](#bugs-found)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+[Deployment](#deployment)
 
-------
+[Credit](#credit)
 
-## Release History
+[Acknowledgments](#Acknowledgments)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+# User Experience
+## User Stories
+- General User
+- Foody Family User
+- Chef 
+- Superuser 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+# Features
+- View Recipies
+- Create an account
+- Upload Recipies
+- Like, comment and save recipies
+- Follow Chefs 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Features to be Implemented
+- TBC
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+# Technologies Used
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Languages Used
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+[Python](https://www.python.org/)
+[html](https://en.wikipedia.org/wiki/HTML)
+[CSS](https://en.wikipedia.org/wiki/CSS)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Frameworks, Libraries and Programmes Used 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+[GitHub](https://github.com/) - Used to hold a repository of my project and deploy the live website to Git Pages, making it public.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+[GitPod](https://gitpod.io/workspaces) – Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+[Heroku](https://www.heroku.com/) - Connected to GitHub repositiry, Heroku is a cloud application platform used to deploy this project so this backend language can be utilised/tested. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+[datetime](https://docs.python.org/3/library/datetime.html) to work with the date and time, ensuring it follows the correct format and doesn exceed the possible day and month.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+[Colorama](https://www.youtube.com/watch?v=u51Zjlnui4Y) is used to add colour to the terminal which adds to the users experience.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+# Testing
 
-## FAQ about the uptime script
+## Functionality 
 
-**Why have you added this script?**
+The project follows the below logic: 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+<img src="assets/images/logic_flow_chart.png" height="350px"> 
 
-**How will this affect me?**
+The user must input each entry of data individually as each item has to be validated using different parameters. Once all data is input the system makes its calculations. These inputs and calculations are then pushed back into the approproate worlsheet. 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+I have manually tested the projecy by:
+- running through a PEP8 linter
+- Intentionally added incorrect data to ensure the code rejects it 
+- Tested both in Gitpod and Heroku terminals
+- Ensured the data input from the deployed terminal pushes the data back into the worksheet as expected (see images below)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+<img src="assets/images/heroku_input.png" height="300px"> 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+<img src="assets/images/worksheet_output.png" height="80px"> 
 
-**So….?**
+# Validator Testing
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+The code was validated using [PEP8](http://pep8online.com/). No errors were retruned. 
 
-**Can I opt out?**
+# Bugs Found 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+During testing I found that the date was not in the dd/mm/yy format I thought I had set it as. To fix this I changed the order of the following line of code from "day, month, year" to be "year, month, date":
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<ins>my_date = date(int(year), int(month), int(day))</ins>
 
-**Anything more?**
+I also found that some user input errors were terminating the code although I used a while loop. To fix this I identified which lines of code were causing the errors using the Traceback in the terminal. What I found was the code that was causing the break in the loop wasn't within the while loop. To fix this I placed the code in the loop and function began to work as expected.  
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Currently, there are no bugs found, however, the below pylint errors were appearing in the Problems tab:
 
----
+<img src="assets/images/pylint_problems.png" height="150px"> 
 
-Happy coding!
+I attempted to remove the errors however the variables I have stored globally were not working when moved into the module. Therefore I had to use the global keyword within the following functions:
+- lesson_duration_data()
+- lesson_location_data
+- lesson_attendance_data
+
+# Deployment 
+
+This project was deployed using the Code Institutes mock terminal for Heroku. 
+
+I followed the following steps:
+1. Login to Heroku and Create a New App.
+
+<img src="assets/images/heroku_deployment_1.png" height="120px"> 
+
+2. Give the App a name, it must be unique, and select a region. 
+
+<img src="assets/images/heroku_deployment_2.png" height="180px"> 
+
+3. Click on 'Create App'. This will take you to a page where you can deploy your project. 
+
+4. Click on 'Settings' among the tabs at the top of the page. The following sets must be dione before deployment.
+
+<img src="assets/images/heroku_deployment_3.png" height="180px"> 
+
+5. Next, scroll down to Config Vars (also knownas Environment Variables). In order for Heroku to access my spreadsheet it must have access to the contents of the creds.json file. As this file is to be kept secure it cannot be found in my GitHub repository. To enable access securely, sensitive data is stored in a Config Vars. 
+
+<img src="assets/images/heroku_deployment_4.png" height="120px"> 
+
+6. Click 'Reveal Config Vars'. Where it says 'KEY', input CREDS and 'VALUE', input the contents of the creds.json file. Then click 'ADD'. 
+I also had to add a second Config Vars of KEY: PORT and VALUE: 8000, to improve compatability with the Code Institute [Template](https://github.com/Code-Institute-Org/python-essentials-template) I am using.
+
+7. Scroll down to Buildpacks. This adds futher required dependencies outside of the requirements.txt file. Click 'Add Buildpack', select 'python' first and then click 'Save Changes'. 
+Then, add a second Buildpack, 'nodejs', to handle the mock terminal provided by The Code Institute.
+
+<img src="assets/images/heroku_deployment_5a.png" height="180px"> 
+
+**The order of these Buildpacks is intentional, ensure Python is on top and nodejs underneath. The order can be changed by clicking and dragging.** 
+
+<img src="assets/images/heroku_deployment_5b.png" height="150px"> 
+
+8. Go to the 'Deploy' section using the tabs at the top. Find the 'Deployment Method' section and choose GitHub. Then, I connected to my relevant GitHub Repository by searching the repository name and clicking 'Connect'.
+
+<img src="assets/images/heroku_deployment_6.png" height="120px"> 
+
+<img src="assets/images/heroku_deployment_6a.png" width="800px"> 
+
+9. Scroll down to the Automatic and Manual Deploys sections. I have enabled Automatic Deploys as I want my project to automatically redeploy if push any changes back into my repository. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
+
+<img src="assets/images/heroku_deployment_7.png" height="180px"> 
+
+10. Once my code was finished deploying I clicked view, to see my newly deployed project in the terminal. 
+
+<img src="assets/images/heroku_deployment_8.png" height="150px"> 
+<img src="assets/images/heroku_deployment_9.png" height="250px"> 
+
+# Credit
+## Content 
+
+I used the following websites to help with different areas of my project:
+
+- [Stack Overflow](https://stackoverflow.com/questions/3944655/testing-user-input-against-a-list-in-python) to test user input against the lesson_day list.
+
+- [Stack Overflow](https://stackoverflow.com/questions/3944655/testing-user-input-against-a-list-in-python) to help with the while loop when writing the lesson day function. 
+
+- [Stack Overflow](https://stackoverflow.com/questions/5619489/troubleshooting-descriptor-date-requires-a-datetime-datetime-object-but-rec) to aid with ensuring the date can be validated correctly in the lesson_date_data function. 
+
+- [Gspread Documentation](https://docs.gspread.org/en/latest/user-guide.html#getting-a-cell-value) to find out how to link to a column of data in a spreadsheet.
+
+- [Colorama YouTube Video](https://www.youtube.com/watch?v=u51Zjlnui4Y) to find out how to use Colorama to change the text colour seen by the user in the terminal.
+
+- [Lucid Charts](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=55688909257&km_CPC_Keyword=lucidchart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433236001&km_CPC_TargetID=aud-921551090622:kwd-33511936169&km_CPC_Country=20485&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&mkwid=sSyVrRTB8_pcrid_442433236001_pkw_lucidchart_pmt_e_pdv_c_slid__pgrid_55688909257_ptaid_aud-921551090622:kwd-33511936169_&gclid=CjwKCAjwzaSLBhBJEiwAJSRoku05OBdnovMIM5_WGqDOlz1tGneFNADPmA-AHWOA1e24IRtSwq7X3BoC_fkQAvD_BwE) to create the logic flow diagram for the project. 
+
+- [W3Schools](https://www.w3schools.com/python/python_variables_global.asp) to help with using the Global keyword. 
+
+- [Geeks for Geeks](https://www.geeksforgeeks.org/python-dictionary-clear/) to help clear the list of user inputs (that were already pushed into the worksheet) if the user chooses to input more data for another lesson. 
+
+- [Maschituts](https://maschituts.com/2-ways-to-loop-back-to-the-beginning-of-a-program-in-python/) for with the code to start the programme again if the user has more data to input. 
+
+- Method 3 on this [Geeks for Geeks](https://www.geeksforgeeks.org/python-converting-all-strings-in-list-to-integers/) article to turn a list of strings into a list of integers.
+
+- [Programiz](https://www.programiz.com/python-programming/methods/list/index) and [Stock Overflow](https://stackoverflow.com/questions/42568565/how-to-index-a-list-based-on-user-input-and-print-the-result) to help with using the index to check a user input.
+
+- [Stack Overflow](https://stackoverflow.com/questions/3944655/testing-user-input-against-a-list-in-python) to help with comparing the users answer with a list. 
+
+- [Edureka](https://www.edureka.co/blog/python-list-remove/#pop()) to find out how to remove an item from a list.
+
+- [Slack Overflow](https://stackoverflow.com/questions/33076617/how-to-validate-time-format) to help with working on the lesson_time_data function.
+
+
+# Acknowledgments
+Thank you to all who encouraged and supported me as I created my first game, espcially to my mentor for his guidance and patience and tutor support at The Code Institute who helped when I was stuck. 
