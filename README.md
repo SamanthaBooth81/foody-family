@@ -36,10 +36,21 @@ Recipe website where users can find, view and share recipies with the world! ADD
 
 # User Experience
 ## User Stories
-- General User
-- Foody Family User
-- Chef 
-- Superuser 
+### Superuser / Admin
+- As a Superuser I can manage the recipies uploaded by community members so that anything unsafe can be removed from the website. 
+- As a Superuser I can showcase my favourite recipe on the homepage so that other users can try them out. 
+
+### General User
+- As a General user I can look through a paginated list of recipes so that I can select a recipe to try out.
+- As a General user I can search for a recipe so that I can minimise time searching for what I need. 
+- As a General user I can view an entire recipe so that I can learn new dishes.
+
+### Community User
+- As a community User I can log into my own account so I can manage Username and Password information.
+- As a community User I can post and manage my own recipies so I can create, edit, update, and delete my own posts.
+- As a community User I can follow other Community Users so I can find recipies from my favourite chefs.
+- As a community User I can like recipies I have tried so that other users may be encouraged to try them. 
+- As a community User I can save recipies to favourites so that I can easily find them again. 
 
 # Features
 - View Recipies
@@ -55,21 +66,23 @@ Recipe website where users can find, view and share recipies with the world! ADD
 
 ## Languages Used
 
-[Python](https://www.python.org/)
 [html](https://en.wikipedia.org/wiki/HTML)
+
 [CSS](https://en.wikipedia.org/wiki/CSS)
+
+[Python](https://www.python.org/)
 
 ## Frameworks, Libraries and Programmes Used 
 
-[GitHub](https://github.com/) - Used to hold a repository of my project and deploy the live website to Git Pages, making it public.
+[GitHub](https://github.com/) - Holds the repository of my project, GitHub connects to GitPod and Heroku.
 
 [GitPod](https://gitpod.io/workspaces) – Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository. 
 
-[Heroku](https://www.heroku.com/) - Connected to GitHub repositiry, Heroku is a cloud application platform used to deploy this project so this backend language can be utilised/tested. 
+[Heroku](https://www.heroku.com/) - Connected to the GitHub repositiry, Heroku is a cloud application platform used to deploy this project so the backend language can be utilised/tested. 
 
-[datetime](https://docs.python.org/3/library/datetime.html) to work with the date and time, ensuring it follows the correct format and doesn exceed the possible day and month.
+[Django](https://www.djangoproject.com/) - This framework was used to build the foundations of this project, reducing time spent geting the project setup and prevent re-writing existing code.
 
-[Colorama](https://www.youtube.com/watch?v=u51Zjlnui4Y) is used to add colour to the terminal which adds to the users experience.
+[Bootstrap](https://getbootstrap.com/) - Used to quickly add design to my website, Bootstrap focuses on mobile first design meaning this website is responsive across multiple devices ans screen sizes. 
 
 
 # Testing
