@@ -41,23 +41,23 @@ Recipe website where users can find, view and share recipies with the world! ADD
 - As a Superuser I can showcase my favourite recipe on the homepage so that other users can try them out. 
 
 ### General User
-- As a General user I can look through a paginated list of recipes so that I can select a recipe to try out.
-- As a General user I can search for a recipe so that I can minimise time searching for what I need. 
-- As a General user I can view an entire recipe so that I can learn new dishes.
+- As a General User I can look through a paginated list of recipes so that I can select a recipe to try out.
+- As a General User I can search for a recipe so that I can minimise time searching for what I need. 
+- As a General User I can view an entire recipe so that I can learn new dishes.
 
 ### Community User
-- As a community User I can log into my own account so I can manage Username and Password information.
-- As a community User I can post and manage my own recipies so I can create, edit, update, and delete my own posts.
-- As a community User I can follow other Community Users so I can find recipies from my favourite chefs.
-- As a community User I can like recipies I have tried so that other users may be encouraged to try them. 
-- As a community User I can save recipies to favourites so that I can easily find them again. 
+- As a Community User I can log into my own account so I can manage Username and Password information and delete my account.
+- As a Community User I create an account so that I can create, edit, update, and delete my own posts.
+- As a Community User I can follow other Community Users so I can find recipes from my favourite chefs.
+- As a Community User I can like recipes I have tried so that other users may be encouraged to try them. 
+- As a Community User I can save recipes to favourites so that I can easily find them again. 
 
 # Features
 - View Recipies
 - Create an account
-- Upload Recipies
+- Upload, edit and remove Recipies
 - Like, comment and save recipies
-- Follow Chefs 
+- Follow other users 
 
 ## Features to be Implemented
 - TBC
@@ -84,6 +84,8 @@ Recipe website where users can find, view and share recipies with the world! ADD
 
 [Bootstrap](https://getbootstrap.com/) - Used to quickly add design to my website, Bootstrap focuses on mobile first design meaning this website is responsive across multiple devices ans screen sizes. 
 
+[Cloudinary](https://cloudinary.com/?utm_source=google&utm_medium=cpc&utm_campaign=Rbrand&utm_content=492438439811&utm_term=cloudinary&gclid=Cj0KCQiAt8WOBhDbARIsANQLp96hTerzfFJ_P9lX0tEYEdtM3tSsYB6fhw-x3wQxOO0oc4hXm-A2ZBUaAptIEALw_wcB) - Used to store images online for the recipe posts. 
+
 
 # Testing
 
@@ -93,17 +95,10 @@ The project follows the below logic:
 
 <img src="assets/images/logic_flow_chart.png" height="350px"> 
 
-The user must input each entry of data individually as each item has to be validated using different parameters. Once all data is input the system makes its calculations. These inputs and calculations are then pushed back into the approproate worlsheet. 
 
 I have manually tested the projecy by:
-- running through a PEP8 linter
-- Intentionally added incorrect data to ensure the code rejects it 
-- Tested both in Gitpod and Heroku terminals
-- Ensured the data input from the deployed terminal pushes the data back into the worksheet as expected (see images below)
 
-<img src="assets/images/heroku_input.png" height="300px"> 
 
-<img src="assets/images/worksheet_output.png" height="80px"> 
 
 # Validator Testing
 
@@ -111,20 +106,6 @@ The code was validated using [PEP8](http://pep8online.com/). No errors were retr
 
 # Bugs Found 
 
-During testing I found that the date was not in the dd/mm/yy format I thought I had set it as. To fix this I changed the order of the following line of code from "day, month, year" to be "year, month, date":
-
-<ins>my_date = date(int(year), int(month), int(day))</ins>
-
-I also found that some user input errors were terminating the code although I used a while loop. To fix this I identified which lines of code were causing the errors using the Traceback in the terminal. What I found was the code that was causing the break in the loop wasn't within the while loop. To fix this I placed the code in the loop and function began to work as expected.  
-
-Currently, there are no bugs found, however, the below pylint errors were appearing in the Problems tab:
-
-<img src="assets/images/pylint_problems.png" height="150px"> 
-
-I attempted to remove the errors however the variables I have stored globally were not working when moved into the module. Therefore I had to use the global keyword within the following functions:
-- lesson_duration_data()
-- lesson_location_data
-- lesson_attendance_data
 
 # Deployment 
 
@@ -180,34 +161,6 @@ Then, add a second Buildpack, 'nodejs', to handle the mock terminal provided by 
 ## Content 
 
 I used the following websites to help with different areas of my project:
-
-- [Stack Overflow](https://stackoverflow.com/questions/3944655/testing-user-input-against-a-list-in-python) to test user input against the lesson_day list.
-
-- [Stack Overflow](https://stackoverflow.com/questions/3944655/testing-user-input-against-a-list-in-python) to help with the while loop when writing the lesson day function. 
-
-- [Stack Overflow](https://stackoverflow.com/questions/5619489/troubleshooting-descriptor-date-requires-a-datetime-datetime-object-but-rec) to aid with ensuring the date can be validated correctly in the lesson_date_data function. 
-
-- [Gspread Documentation](https://docs.gspread.org/en/latest/user-guide.html#getting-a-cell-value) to find out how to link to a column of data in a spreadsheet.
-
-- [Colorama YouTube Video](https://www.youtube.com/watch?v=u51Zjlnui4Y) to find out how to use Colorama to change the text colour seen by the user in the terminal.
-
-- [Lucid Charts](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=55688909257&km_CPC_Keyword=lucidchart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433236001&km_CPC_TargetID=aud-921551090622:kwd-33511936169&km_CPC_Country=20485&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&mkwid=sSyVrRTB8_pcrid_442433236001_pkw_lucidchart_pmt_e_pdv_c_slid__pgrid_55688909257_ptaid_aud-921551090622:kwd-33511936169_&gclid=CjwKCAjwzaSLBhBJEiwAJSRoku05OBdnovMIM5_WGqDOlz1tGneFNADPmA-AHWOA1e24IRtSwq7X3BoC_fkQAvD_BwE) to create the logic flow diagram for the project. 
-
-- [W3Schools](https://www.w3schools.com/python/python_variables_global.asp) to help with using the Global keyword. 
-
-- [Geeks for Geeks](https://www.geeksforgeeks.org/python-dictionary-clear/) to help clear the list of user inputs (that were already pushed into the worksheet) if the user chooses to input more data for another lesson. 
-
-- [Maschituts](https://maschituts.com/2-ways-to-loop-back-to-the-beginning-of-a-program-in-python/) for with the code to start the programme again if the user has more data to input. 
-
-- Method 3 on this [Geeks for Geeks](https://www.geeksforgeeks.org/python-converting-all-strings-in-list-to-integers/) article to turn a list of strings into a list of integers.
-
-- [Programiz](https://www.programiz.com/python-programming/methods/list/index) and [Stock Overflow](https://stackoverflow.com/questions/42568565/how-to-index-a-list-based-on-user-input-and-print-the-result) to help with using the index to check a user input.
-
-- [Stack Overflow](https://stackoverflow.com/questions/3944655/testing-user-input-against-a-list-in-python) to help with comparing the users answer with a list. 
-
-- [Edureka](https://www.edureka.co/blog/python-list-remove/#pop()) to find out how to remove an item from a list.
-
-- [Slack Overflow](https://stackoverflow.com/questions/33076617/how-to-validate-time-format) to help with working on the lesson_time_data function.
 
 
 # Acknowledgments
