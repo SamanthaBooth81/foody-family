@@ -37,7 +37,7 @@ Recipe website where users can find, view and share recipies with the world! ADD
 # User Experience
 ## User Stories
 ### Superuser / Admin
-- As a Superuser I can manage the recipies uploaded by community members so that anything unsafe can be removed from the website. 
+- As a Superuser I can approve and manage the recipies uploaded by community members so that anything unsafe can be removed from the website. 
 - As a Superuser I can showcase my favourite recipe on the homepage so that other users can try them out. 
 - As a Superuser I can be contacted by all users so I can be made aware of any issues.
 
