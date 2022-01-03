@@ -39,11 +39,13 @@ Recipe website where users can find, view and share recipies with the world! ADD
 ### Superuser / Admin
 - As a Superuser I can manage the recipies uploaded by community members so that anything unsafe can be removed from the website. 
 - As a Superuser I can showcase my favourite recipe on the homepage so that other users can try them out. 
+- As a Superuser I can be contacted by all users so I can be made aware of any issues.
 
 ### General User
 - As a General User I can look through a paginated list of recipes so that I can select a recipe to try out.
 - As a General User I can search for a recipe so that I can minimise time searching for what I need. 
 - As a General User I can view an entire recipe so that I can learn new dishes.
+- As a General User I can contact the site owner so that if there is an issue they will be notified.
 
 ### Community User
 - As a Community User I can log into my own account so I can manage Username and Password information and delete my account.
