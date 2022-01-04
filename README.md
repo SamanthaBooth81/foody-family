@@ -168,26 +168,18 @@ DATABASES = {
 
 17. Now add our Heroku host name into allowed hosts in our settings.py file, APP_NAME.herokuapp.com, and then also add 'localhost' so the app can also run locally.
 
-18. Finally, to complete the first deployment of the skelleton app, create a Procfile so that Heroku knows how to run the project. Within this file add the following:
+18. Finally, to complete the first deployment set up of the skelleton app, create a Procfile so that Heroku knows how to run the project. Within this file add the following:
 web: gunicorn foody-family.wsgi
 Web tells Heroku to allow web traffic, whilst gunicorn is the server installed earlier, a web services gateway interface server (wsgi). This is a standard that allows Python services to integrate with web servers.
 
-11. Scroll down to Buildpacks. This adds futher required dependencies outside of the requirements.txt file. Click 'Add Buildpack', select 'python' first and then click 'Save Changes'. 
-Then, add a second Buildpack, 'nodejs', to handle the mock terminal provided by The Code Institute.
 
-<img src="assets/images/heroku_deployment_5a.png" height="180px"> 
-
-**The order of these Buildpacks is intentional, ensure Python is on top and nodejs underneath. The order can be changed by clicking and dragging.** 
-
-<img src="assets/images/heroku_deployment_5b.png" height="150px"> 
-
-12. Go to the 'Deploy' section using the tabs at the top. Find the 'Deployment Method' section and choose GitHub. Then, I connected to my relevant GitHub Repository by searching the repository name and clicking 'Connect'.
+19. Now, go to the 'Deploy' section on Heroku. Find the 'Deployment Method' section and choose GitHub. Then, connected to the relevant GitHub Repository by searching the repository name and clicking 'Connect'.
 
 <img src="assets/images/heroku_deployment_6.png" height="120px"> 
 
 <img src="assets/images/heroku_deployment_6a.png" width="800px"> 
 
-13. Scroll down to the Automatic and Manual Deploys sections. I have enabled Automatic Deploys as I want my project to automatically redeploy if push any changes back into my repository. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
+20. Scroll down to the Automatic and Manual Deploys sections. I have enabled Automatic Deploys as I want my project to automatically redeploy if push any changes back into my repository. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
 
 <img src="assets/images/heroku_deployment_7.png" height="180px"> 
 

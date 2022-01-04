@@ -1,1 +1,1 @@
-web: gunicorn foody-family.wsgi
+web: gunicorn foody_family.wsgi
