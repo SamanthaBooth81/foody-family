@@ -111,9 +111,10 @@ The code was validated using [PEP8](http://pep8online.com/). No errors were retr
 
 # Deployment 
 
-This project was deployed using the Code Institutes mock terminal for Heroku. 
+This project was deployed using Heroku. Some of the steps in this deployment process are used to get the bare minimum of this project up and running prior to adding functionality. 
 
-I followed the following steps:
+See the following steps to deploy below:
+
 1. Login to Heroku and Create a New App.
 
 <img src="assets/images/heroku_deployment_1.png" height="120px"> 
@@ -134,7 +135,7 @@ I followed the following steps:
 
 The env.py files is where the projects secret environment variables are stored. This file is then added to a gitnore file so it isn't stored publicly within the projects repository.  
 
-7. Next, the secret key needs to be created within the env.py file and then added to the Config Vars on Heroku. Once added, go to the settings.py file on GitPod.
+7. Next, the secret key needs to be created within the projects env.py file on GitPod and then added to the Config Vars on Heroku. Once added, go to the settings.py file on GitPod.
 
 8. Within the settings.py file you need to import os, import dj_database_url and then write an if statement to import the env.py file in production to avoid an error. 
 
@@ -145,10 +146,33 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
+11. The next step is to connect the project to Cloudinary, which is where the media files will be stored. Log into Cloudinary and copy the API environment variable. This needs to be added to the Config Vars on Heroku and to the projects env.py file, removing the 'CLOUDINARY_URL = ' from the beginning of the copied API link. 
+
+12. Then on Heroku add to the Config Vars, DISABLE_COLLECTSTATIC = 1, as a temporary measure to enable deployment without any static files, this will be removed when it is time to deploy the full project.
 
 
+13. Back onto GitPod, the cloudinary libraries installed now need to be added to the list of installed apps within the settings.py file - 'cloudinary_storage' and 'cloudinary'
 
-7. Scroll down to Buildpacks. This adds futher required dependencies outside of the requirements.txt file. Click 'Add Buildpack', select 'python' first and then click 'Save Changes'. 
+14. Next we need to tell Django to use Cloudinary to store our media and static files. Toward the end of our settings.py  file we can add:
+
+- STATIC_URL = '/static/'
+- STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+- STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+- STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
+- MEDIA_URL = '/media/'
+- DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+15. Then we need to tell Django where the templates will be stored. At the top of settings.py, under BASE_DIR (the base directory), add a templates directory and then scroll down to TEMPLATES and add the templates directory variable to 'DIRS': []. 
+
+16. Next, create the three above directories, media, static and templates, on the top level with the manage.py file. 
+
+17. Now add our Heroku host name into allowed hosts in our settings.py file, APP_NAME.herokuapp.com, and then also add 'localhost' so the app can also run locally.
+
+18. Finally, to complete the first deployment of the skelleton app, create a Procfile so that Heroku knows how to run the project. Within this file add the following:
+web: gunicorn foody-family.wsgi
+Web tells Heroku to allow web traffic, whilst gunicorn is the server installed earlier, a web services gateway interface server (wsgi). This is a standard that allows Python services to integrate with web servers.
+
+11. Scroll down to Buildpacks. This adds futher required dependencies outside of the requirements.txt file. Click 'Add Buildpack', select 'python' first and then click 'Save Changes'. 
 Then, add a second Buildpack, 'nodejs', to handle the mock terminal provided by The Code Institute.
 
 <img src="assets/images/heroku_deployment_5a.png" height="180px"> 
@@ -157,17 +181,17 @@ Then, add a second Buildpack, 'nodejs', to handle the mock terminal provided by 
 
 <img src="assets/images/heroku_deployment_5b.png" height="150px"> 
 
-9. Go to the 'Deploy' section using the tabs at the top. Find the 'Deployment Method' section and choose GitHub. Then, I connected to my relevant GitHub Repository by searching the repository name and clicking 'Connect'.
+12. Go to the 'Deploy' section using the tabs at the top. Find the 'Deployment Method' section and choose GitHub. Then, I connected to my relevant GitHub Repository by searching the repository name and clicking 'Connect'.
 
 <img src="assets/images/heroku_deployment_6.png" height="120px"> 
 
 <img src="assets/images/heroku_deployment_6a.png" width="800px"> 
 
-10. Scroll down to the Automatic and Manual Deploys sections. I have enabled Automatic Deploys as I want my project to automatically redeploy if push any changes back into my repository. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
+13. Scroll down to the Automatic and Manual Deploys sections. I have enabled Automatic Deploys as I want my project to automatically redeploy if push any changes back into my repository. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
 
 <img src="assets/images/heroku_deployment_7.png" height="180px"> 
 
-11. Once my code was finished deploying I clicked view, to see my newly deployed project in the terminal. 
+14. Once my code was finished deploying I clicked view, to see my newly deployed project in the terminal. 
 
 <img src="assets/images/heroku_deployment_8.png" height="150px"> 
 <img src="assets/images/heroku_deployment_9.png" height="250px"> 
