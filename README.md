@@ -124,16 +124,29 @@ I followed the following steps:
 
 3. Click on 'Create App'. This will take you to a page where you can deploy your project. 
 
-4. Click on 'Settings' among the tabs at the top of the page. The following sets must be dione before deployment.
+4. Next, click on the 'Resources' tab and search for 'Heroku Postgres' in the Add-ons section to add the Heroku Postgres database to the project. 
+
+5. Click on the 'Settings' tab at the top of the page. The following steps must be completed before deployment.
 
 <img src="assets/images/heroku_deployment_3.png" height="180px"> 
 
-5. Next, scroll down to Config Vars (also knownas Environment Variables). In order for Heroku to access my spreadsheet it must have access to the contents of the creds.json file. As this file is to be kept secure it cannot be found in my GitHub repository. To enable access securely, sensitive data is stored in a Config Vars. 
+6. Scroll down to Config Vars (also known as Environment Variables) and click 'Reveal Config Vars'. Here the database URL is stored, it is the connection to the database, so this must be copied and stored within env.py file within the same directory as the manage.py file. 
 
-<img src="assets/images/heroku_deployment_4.png" height="120px"> 
+The env.py files is where the projects secret environment variables are stored. This file is then added to a gitnore file so it isn't stored publicly within the projects repository.  
 
-6. Click 'Reveal Config Vars'. Where it says 'KEY', input CREDS and 'VALUE', input the contents of the creds.json file. Then click 'ADD'. 
-I also had to add a second Config Vars of KEY: PORT and VALUE: 8000, to improve compatability with the Code Institute [Template](https://github.com/Code-Institute-Org/python-essentials-template) I am using.
+7. Next, the secret key needs to be created within the env.py file and then added to the Config Vars on Heroku. Once added, go to the settings.py file on GitPod.
+
+8. Within the settings.py file you need to import os, import dj_database_url and then write an if statement to import the env.py file in production to avoid an error. 
+
+9. Then, we need to replace the current insecure secret key with **os.environ.get('SECRET_KEY')**, that we set within the env.py file. 
+
+10. Once the secret key is replaced, scroll down to DATABASES to connect to the Postgres database. Comment out the current code and add the following python doctionary:
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+
+
+
 
 7. Scroll down to Buildpacks. This adds futher required dependencies outside of the requirements.txt file. Click 'Add Buildpack', select 'python' first and then click 'Save Changes'. 
 Then, add a second Buildpack, 'nodejs', to handle the mock terminal provided by The Code Institute.
@@ -144,17 +157,17 @@ Then, add a second Buildpack, 'nodejs', to handle the mock terminal provided by 
 
 <img src="assets/images/heroku_deployment_5b.png" height="150px"> 
 
-8. Go to the 'Deploy' section using the tabs at the top. Find the 'Deployment Method' section and choose GitHub. Then, I connected to my relevant GitHub Repository by searching the repository name and clicking 'Connect'.
+9. Go to the 'Deploy' section using the tabs at the top. Find the 'Deployment Method' section and choose GitHub. Then, I connected to my relevant GitHub Repository by searching the repository name and clicking 'Connect'.
 
 <img src="assets/images/heroku_deployment_6.png" height="120px"> 
 
 <img src="assets/images/heroku_deployment_6a.png" width="800px"> 
 
-9. Scroll down to the Automatic and Manual Deploys sections. I have enabled Automatic Deploys as I want my project to automatically redeploy if push any changes back into my repository. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
+10. Scroll down to the Automatic and Manual Deploys sections. I have enabled Automatic Deploys as I want my project to automatically redeploy if push any changes back into my repository. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
 
 <img src="assets/images/heroku_deployment_7.png" height="180px"> 
 
-10. Once my code was finished deploying I clicked view, to see my newly deployed project in the terminal. 
+11. Once my code was finished deploying I clicked view, to see my newly deployed project in the terminal. 
 
 <img src="assets/images/heroku_deployment_8.png" height="150px"> 
 <img src="assets/images/heroku_deployment_9.png" height="250px"> 
