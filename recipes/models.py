@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class Post(models.Model):
+class Recipe(models.Model):
     """Django Model of recipe database"""
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -25,17 +25,32 @@ class Post(models.Model):
     likes = models.ManyToManyField(
         User, related_name='recipe_likes', blank=True)
 
+    class Meta:
+        """Orders posts by date created using descending order"""
+        ordering = ['-created_on']
 
-class Meta:
-    """Orders posts by date created using descending order"""
-    ordering = ['-created_on']
+    def __str__(self):
+        """Magic Method, returns a string representation of an object"""
+        return self.title
+
+    def number_of_likes(self):
+        """Helper method, returns total count of likes on a recipe"""
+        return self.likes.count()
 
 
-def __str__(self):
-    """Magic Method, returns a string representation of an object"""
-    return self.title
+class Comments(models.Model):
+    """Django Model for comments database"""
+    post = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, related_name="comments")
+    name = models.CharField(max_length=80, unique=True)
+    email = models.EmailField()
+    body = models.TimeField()
+    created_on = models.BooleanField(default=True)
+    approved = models.BooleanField(default=False)
 
+    class Meta:
+        """Orders posts by date created using ascending order"""
+        ordering = ['created_on']
 
-def number_of_likes(self):
-    """Helper method, returns total count of likes on a recipe"""
-    return self.likes.count()
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
