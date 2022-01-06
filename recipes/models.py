@@ -1,3 +1,41 @@
+"""Django Models of foody-family databases"""
 from django.db import models
+from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
-# Create your models here.
+STATUS = ((0, "Draft"), (1, "Published"))
+
+
+class Post(models.Model):
+    """Django Model of recipe database"""
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="recipe_post")
+    updated_on = models.DateTimeField(auto_now=True)
+    prep_time = models.TimeField()
+    cook_time = models.TimeField()
+    total_time = models.TimeField()
+    ingredients = models.TextField()
+    instructions = models.TextField()
+    featured_image = CloudinaryField('image', default='placeholder')
+    excerpt = models.TextField(blank=True)
+    created_on = models.DateTimeField(auto_now=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    likes = models.ManyToManyField(
+        User, related_name='recipe_likes', blank=True)
+
+
+class Meta:
+    """Orders posts by date created using descending order"""
+    ordering = ['-created_on']
+
+
+def __str__(self):
+    """Magic Method, returns a string representation of an object"""
+    return self.title
+
+
+def number_of_likes(self):
+    """Helper method, returns total count of likes on a recipe"""
+    return self.likes.count()
