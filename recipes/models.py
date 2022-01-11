@@ -38,19 +38,19 @@ class Recipe(models.Model):
         return self.likes.count()
 
 
-class Comments(models.Model):
-    """Django Model for comments database"""
-    post = models.ForeignKey(
-        Recipe, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=80, unique=True)
-    email = models.EmailField()
-    body = models.TimeField()
-    created_on = models.BooleanField(default=True)
-    approved = models.BooleanField(default=False)
+# class Comments(models.Model):
+#     """Django Model for comments database"""
+#     post = models.ForeignKey(
+#         Recipe, on_delete=models.CASCADE, related_name="comments")
+#     name = models.CharField(max_length=80, unique=True)
+#     email = models.EmailField()
+#     body = models.TimeField()
+#     created_on = models.BooleanField(default=True)
+#     approved = models.BooleanField(default=False)
 
-    class Meta:
-        """Orders posts by date created using ascending order"""
-        ordering = ['created_on']
+#     class Meta:
+#         """Orders posts by date created using ascending order"""
+#         ordering = ['created_on']
 
-    def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+#     def __str__(self):
+#         return f"Comment {self.body} by {self.name}"
