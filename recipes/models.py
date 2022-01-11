@@ -13,9 +13,9 @@ class Recipe(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_post")
     updated_on = models.DateTimeField(auto_now=True)
-    prep_time = models.TimeField()
-    cook_time = models.TimeField()
-    total_time = models.TimeField()
+    preparation_length = models.CharField(max_length=10, default=0)
+    cooking_length = models.CharField(max_length=10, default=0)
+    total_length = models.CharField(max_length=10, default=0)
     ingredients = models.TextField()
     instructions = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
