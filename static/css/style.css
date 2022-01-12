@@ -1,18 +1,26 @@
 /* homepage stylling */
-/* .home-img {
-    background: url(../css/images/landing-image.jpg) no-repeat center center fixed;
-    min-height: 800px; 
+
+.home-img {
+    background: url('https://res.cloudinary.com/sjb21/image/upload/v1642009399/static/landing-image_jaq8ob.jpg') no-repeat center center fixed;
+    min-height: 700px; 
+    padding: 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-} */
+}
 
 .title {
     color: white;
     background: rgba(255, 255, 255, 0.199);
     text-align: center;
-    margin: 300px 200px;
+    margin: 270px 140px;
+    align-items: center;
     padding: 30px;
     border-radius: 10px;
+}
+
+.card-icons {
+    color: #0b1726;
+    padding-right: 5px;
 }
