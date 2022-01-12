@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<heading>
+    <!-- Title -->
+    <div class="container-fluid">
+        <img src="https://res.cloudinary.com/sjb21/image/upload/v1642002252/static/landing-image_abvoyn.jpg"
+            alt="spices" class="home-img">
+        <div class="row">
+            <div class="col title">
+                <h1>Welcome to the Foody Family</h1>
+                <hr>
+                <p>We hope you find the perfect recipe here!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipe card -->
+    <div class="col-12 mt-3 left">
+        <div class="row">
+            {% for recipes in recipe_list %}
+            <div col-md-3>
+                <div class="card" style="width: 18rem;">
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
+                        class="card-img-top" alt="placeholder image">
+                    {% else %}
+                    <img src="{{ recipe.featured_image.url }}" alt="recipe image">
+                    {% endif %}
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">{{ recipe.title }}</h5>
+                        </a>
+                        <p class="card-text">{{ recipe.author }}</p>
+                        <p class="card-text">{{ recipe.preparation_length }}</p>
+                        <p class="card-text">{{ recipe.cooking_length }}</p>
+                        <p><i class="fas fa-heart"></i>{{ recipe.number_of_likes }}</p>
+                        <!-- <a href="#" class="btn btn-primary">View Recipe</a> -->
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:4 %}
+        </div>
+        <div class="row">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</heading>
+{%endblock%}

@@ -1,0 +1,18 @@
+/* homepage stylling */
+/* .home-img {
+    background: url(../css/images/landing-image.jpg) no-repeat center center fixed;
+    min-height: 800px; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+
+.title {
+    color: white;
+    background: rgba(255, 255, 255, 0.199);
+    text-align: center;
+    margin: 300px 200px;
+    padding: 30px;
+    border-radius: 10px;
+}
