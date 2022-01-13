@@ -24,3 +24,8 @@
     color: #0b1726;
     padding-right: 5px;
 }
+
+.recipe-card-img {
+    max-height: 191px;
+    object-fit: cover;
+}
