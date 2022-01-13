@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    {% if "placeholder" in recipes.featured_image.url %}
+    <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
+        alt="placeholder image">
+    {% else %}
+    <img src="{{ recipes.featured_image.url }}" alt="recipe image">
+    {% endif %}
+    <div>
+        <h1>{{ recipes.title }}</h1>
+        <p class="card-text">By {{ recipes.author }}</p>
+        <div>
+            <span>
+                <i class="far fa-clock card-icons">Prep Time: {{ recipes.preparation_length }}
+                <i class="far fa-clock card-icons"></i>Cook Time: {{ recipes.cooking_length }}
+                <i class="far fa-clock card-icons"></i>Total: {{ recipes.total_length }}
+            </span>
+            <span>
+                <i class="fas fa-heart card-icons"></i>{{ recipes.number_of_likes }}
+            </span>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h2>Ingredients</h2>
+    <span>{{ recipes.ingredients }}</span>
+    <h2>Method</h2>
+    <span>{{ recipes.instructions }}</span>
+</div>
+
+{%endblock%}
