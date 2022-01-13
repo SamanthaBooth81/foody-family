@@ -1,4 +1,4 @@
-/* homepage stylling */
+/* homepage landing stylling */
 
 .home-img {
     background: url('https://res.cloudinary.com/sjb21/image/upload/v1642009399/static/landing-image_jaq8ob.jpg') no-repeat center center fixed;
@@ -20,6 +20,10 @@
     border-radius: 10px;
 }
 
+/* Recipe Card Stylling */
+.card-position {
+    margin-bottom: 10px;
+}
 .card-icons {
     color: #0b1726;
     padding-right: 5px;
@@ -28,4 +32,31 @@
 .recipe-card-img {
     max-height: 191px;
     object-fit: cover;
+}
+
+
+/* footer stylling */
+.footer {
+    background-color: #0b1726;
+    margin-top: 25px;
+    color: #ecece2;
+    text-align: center;
+    font-size: 20px;
+}
+
+.footer p {
+    padding-top: 20px;
+    margin: 0;
+}
+
+.footer a {
+    color: #ecece2;
+    padding: 5px;
+}
+
+.social-links {
+    color: #ecece2;
+    padding: 20px;
+    margin: 0;
+    font-size: 30px;
 }

@@ -18,9 +18,10 @@
         <div class="row">
             <div class="col-12 mt-4 left">
                 <div class="row">
+                    <h2>Recipes</h2>
                     {% for recipes in recipe_list %}
                     <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card card-position" style="width: 18rem;">
                             {% if "placeholder" in recipes.featured_image.url %}
                             <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
                                 class="card-img-top recipe-card-img" alt="placeholder image">
@@ -68,6 +69,6 @@
             {% endif %}
         </div>
     </div>
-    <hr>
+
 </heading>
 {%endblock%}
