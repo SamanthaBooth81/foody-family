@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+ <!-- Landing Page image with welcome message -->
 <heading>
     <div class="container-fluid home-img">
         <div class="row">
@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <!-- Recipe card -->
+    <!-- Recipe card, code taken from Bootstrap -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mt-4 left">
@@ -53,6 +53,7 @@
             </div>
         </div>
 
+        <!-- Site Pagination, maximum 12 recipes per page -->
         <div>
             {% if is_paginated %}
             <nav aria-label="Page navigation">
