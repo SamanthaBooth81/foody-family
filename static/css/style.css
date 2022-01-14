@@ -63,6 +63,7 @@
 
 /* recipe detail stylling */
 
-.recipe-img {
-    max-height: 100px;
+.details-img {
+    max-height: 300px;
+    object-fit: cover;
 }

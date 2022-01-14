@@ -3,15 +3,15 @@
 {% block content %}
 
 <div class="card mb-3">
-    {% if "placeholder" in recipes.featured_image.url %}
+    {% if "placeholder" in recipe.featured_image.url %}
     <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
-        alt="placeholder image" class="card-img-top">
+        alt="placeholder image" class="card-img-top details-img">
     {% else %}
-    <img src="{{ recipe.featured_image.url }}" alt="recipe image" class="card-img-top">
+    <img src="{{ recipe.featured_image.url }}" alt="recipe image" class="card-img-top details-img">
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">{{ recipe.title }}</h5>
-        <p class="card-text">{{ recipe.author }}</p>
+        <p class="card-text">By {{ recipe.author }}</p>
         <span lass="card-text"><small>
                 <i class="far fa-clock"></i>Prep Time: {{ recipe.preparation_length }}
                 <i class="far fa-clock"></i>Cook Time: {{ recipe.cooking_length }}
@@ -25,11 +25,16 @@
     <div>
         <h2>Ingredients</h2>
         <span>{{ recipe.ingredients }}</span>
+        <!-- {% for ingredients in ingredients_list %}
+        <ul>
+            <li>{{ recipe.ingredients }}</li>
+        </ul>
+        {% endfor %} -->
     </div>
     <hr>
     <div>
         <h2>Method</h2>
-        <span>{{ recipe.instructions }}</span>
+        <span>{{ recipe.instructions|striptags }}</span>
     </div>
 </div>
 
