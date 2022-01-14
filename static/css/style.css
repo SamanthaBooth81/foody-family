@@ -60,3 +60,9 @@
     margin: 0;
     font-size: 30px;
 }
+
+/* recipe detail stylling */
+
+.recipe-img {
+    max-height: 100px;
+}
