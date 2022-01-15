@@ -24,17 +24,12 @@
 <div>
     <div>
         <h2>Ingredients</h2>
-        <span>{{ recipe.ingredients }}</span>
-        <!-- {% for ingredients in ingredients_list %}
-        <ul>
-            <li>{{ recipe.ingredients }}</li>
-        </ul>
-        {% endfor %} -->
+        <span>{{ recipe.ingredients|safe }}</span>
     </div>
     <hr>
     <div>
         <h2>Method</h2>
-        <span>{{ recipe.instructions|striptags }}</span>
+        <span>{{ recipe.instructions|safe }}</span>
     </div>
 </div>
 
