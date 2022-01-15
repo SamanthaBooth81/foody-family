@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
- <!-- Landing Page image with welcome message -->
+<!-- Landing Page image with welcome message -->
 <heading>
     <div class="container-fluid home-img">
         <div class="row">
@@ -12,64 +12,64 @@
             </div>
         </div>
     </div>
+</heading>
 
-    <!-- Recipe card, code taken from Bootstrap -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-4 left">
-                <div class="row">
-                    <h2>Recipes</h2>
-                    {% for recipes in recipe_list %}
-                    <div class="col-md-3">
-                        <div class="card card-position" style="width: 18rem;">
-                            {% if "placeholder" in recipes.featured_image.url %}
-                            <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
-                                class="card-img-top recipe-card-img" alt="placeholder image">
-                            {% else %}
-                            <img src="{{ recipes.featured_image.url }}" alt="recipe image">
-                            {% endif %}
-                            <div class="card-body">
-                                <a href="{% url 'recipe_detail' recipes.slug %}">
-                                    <h5 class="card-title">{{ recipes.title }}</h5>
-                                </a>
-                                <p class="card-text">By {{ recipes.author }}</p>
-                                <div class="card-text">
-                                    <span>
-                                        <i class="far fa-clock card-icons"></i>{{ recipes.total_length }}
-                                    </span>
-                                    <span>
-                                        <i class="fas fa-heart card-icons"></i>{{ recipes.number_of_likes }}
-                                    </span>
-                                </div>
+<!-- Recipe card, code taken from Bootstrap -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-4 left">
+            <div class="row">
+                <h2>Recipes</h2>
+                {% for recipes in recipe_list %}
+                <div class="col-md-3">
+                    <div class="card card-position" style="width: 18rem;">
+                        {% if "placeholder" in recipes.featured_image.url %}
+                        <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
+                            class="card-img-top recipe-card-img" alt="placeholder image">
+                        {% else %}
+                        <img src="{{ recipes.featured_image.url }}" alt="recipe image">
+                        {% endif %}
+                        <div class="card-body">
+                            <a href="{% url 'recipe_detail' recipes.slug %}">
+                                <h5 class="card-title">{{ recipes.title }}</h5>
+                            </a>
+                            <p class="card-text">By {{ recipes.author }}</p>
+                            <div class="card-text">
+                                <span>
+                                    <i class="far fa-clock card-icons"></i>{{ recipes.total_length }}
+                                </span>
+                                <span>
+                                    <i class="fas fa-heart card-icons"></i>{{ recipes.number_of_likes }}
+                                </span>
                             </div>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:4 %}
                 </div>
-                <div class="row">
-                    {% endif %}
-                    {% endfor %}
-                </div>
+                {% if forloop.counter|divisibleby:4 %}
             </div>
-        </div>
-
-        <!-- Site Pagination, maximum 12 recipes per page -->
-        <div>
-            {% if is_paginated %}
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                    {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                    {% endif %}
-                    {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-                    {% endif %}
-                </ul>
-            </nav>
-            {% endif %}
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 
-</heading>
+    <!-- Site Pagination, maximum 12 recipes per page -->
+    <div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+
 {%endblock%}
