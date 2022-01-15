@@ -10,7 +10,7 @@
 
 # About
 
-Recipe website where users can find, view and share recipies with the world! ADD MORE DETAIL HERE!
+Foody Family is a recipe sharing website where users can view, like and comment on recipes and upload their own recipies to share with other users. This project was set up using a Postgresql database and built using Django. Along with Bootstrap to setup the basic layout and stylling. 
 
 # Table of Contents
 
@@ -59,10 +59,11 @@ Recipe website where users can find, view and share recipies with the world! ADD
 - Create an account
 - Upload, edit and remove Recipies
 - Like, comment and save recipies
-- Follow other users 
+
 
 ## Features to be Implemented
-- TBC
+- Follow other users 
+- Search/Filter Options 
 
 # Technologies Used
 
@@ -88,6 +89,8 @@ Recipe website where users can find, view and share recipies with the world! ADD
 
 [Cloudinary](https://cloudinary.com/?utm_source=google&utm_medium=cpc&utm_campaign=Rbrand&utm_content=492438439811&utm_term=cloudinary&gclid=Cj0KCQiAt8WOBhDbARIsANQLp96hTerzfFJ_P9lX0tEYEdtM3tSsYB6fhw-x3wQxOO0oc4hXm-A2ZBUaAptIEALw_wcB) - Used to store images online for the recipe posts. 
 
+[Summernote](https://summernote.org/) Used to add a text area field to the admin setup to enable a list of ingredients and method steps.
+
 
 # Testing
 
@@ -99,8 +102,10 @@ The project follows the below logic:
 
 
 I have manually tested the projecy by:
-
-
+- Adding multiple recipes to ensure:
+    - The layout works as expected
+    - The images displayed correctly, whether uploaded by the user or using the placeholder image instead
+    - The recipe details were displaying the correct recipe chosen to be viewed 
 
 # Validator Testing
 
@@ -108,6 +113,8 @@ The code was validated using [PEP8](http://pep8online.com/). No errors were retr
 
 # Bugs Found 
 
+I encountered the following issues whilst builing this project:
+- Summernote's text area boxes were not displaying as lists on the webpage. To fix this I added |safe to the code linking to those model fields which removed the tags and displayed them as the lists they are. 
 
 # Deployment 
 
