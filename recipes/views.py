@@ -31,4 +31,3 @@ class RecipeDetail(View):
                 "liked": liked
             },
         )
-
