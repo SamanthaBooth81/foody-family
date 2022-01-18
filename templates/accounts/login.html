@@ -7,26 +7,28 @@
     <h1>Login</h1>
 </header>
 
-<form  method="POST" action="" class="form"> 
+<form method="POST" action="" class="form">
 
     <!--csrf_token is used to prevent hackers calling my webpage 
         from another site. How to create login page taken from Hacker
         Shack YouTube Channel. Link in README. -->
 
     {% csrf_token %}
-        
-    <input id="username" name="username" type="username" Placeholder="Username" class="form-input form-control" id="inputUsername3">
-    
-    <input id="password" name="password" type="password" placeholder="Password" class="form-input form-control" id="inputPassword3">
-    
+
+    <input id="username" name="username" type="username" Placeholder="Username" class="form-input form-control"
+        id="inputUsername3">
+
+    <input id="password" name="password" type="password" placeholder="Password" class="form-input form-control"
+        id="inputPassword3">
+
     <button type="submit" class="btn btn-primary">Sign in</button>
 
     {{ form.errors }}
-    
+
     <p>Need an account?
         Register <a href="#">here</a>!
     </p>
-    
+
 </form>
-   
+
 {% endblock %}
