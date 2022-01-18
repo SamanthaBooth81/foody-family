@@ -35,9 +35,10 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li>
-                        <span>Hi {{ user.username }}!</span>
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}" class="nav-link active">Logout</a>
                     </li>
+                    <li class="nav-item"><span>Hi {{ user.username }}!</span></li>
                     {% else %}
                     <li class="nav-item dropdown">
                         <a href="{% url 'login' %}" class="nav-link" id="navbarDropdown" role="button"

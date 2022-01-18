@@ -23,7 +23,12 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('recipes.urls'), name='recipe_urls'),
 
-    # Django Auth - help from Hacker Shack Video in README
+    # Django Auth - help from Hacker Shack Video in README for login path
     path('accounts/login/',
-         views.LoginView.as_view(template_name="accounts/login.html"), name='login'),
+         views.LoginView.as_view(template_name="accounts/login.html"),
+         name='login'),
+    # https://stackoverflow.com/questions/14021913/django-logout-not-working
+    # to find below url path
+    path('accounts/logout/',
+         views.LogoutView.as_view(next_page='/'), name="logout")
 ]
