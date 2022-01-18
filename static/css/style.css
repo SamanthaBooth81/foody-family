@@ -20,6 +20,13 @@
     border-radius: 10px;
 }
 
+.welcome {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #A7490D;
+    text-decoration: none;
+}
+
 /* Recipe Card Stylling */
 .card-position {
     margin-bottom: 10px;
