@@ -1,10 +1,10 @@
 """Views for the different pages to be rendered"""
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django import forms
 from .models import Recipe
-
 
 
 class RecipeList(generic.ListView):
@@ -46,13 +46,12 @@ def LoginPage(request):
 
         user = authenticate(request, username=username, password=password)
 
-        if user is not None: 
+        if user is not None:
             login(request, user)
             return redirect('home')
         else:
-            messages.info(request,'username or password is incorrect')
-    
+            messages.info(request, 'username or password is incorrect')
+
     context = {}
 
     return render(request, 'accounts/login.html', context)
-
