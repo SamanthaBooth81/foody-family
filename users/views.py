@@ -30,3 +30,8 @@ def LogoutUser(request):
     # https://docs.djangoproject.com/en/4.0/topics/auth/default/#how-to-log-a-user-out
     logout(request)
     return redirect('home')
+
+
+def RegisterUser(request):
+    """User Registration"""
+    

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+    <h1>Register</h1>
+</header>
+
+<form method="POST" action="login.html" class="form">
+    {% csrf_token %}
+
+    <input type="email" name="email" placeholder="Email">
+    <input type="username" name="username" placeholder="Username">
+    <input type="password1" name="password1" placeholder="Password">
+    <input type="password2" name="password2" placeholder="Repeat Password">
+
+    <button type="submit" class="btn btn-primary">Register</button>
+    
+    {{ form.errors }}
+
+    <p>Already have an account?
+        Please <a href="{% url 'login' %}">Login</a>
+    </p>
+</form>
+
+
+{% endblock %}
