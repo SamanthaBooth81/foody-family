@@ -20,6 +20,8 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 
 [Features to be Implemented](#features-to-be-implemented)
 
+[Wireframes](#wireframes)
+
 [Technologies Used](#technologies-used)
 
 [Testing](#testing)
@@ -61,9 +63,26 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 - Like, comment and save recipies
 
 
-## Features to be Implemented
+# Features to be Implemented
 - Follow other users 
 - Search/Filter Options 
+
+# Wireframes
+All wireframes were created used [Balsamiq](https://balsamiq.com/)
+
+### Homepage
+
+### Registration, Login, Logout
+
+### Recipe Details
+
+### Manage Account
+
+### Profile
+
+### Add Recipe
+
+### Recipe Management 
 
 # Technologies Used
 
@@ -115,6 +134,7 @@ The code was validated using [PEP8](http://pep8online.com/). No errors were retr
 
 I encountered the following issues whilst builing this project:
 - Summernote's text area boxes were not displaying as lists on the webpage. To fix this I added |safe to the code linking to those model fields which removed the tags and displayed them as the lists they are. 
+- login error message showing __ all __ and then the message. To fix this I ....................
 
 # Deployment 
 
@@ -196,7 +216,21 @@ Web tells Heroku to allow web traffic, whilst gunicorn is the server installed e
 ## Content 
 
 I used the following websites to help with different areas of my project:
+### Login, Logout & Registration
+- [Django - How to log a user out](https://docs.djangoproject.com/en/4.0/topics/auth/default/#how-to-log-a-user-out), to help get the logout functionality working.
+- [Coding Entrepreneurs - Django Logout View](https://www.youtube.com/watch?v=66abhpAxMgQ), to help create the Login functionality. 
+- [Denis Ivy - User Registration and Login Authentication](https://www.youtube.com/watch?v=tUqUdu0Sjyc), used to help put together Login, Logout and Registration functionality.
+- [Stack Overflow - Django logout not working](https://stackoverflow.com/questions/14021913/django-logout-not-working), to correct my url path for the logout function.
+- [Django - form.errors](https://docs.djangoproject.com/en/4.0/ref/forms/api/#django.forms.Form.errors), used to figure out how to use form.errors.
+-[Hacker Shack - Login Path](https://www.youtube.com/watch?v=Rz6racFuW_Q), used to help put the url path together for the login page.
+
+### Stylling
+- [Unsplash - Landing Image](https://unsplash.com/photos/DoUgSMezLp0)
+- [Logo Font - Google Fonts](https://fonts.google.com/specimen/Ribeye+Marrow?category=Display&preview.text=Foody%20Family&preview.text_type=custom#standard-styles)
+- [Unsplash - Recipe Placeholder Image](https://unsplash.com/photos/ezSFnAFi9hY)
+- [Font Awsome Heart Likes Icon](https://fontawesome.com/v5.15/icons/heart?style=solid)
+- [CSS object-fit property](https://www.w3schools.com/css/css3_object-fit.asp), used to fit recipe image correctly into the layout.
 
 
 # Acknowledgments
-Thank you to all who encouraged and supported me as I created my first game, espcially to my mentor for his guidance and patience and tutor support at The Code Institute who helped when I was stuck. 
+Thank you to all who encouraged and supported me as I created my first full stack website, espcially to my mentor at The Code Institute for his guidance, patience and encouragement. Also a thank you to Tutor Support at the Code Institute for help with anything I found myself stuck on.  

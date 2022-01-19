@@ -37,6 +37,7 @@
 }
 
 .recipe-card-img {
+    /* w3schools used to find object-fit property*/
     max-height: 191px;
     object-fit: cover;
 }
