@@ -24,8 +24,8 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('recipes.urls'), name='recipe_urls'),
 
-    path('accounts/register/',
-     user_views.RegisterUser, name='registration'),
+    path('accounts/login/register',
+         user_views.RegisterUser, name='register'),
 
     # Django Auth - help from Hacker Shack Video in README for login path
     path('accounts/login/',

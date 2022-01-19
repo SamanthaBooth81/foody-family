@@ -47,4 +47,4 @@ def RegisterUser(request):
     else:
         form = UserCreationForm()
     
-    return render(request, 'accounts/login.html', {'form': form})
+    return render(request, 'accounts/register.html', {'form': form})
