@@ -43,7 +43,7 @@ def RegisterUser(request):
         password = form.cleaned_data.get('password1')
         user = authenticate(email=email, username=username, password=password)
         login(request, user)
-        return redirect('accounts/login/')
+        return redirect('login')
     else:
         messages.info(request, 'Please ensure the password matches')
         form = UserCreationForm()
