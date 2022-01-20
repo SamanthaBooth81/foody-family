@@ -43,9 +43,10 @@ def RegisterUser(request):
         password = form.cleaned_data.get('password1')
         user = authenticate(email=email, username=username, password=password)
         login(request, user)
-        return redirect('login')
+        messages.success(request, "Welcome {{ user.username }}!")
+        return redirect('home')
     else:
-        messages.info(request, 'Please ensure the password matches')
+        messages.error(request, 'Please ensure the password matches')
         form = UserCreationForm()
     
     return render(request, 'accounts/register.html', {'form': form})
