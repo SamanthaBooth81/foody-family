@@ -35,16 +35,18 @@ def LogoutUser(request):
 
 def RegisterUser(request):
     """User Registration"""
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('login')
+    # if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+        form.save()
+        email = form.cleaned_data.get('email')
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password1')
+        user = authenticate(username=username, password=password)
+        login(request, user)
+        return redirect('accounts/login/')
     else:
+        messages.info(request, 'Please ensure the password matches')
         form = UserCreationForm()
     
     return render(request, 'accounts/register.html', {'form': form})
