@@ -134,6 +134,7 @@ The code was validated using [PEP8](http://pep8online.com/). No errors were retr
 
 I encountered the following issues whilst builing this project:
 - Summernote's text area boxes were not displaying as lists on the webpage. To fix this I added |safe to the code linking to those model fields which removed the tags and displayed them as the lists they are. 
+- My registration redirect wasn't redirecting as expected. To fix this I removed the URL from the 'form action' to make this an empty string instead. 
 - login error message showing __ all __ and then the message. To fix this I ....................
 
 # Deployment 
@@ -222,7 +223,8 @@ I used the following websites to help with different areas of my project:
 - [Denis Ivy - User Registration and Login Authentication](https://www.youtube.com/watch?v=tUqUdu0Sjyc), used to help put together Login, Logout and Registration functionality.
 - [Stack Overflow - Django logout not working](https://stackoverflow.com/questions/14021913/django-logout-not-working), to correct my url path for the logout function.
 - [Django - form.errors](https://docs.djangoproject.com/en/4.0/ref/forms/api/#django.forms.Form.errors), used to figure out how to use form.errors.
--[Hacker Shack - Login Path](https://www.youtube.com/watch?v=Rz6racFuW_Q), used to help put the url path together for the login page.
+- [Hacker Shack - Login Path](https://www.youtube.com/watch?v=Rz6racFuW_Q), used to help put the url path together for the login page.
+- [Stack Overflow - redirect() not redirecting](https://stackoverflow.com/questions/62667374/django-redirect-not-redirecting-appends-the-current-path-name-to-the-domai), to figure out why I wasn't being redirected after registering an account.
 
 ### Stylling
 - [Unsplash - Landing Image](https://unsplash.com/photos/DoUgSMezLp0)
