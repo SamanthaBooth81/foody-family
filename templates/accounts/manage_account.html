@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Manage Account</h1>
+
+<div>
+    <h5>Username</h5>
+    <p>Username: {{ user.username }}</p>
+    <button>Change Username</button>
+</div>
+<div>
+    <h5>Password</h5>
+    <button>Change Password</button>
+</div>
+<div>
+    <button>Delete Account</button>
+</div>
+
+
+{% endblock %}

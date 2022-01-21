@@ -31,8 +31,13 @@ urlpatterns = [
     path('accounts/login/',
          views.LoginView.as_view(template_name="accounts/login.html"),
          name='login'),
+
     # https://stackoverflow.com/questions/14021913/django-logout-not-working
     # to find below url path
     path('accounts/logout/',
          views.LogoutView.as_view(next_page='/'), name="logout"),
+    
+    path('accounts/manage_account/',
+         views.LoginView.as_view(template_name="accounts/manage_account.html"),
+         name='manage_account'),
 ]
