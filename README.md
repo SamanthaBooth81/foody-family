@@ -225,6 +225,7 @@ I used the following websites to help with different areas of my project:
 - [Django - form.errors](https://docs.djangoproject.com/en/4.0/ref/forms/api/#django.forms.Form.errors), used to figure out how to use form.errors.
 - [Hacker Shack - Login Path](https://www.youtube.com/watch?v=Rz6racFuW_Q), used to help put the url path together for the login page.
 - [Stack Overflow - redirect() not redirecting](https://stackoverflow.com/questions/62667374/django-redirect-not-redirecting-appends-the-current-path-name-to-the-domai), to figure out why I wasn't being redirected after registering an account.
+- [The Pylot - Create Advanced User Sign Up](https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m), used to help put together the registration view. 
 
 ### Stylling
 - [Unsplash - Landing Image](https://unsplash.com/photos/DoUgSMezLp0)
