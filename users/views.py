@@ -34,7 +34,9 @@ def LogoutUser(request):
 
 
 def RegisterUser(request):
-    """User Registration"""
+    """User Registration Form View.
+    Used The Pylot article to help create this view. 
+    Link in README"""
 
     form = UserCreationForm(request.POST)
     if form.is_valid():
@@ -51,3 +53,8 @@ def RegisterUser(request):
         form = UserCreationForm()
     
     return render(request, 'accounts/register.html', {'form': form})
+
+
+def ManageAccount():
+    """Manage User Account, change Username, Password, Delete Account"""
+

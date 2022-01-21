@@ -37,7 +37,10 @@ urlpatterns = [
     path('accounts/logout/',
          views.LogoutView.as_view(next_page='/'), name="logout"),
     
+    # MUST AMEND THIS URL, NOT CORRECT
     path('accounts/manage_account/',
          views.LoginView.as_view(template_name="accounts/manage_account.html"),
          name='manage_account'),
+    #  path('accounts/manage_account',
+        #  user_views.ManageAccount, name='manage_account'),
 ]
