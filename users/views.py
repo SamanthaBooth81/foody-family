@@ -1,7 +1,9 @@
 """Views for the different pages to be rendered"""
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
+from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import authenticate, login, logout
 
 
@@ -55,6 +57,7 @@ def RegisterUser(request):
     return render(request, 'accounts/register.html', {'form': form})
 
 
-def ManageAccount():
-    """Manage User Account, change Username, Password, Delete Account"""
-
+# def ManageAccount(PasswordChangeView):
+#     """Manage User Account to Change Password and Delete Account"""
+#     form_class = PasswordChangeForm
+#     return redirect('home')
