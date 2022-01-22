@@ -37,8 +37,7 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item welcome"><span>Hi {{ user.username }}!</span></li>
                     <li class="nav-item"><a href="" class="nav-link active">Add Recipe</a></li>
-                    <li class="nav-item"><a href="" class="nav-link active">Profile</a></li>
-                    <li class="nav-item"><a href="{% url 'manage_account' %}" class="nav-link active">Manage Account</a></li>
+                    <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link active">Profile</a></li>
                     <li class="nav-item">
                         <a href="{% url 'logout' %}" class="nav-link active">Logout</a>
                     </li>

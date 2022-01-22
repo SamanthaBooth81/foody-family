@@ -36,16 +36,11 @@ urlpatterns = [
     # to find below url path
     path('accounts/logout/',
          views.LogoutView.as_view(next_page='/'), name="logout"),
+    path('accounts/profile/', user_views.UserProfile, name='profile'),
 
-    # MUST AMEND THIS URL, NOT CORRECT
-    # path('accounts/manage_account/',
-    #      views.LoginView.as_view(template_name="accounts/manage_account.html"),
-    #      name='manage_account'),
-    #  path('accounts/manage_account',
-    #  user_views.ManageAccount, name='manage_account'),
+    path('accounts/change_password',
+         user_views.ChangePassword, name='change_password'),
 
-    path('accounts/manage_account/', views.PasswordChangeView.as_view(
-        template_name="accounts/manage_account.html"), name='manage_account'),
-    
-    # path('accounts/manage_account/', user_views.ManageAccount, name='manage_account'),
+    path('accounts/password_success/',
+         user_views.PasswordSuccess, name='password_change_done'),
 ]

@@ -1,10 +1,8 @@
 """Views for the different pages to be rendered"""
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
-from django.contrib.auth.views import PasswordChangeView
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 
 
 def LoginPage(request):
@@ -37,7 +35,7 @@ def LogoutUser(request):
 
 def RegisterUser(request):
     """User Registration Form View.
-    Used The Pylot article to help create this view. 
+    Used The Pylot article to help create this view.
     Link in README"""
 
     form = UserCreationForm(request.POST)
@@ -53,11 +51,31 @@ def RegisterUser(request):
     else:
         messages.error(request, 'Please ensure the password matches')
         form = UserCreationForm()
-    
+
     return render(request, 'accounts/register.html', {'form': form})
 
 
-# def ManageAccount(PasswordChangeView):
-#     """Manage User Account to Change Password and Delete Account"""
-#     form_class = PasswordChangeForm
-#     return redirect('home')
+def UserProfile(request):
+    """View to see users profile page"""
+    return render(request, 'accounts/profile.html')
+
+
+def ChangePassword(request):
+    """Manage User Account to Change Password and Delete Account"""
+    #  Used Professional Cipher Youtube video to help with the
+    # change password view
+    form = PasswordChangeForm(user=request.user, data=request.POST)
+    if form.is_valid():
+        form.save()
+        messages.success(request, "Password Updated")
+        update_session_auth_hash(request, form.user)
+        return redirect('password_change_done')
+    else:
+        messages.error(request, 'Please correct the error.')
+
+    return render(request, 'accounts/change_password.html', {'form': form})
+
+
+def PasswordSuccess(request):
+    """Password Update Success Message"""
+    return render(request, 'accounts/password_success.html')

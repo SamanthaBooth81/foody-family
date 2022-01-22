@@ -227,6 +227,9 @@ I used the following websites to help with different areas of my project:
 - [Stack Overflow - redirect() not redirecting](https://stackoverflow.com/questions/62667374/django-redirect-not-redirecting-appends-the-current-path-name-to-the-domai), to figure out why I wasn't being redirected after registering an account.
 - [The Pylot - Create Advanced User Sign Up](https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m), used to help put together the registration view. 
 
+### Change Password
+- [Professional Cipher - How to Create a Change Password View | Django Tips #9](https://www.youtube.com/watch?v=00sdVcuYki0), used to help with the change password view
+
 ### Stylling
 - [Unsplash - Landing Image](https://unsplash.com/photos/DoUgSMezLp0)
 - [Logo Font - Google Fonts](https://fonts.google.com/specimen/Ribeye+Marrow?category=Display&preview.text=Foody%20Family&preview.text_type=custom#standard-styles)
