@@ -60,6 +60,11 @@ def UserProfile(request):
     return render(request, 'accounts/profile.html')
 
 
+def ManageAccount(request):
+    """View to see users profile page"""
+    return render(request, 'accounts/manage_account.html')
+
+
 def ChangePassword(request):
     """Manage User Account to Change Password and Delete Account"""
     #  Used Professional Cipher Youtube video to help with the
@@ -67,7 +72,7 @@ def ChangePassword(request):
     form = PasswordChangeForm(user=request.user, data=request.POST)
     if form.is_valid():
         form.save()
-        messages.success(request, "Password Updated")
+        # messages.success(request, "Password Updated")
         update_session_auth_hash(request, form.user)
         return redirect('password_change_done')
     else:

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Manage Account</h1>
+
+<div>
+    <h5>Username</h5>
+    <p>Username: {{ user.username }}</p>
+    <button>Change Username</button>
+</div>
+
+<div>
+    <form method="POST" action="" class="form">
+        {% csrf_token %}
+        <h5>Change Password</h5>
+        {{ form.as_p }}
+        <button>
+            <a href="{% url 'change_password' %}">
+                Change Password
+            </a>
+        </button>
+    </form>
+</div>
+
+<div>
+    <h5>Delete Account</h5>
+    <button>Delete Foody Family Account</button>
+    <p>Account Deletion is Permanent!</p>
+</div>
+
+
+{% endblock %}
