@@ -1,7 +1,8 @@
 """Views for the different pages to be rendered"""
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, UserChangeForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 
 

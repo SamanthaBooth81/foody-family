@@ -5,12 +5,6 @@
 <h1>Manage Account</h1>
 
 <div>
-    <h5>Username</h5>
-    <p>Username: {{ user.username }}</p>
-    <button>Change Username</button>
-</div>
-
-<div>
     <form method="POST" action="" class="form">
         {% csrf_token %}
         <h5>Change Password</h5>
