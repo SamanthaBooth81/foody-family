@@ -2,8 +2,11 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
+from django import forms
 
 
 def LoginPage(request):
@@ -64,6 +67,40 @@ def UserProfile(request):
 def ManageAccount(request):
     """View to see users profile page"""
     return render(request, 'accounts/manage_account.html')
+
+
+class DeleteAccount(DeleteView):
+
+    model = User
+    success_url = reverse_lazy('home')
+    template_name = 'accounts/confirm_delete_account.html'
+    messages.success = 'Account deleted successfully.'
+
+    def delete(self, request, *args, **kwargs):
+        # messages.success(self.request, self.success_message)
+        return super(DeleteAccount, self).delete(request, *args, **kwargs)
+
+
+# class delete_user(DeleteView):
+#     model = User
+#     success_url = reverse_lazy('index.html')
+
+
+# def delete_user(request, username):
+#     context = {}
+
+#     try:
+#         user = User.object.get(username=username)
+#         user.is_active = False
+#         user.save()
+#         context['msg'] = 'Profile successfully disabled.'
+#         return redirect('home')
+#     except User.DoesNotExist:
+#         context['msg'] = 'User does not exist.'
+#     except Exception as e:
+#         context['msg'] = e.message
+
+#     return render(request, 'accounts/confirm_delete_account.html', context=context)
 
 
 def ChangePassword(request):

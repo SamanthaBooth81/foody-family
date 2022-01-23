@@ -18,9 +18,13 @@
 </div>
 
 <div>
-    <h5>Delete Account</h5>
-    <button>Delete Foody Family Account</button>
-    <p>Account Deletion is Permanent!</p>
+    <form method="POST" action="">
+        <h5>Delete Account</h5>
+        <button>
+            <a href="{% url 'confirm_delete_account' %}">Delete Foody Family Account</a>
+        </button>
+        <p>Account Deletion is Permanent!</p>
+    </form>
 </div>
 
 
