@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
-from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
 from django import forms
 
