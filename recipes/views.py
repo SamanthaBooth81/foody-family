@@ -33,3 +33,7 @@ class RecipeDetail(View):
                 "liked": liked
             },
         )
+
+
+def AddRecipe(request):
+    return render(request, 'add_recipe.html')

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Add Recipe</h1>
+
+<form action="">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Recipe Title">
+        <label for="floatingInput">Recipe Title</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" placeholder="Preparation Time">
+        <label for="floatingPassword">Preparation Time</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" placeholder="Cooking Time">
+        <label for="floatingPassword">Cooking Time</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" placeholder="Total Time">
+        <label for="floatingPassword">Total Time</label>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="List ingredients here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Ingredients</label>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="List instructions here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Method</label>
+      </div>
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02">
+        <label class="input-group-text" for="inputGroupFile02">Upload Recipe Image</label>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Additional Notes" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Additional Notes</label>
+      </div>
+</form>
+
+{% endblock %}
