@@ -30,7 +30,4 @@ urlpatterns = [
 
     path('accounts/password_success/',
          user_views.PasswordSuccess, name='password_change_done'),
-
-    path('accounts/manage_account/confirm_delete_account/',
-         user_views.DeleteAccount, name='confirm_delete_account')
 ]
