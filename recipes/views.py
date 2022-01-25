@@ -2,6 +2,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
+from django.utils.text import slugify
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -43,7 +44,8 @@ def AddRecipe(request):
     if recipe_form.is_valid():
         recipe = recipe_form.save(commit=False)
         recipe.author_id = request.user.id
-        # recipe.save()
+        recipe.slug = slugify(recipe.title)
+        recipe.save()
     else:
         recipe_form = RecipeForm()
         return render(
