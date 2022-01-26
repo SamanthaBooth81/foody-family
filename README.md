@@ -228,7 +228,7 @@ I used the following websites to help with different areas of my project:
 - [The Pylot - Create Advanced User Sign Up](https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m), used to help put together the registration view. 
 
 ### Change Password
-- [Professional Cipher - How to Create a Change Password View | Django Tips #9](https://www.youtube.com/watch?v=00sdVcuYki0), used to help with the change password view
+- [Professional Cipher - How to Create a Change Password View | Django Tips #9](https://www.youtube.com/watch?v=00sdVcuYki0), used to help with the change password view.
 
 ### Stylling
 - [Unsplash - Landing Image](https://unsplash.com/photos/DoUgSMezLp0)
@@ -236,6 +236,7 @@ I used the following websites to help with different areas of my project:
 - [Unsplash - Recipe Placeholder Image](https://unsplash.com/photos/ezSFnAFi9hY)
 - [Font Awsome Heart Likes Icon](https://fontawesome.com/v5.15/icons/heart?style=solid)
 - [CSS object-fit property](https://www.w3schools.com/css/css3_object-fit.asp), used to fit recipe image correctly into the layout.
+- [CSS-Tricks - Flexbox Sticky Footer](https://css-tricks.com/couple-takes-sticky-footer/), for the sticky footer code.
 
 
 # Acknowledgments

@@ -1,5 +1,19 @@
-/* homepage landing stylling */
+/*Sticky Footer from https://css-tricks.com/couple-takes-sticky-footer/ */
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1 0 auto;
+  }
+  .footer {
+    flex-shrink: 0;
+  }
 
+/* homepage landing stylling */
 .home-img {
     background: url('https://res.cloudinary.com/sjb21/image/upload/v1642009399/static/landing-image_jaq8ob.jpg') no-repeat center center fixed;
     min-height: 700px; 
