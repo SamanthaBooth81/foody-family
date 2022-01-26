@@ -47,6 +47,7 @@ def AddRecipe(request):
         recipe = recipe_form.save(commit=False)
         recipe.author_id = request.user.id
         recipe.slug = slugify(recipe.title)
+        messages.info(request, "Recipe Submitted! Your recipe will be in your drafts until approved.")
         recipe.save()
     else:
         recipe_form = RecipeForm()

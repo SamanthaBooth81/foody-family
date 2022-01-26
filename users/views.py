@@ -52,7 +52,7 @@ def RegisterUser(request):
         messages.success(request, "Welcome {{ user.username }}!")
         return redirect('home')
     else:
-        messages.error(request, 'Please ensure the password matches')
+        messages.error(request, 'Please ensure the passwords match')
         form = UserCreationForm()
 
     return render(request, 'accounts/register.html', {'form': form})
@@ -68,8 +68,8 @@ def ChangePassword(request):
         # messages.success(request, "Password Updated")
         update_session_auth_hash(request, form.user)
         return redirect('password_change_done')
-    else:
-        messages.error(request, 'Please correct the error.')
+    # else:
+    #     messages.error(request, 'New passwords do not match, please try again.')
 
     return render(request, 'accounts/change_password.html', {'form': form})
 
