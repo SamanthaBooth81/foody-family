@@ -60,7 +60,13 @@ def AddRecipe(request):
     return redirect('home')
 
 
-class UserRecipes(generic.ListView):
+class UserPostedRecipes(generic.ListView):
     """View for the list of recipes posted"""
     model = Recipe
     template_name = 'my_recipes.html'
+
+
+class UserDraftRecipes(generic.ListView):
+    """View for the list of recipes posted"""
+    model = Recipe
+    template_name = 'my_drafts.html'

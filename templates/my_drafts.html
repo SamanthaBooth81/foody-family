@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>My Posted Recipes</h1>
+<h1>My Draft Recipes</h1>
 
 <div class="container-fluid">
     <div class="row">
@@ -10,7 +10,7 @@
             <div class="row">
                 {% for recipes in recipe_list %}
                 {% if user.id == recipes.author.id %}
-                {% if recipes.status == 1 %}
+                {% if recipes.status == 0 %}
                 <div class="col-md-3">
                     <div class="card card-position" style="width: 18rem;">
                         {% if "placeholder" in recipes.featured_image.url %}
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:5 %}
+                {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row">
                 {% endif %}
