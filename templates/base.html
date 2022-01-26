@@ -35,22 +35,23 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item welcome">
-                        <span>Hi {{ user.username }}!</span>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'add_recipe' %}" class="nav-link active">Add Recipe</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'my_recipes' %}" class="nav-link active">My Recipes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'manage_account' %}" class="nav-link active">Manage Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'logout' %}" class="nav-link active">Logout</a>
-                    </li>
 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Hi {{ user.username }}!
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'add_recipe' %}">Add Recipe</a></li>
+                            <li><a class="dropdown-item" href="{% url 'my_recipes' %}">My Posted Recipes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'my_recipes' %}">My Draft Recipes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'manage_account' %}">Change Password</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                        </ul>
+                    </li>
                     {% else %}
                     <li class="nav-item dropdown">
                         <a href="{% url 'login' %}" class="nav-link" id="navbarDropdown" role="button"
