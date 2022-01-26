@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>My Recipes</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-4 left">
+            <div class="row">
+                <h2>Posted Recipes</h2>
+                {% for recipes in recipe_list %}
+                {% if user.id == recipes.author.id %}
+                {% if recipes.status == 1 %}
+                <div class="col-md-3">
+                    <div class="card card-position" style="width: 18rem;">
+                        {% if "placeholder" in recipes.featured_image.url %}
+                        <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
+                            class="card-img-top recipe-card-img" alt="placeholder image">
+                        {% else %}
+                        <img src="{{ recipes.featured_image.url }}" alt="recipe image">
+                        {% endif %}
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">{{ recipes.title }}</h5>
+                            </a>
+                            <p class="card-text">By {{ recipes.author.id }}</p>
+                            <div class="card-text">
+                                <span>
+                                    <i class="far fa-clock card-icons"></i>{{ recipes.total_length }}
+                                </span>
+                                <span>
+                                    <i class="fas fa-heart card-icons"></i>{{ recipes.status }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-4 left">
+            <div class="row">
+                <h2>Draft Recipes</h2>
+                {% for recipes in recipe_list %}
+                {% if user.id == recipes.author.id %}
+                {% if recipes.status == 0 %}
+                <div class="col-md-3">
+                    <div class="card card-position" style="width: 18rem;">
+                        {% if "placeholder" in recipes.featured_image.url %}
+                        <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
+                            class="card-img-top recipe-card-img" alt="placeholder image">
+                        {% else %}
+                        <img src="{{ recipes.featured_image.url }}" alt="recipe image">
+                        {% endif %}
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">{{ recipes.title }}</h5>
+                            </a>
+                            <p class="card-text">By {{ recipes.author.id }}</p>
+                            <div class="card-text">
+                                <span>
+                                    <i class="far fa-clock card-icons"></i>{{ recipes.total_length }}
+                                </span>
+                                <span>
+                                    <i class="fas fa-heart card-icons"></i>{{ recipes.status }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

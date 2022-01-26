@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.utils.text import slugify
+from django.contrib import messages
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -39,6 +40,7 @@ class RecipeDetail(View):
 
 
 def AddRecipe(request):
+    """Allows user to add a recipe"""
     recipe_form = RecipeForm(data=request.POST)
 
     if recipe_form.is_valid():
@@ -55,4 +57,10 @@ def AddRecipe(request):
                 "recipe_form": recipe_form,
             },
         )
-    return redirect ('home')
+    return redirect('home')
+
+
+class UserRecipes(generic.ListView):
+    """View for the list of recipes posted"""
+    model = Recipe
+    template_name = 'my_recipes.html'

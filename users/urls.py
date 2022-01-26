@@ -20,7 +20,6 @@ urlpatterns = [
     path('accounts/logout/',
          views.LogoutView.as_view(next_page='/'), name="logout"),
 
-    path('accounts/profile/', user_views.UserProfile, name='profile'),
 
     path('accounts/manage_account/',
          user_views.ManageAccount, name='manage_account'),

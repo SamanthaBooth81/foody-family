@@ -58,11 +58,6 @@ def RegisterUser(request):
     return render(request, 'accounts/register.html', {'form': form})
 
 
-def UserProfile(request):
-    """View to see users profile page"""
-    return render(request, 'accounts/profile.html')
-
-
 def ManageAccount(request):
     """View to see users profile page"""
     return render(request, 'accounts/manage_account.html')
