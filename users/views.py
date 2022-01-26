@@ -58,11 +58,6 @@ def RegisterUser(request):
     return render(request, 'accounts/register.html', {'form': form})
 
 
-def ManageAccount(request):
-    """View to see users profile page"""
-    return render(request, 'accounts/manage_account.html')
-
-
 def ChangePassword(request):
     """Manage User Account to Change Password and Delete Account"""
     #  Used Professional Cipher Youtube video to help with the
