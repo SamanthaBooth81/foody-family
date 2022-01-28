@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -36,6 +37,9 @@ class Recipe(models.Model):
     def number_of_likes(self):
         """Helper method, returns total count of likes on a recipe"""
         return self.likes.count()
+    
+    def get_absolute_url(self):
+        return reverse('home')
 
 
 # class Comments(models.Model):

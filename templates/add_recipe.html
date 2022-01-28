@@ -4,7 +4,6 @@
 
 <h1>Add Recipe</h1>
 
-<p>Posting as: {{ user.username }}</p>
 <form method="post" style="margin-top: 1.3em;">
   {{ recipe_form | crispy }}
   {% csrf_token %}

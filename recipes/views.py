@@ -1,6 +1,7 @@
 """Views for the different pages to be rendered"""
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import UpdateView
 from django.views import generic, View
 from django.utils.text import slugify
 from django.contrib import messages
@@ -47,7 +48,8 @@ def AddRecipe(request):
         recipe = recipe_form.save(commit=False)
         recipe.author_id = request.user.id
         recipe.slug = slugify(recipe.title)
-        messages.info(request, "Recipe Submitted! Your recipe will be in your drafts until approved.")
+        messages.success(
+            request, "Recipe Submitted and awaiting approval!")
         recipe.save()
     else:
         recipe_form = RecipeForm()
@@ -71,3 +73,13 @@ class UserDraftRecipes(generic.ListView):
     """View for the list of recipes posted"""
     model = Recipe
     template_name = 'my_drafts.html'
+
+
+class UpdateRecipe(UpdateView):
+    model = Recipe
+    queryset = Recipe.objects
+    form = RecipeForm()
+    fields = ['title', 'preparation_length', 'cooking_length',
+              'total_length', 'ingredients', 'instructions',
+              'featured_image', 'excerpt', ]
+    template_name = 'update_recipe.html'
