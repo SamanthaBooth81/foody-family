@@ -76,8 +76,8 @@ class UserDraftRecipes(generic.ListView):
 
 
 class UpdateRecipe(UpdateView):
+    """View to update published recipies"""
     model = Recipe
-    queryset = Recipe.objects
     form = RecipeForm()
     fields = ['title', 'preparation_length', 'cooking_length',
               'total_length', 'ingredients', 'instructions',
