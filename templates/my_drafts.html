@@ -20,13 +20,15 @@
                         <img src="{{ recipes.featured_image.url }}" alt="recipe image">
                         {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title">{{ recipes.title }}</h5>
+                            <a href="{% url 'recipe_detail' recipes.slug %}">
+                                <h5 class="card-title">{{ recipes.title }}</h5>
+                            </a>
                             <div class="card-text">
                                 <span>
-                                    <a href=""><i class="fas fa-pencil-alt"></i>Edit</a>
+                                    <a href="{% url 'update_recipe' recipes.pk %}"><i class="fas fa-pencil-alt"></i>Edit</a>
                                 </span>
                                 <span>
-                                    <a href=""><i class="far fa-trash-alt"></i>Delete</a>
+                                    <a href="{% url 'delete_recipe' recipes.pk %}"><i class="far fa-trash-alt"></i>Delete</a>
                                 </span>
                             </div>
                         </div>
