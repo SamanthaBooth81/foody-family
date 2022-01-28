@@ -50,10 +50,11 @@ def AddRecipe(request):
         recipe.author_id = request.user.id
         recipe.slug = slugify(recipe.title)
         messages.success(
-            request, "Recipe Submitted and awaiting approval!")
+            request, "Recipe submitted and waiting approval!")
         recipe.save()
     else:
-        recipe_form = RecipeForm()
+        messages.error
+        # recipe_form = RecipeForm()
         return render(
             request,
             "add_recipe.html",
@@ -70,7 +71,7 @@ class UserPostedRecipes(generic.ListView):
     template_name = 'my_recipes.html'
 
 
-class UserDraftRecipes(generic.ListView):
+class ApprovalPendingRecipes(generic.ListView):
     """View for the list of recipes posted"""
     model = Recipe
     template_name = 'my_drafts.html'

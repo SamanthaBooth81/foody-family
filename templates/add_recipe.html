@@ -6,6 +6,11 @@
 <h1>Add Recipe</h1>
 
 <form method="post" style="margin-top: 1.3em;">
+  {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
   {{ recipe_form | crispy }}
   {% csrf_token %}
   <button type="submit" class="btn btn-signup btn-lg">Post Recipe</button>

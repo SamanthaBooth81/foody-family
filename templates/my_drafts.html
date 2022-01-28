@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% block title %}Foody Family | My Draft Recipes{% endblock %}
+{% block title %}Foody Family | My Pending Recipes{% endblock %}
 {% block content %}
 
-<h1>My Draft Recipes</h1>
+<h1>My Recipes Pending Approval</h1>
 
 <div class="container-fluid">
     <div class="row">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:5 %}
             </div>
             <div class="row">
                 {% endif %}
@@ -41,6 +41,23 @@
                 {% endfor %}
             </div>
         </div>
+    </div>
+
+    <!-- Site Pagination, maximum 12 recipes per page -->
+    <div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
     </div>
 </div>
 
