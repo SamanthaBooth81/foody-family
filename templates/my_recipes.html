@@ -28,7 +28,7 @@
                                     <a href="{% url 'update_recipe' recipes.pk %}"><i class="fas fa-pencil-alt"></i>Edit</a>
                                 </span>
                                 <span>
-                                    <a href=""><i class="far fa-trash-alt"></i>Delete</a>
+                                    <a href="{% url 'delete_recipe' recipes.pk %}"><i class="far fa-trash-alt"></i>Delete</a>
                                 </span>
                             </div>
                         </div>

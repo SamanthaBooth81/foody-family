@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Delete Recipe{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<h1>Delete {{ recipe.title }} Recipe</h1>
+
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete this recipe?</p>
+        <input type="submit" value="Delete Recipe">
+    </form>
+</div>
+
+{% endblock %}

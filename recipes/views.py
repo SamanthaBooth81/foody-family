@@ -1,10 +1,11 @@
 """Views for the different pages to be rendered"""
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DeleteView
 from django.views import generic, View
 from django.utils.text import slugify
 from django.contrib import messages
+from django.urls import reverse_lazy
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -83,3 +84,9 @@ class UpdateRecipe(UpdateView):
               'total_length', 'ingredients', 'instructions',
               'featured_image', 'excerpt', ]
     template_name = 'update_recipe.html'
+
+
+class DeleteRecipe(DeleteView):
+    model = Recipe
+    template_name = 'delete_recipe.html'
+    success_url = reverse_lazy('my_posted_recipes')
