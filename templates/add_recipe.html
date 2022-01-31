@@ -7,12 +7,29 @@
 
 <form method="post" style="margin-top: 1.3em;">
   {% if messages %}
-        {% for message in messages %}
-            {{ message }}
-        {% endfor %}
-    {% endif %}
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  {% endif %}
+  
   {{ recipe_form | crispy }}
   {% csrf_token %}
-  <button type="submit" class="btn btn-signup btn-lg">Post Recipe</button>
+  <!-- <button type="submit" class="btn btn-signup btn-lg">Post Recipe</button> -->
+
+  <button type="submit" class="btn btn-primary" id="liveToastBtn">Post Recipe</button>
+
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <!-- <img src="..." class="rounded me-2" alt="..."> -->
+        <strong class="me-auto">Recipe Submitted!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Waiting for approval.
+      </div>
+    </div>
+  </div>
+
 </form>
 {% endblock %}

@@ -54,7 +54,6 @@ def AddRecipe(request):
         recipe.save()
     else:
         messages.error
-        # recipe_form = RecipeForm()
         return render(
             request,
             "add_recipe.html",
@@ -85,9 +84,27 @@ class UpdateRecipe(UpdateView):
               'total_length', 'ingredients', 'instructions',
               'featured_image', 'excerpt', ]
     template_name = 'update_recipe.html'
+    success_url = reverse_lazy('my_posted_recipes')
 
 
 class DeleteRecipe(DeleteView):
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
+
+
+class UpdateDraftRecipe(UpdateView):
+    """View to update published recipies"""
+    model = Recipe
+    form = RecipeForm()
+    fields = ['title', 'preparation_length', 'cooking_length',
+              'total_length', 'ingredients', 'instructions',
+              'featured_image', 'excerpt', ]
+    template_name = 'update_recipe.html'
+    success_url = reverse_lazy('my_pending_recipes')
+
+
+class DeleteDraftRecipe(DeleteView):
+    model = Recipe
+    template_name = 'delete_recipe.html'
+    success_url = reverse_lazy('my_pending_recipes')

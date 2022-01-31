@@ -10,9 +10,13 @@ urlpatterns = [
          views.UserPostedRecipes.as_view(), name="my_posted_recipes"),
     path("templates/my_drafts/",
          views.ApprovalPendingRecipes.as_view(), name="my_pending_recipes"),
-    path("my_recipes/update_recipe/<int:pk>",
+    path("my-recipes/update-recipe/<int:pk>",
          views.UpdateRecipe.as_view(), name="update_recipe"),
      path("my-recipes/delete-recipe/<int:pk>",
          views.DeleteRecipe.as_view(), name="delete_recipe"),
+     path("my-recipes/update-recipe/<int:pk>",
+         views.UpdateDraftRecipe.as_view(), name="update_draft"),
+     path("my-recipes/delete-recipe/<int:pk>",
+         views.DeleteDraftRecipe.as_view(), name="delete_draft"),
 ]
 

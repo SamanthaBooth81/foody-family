@@ -38,8 +38,8 @@ class Recipe(models.Model):
         """Helper method, returns total count of likes on a recipe"""
         return self.likes.count()
     
-    def get_absolute_url(self):
-        return reverse('home')
+    # def get_absolute_url(self):
+    #     return reverse('home')
 
 
 # class Comments(models.Model):
