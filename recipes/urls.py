@@ -14,9 +14,9 @@ urlpatterns = [
          views.UpdateRecipe.as_view(), name="update_recipe"),
      path("my-recipes/delete-recipe/<int:pk>",
          views.DeleteRecipe.as_view(), name="delete_recipe"),
-     path("my-recipes/update-recipe/<int:pk>",
-         views.UpdateDraftRecipe.as_view(), name="update_draft"),
-     path("my-recipes/delete-recipe/<int:pk>",
-         views.DeleteDraftRecipe.as_view(), name="delete_draft"),
+     path("my-recipes/update-pending-recipe/<int:pk>",
+         views.UpdatePendingRecipe.as_view(), name="update_draft"),
+     path("my-recipes/delete-pending-recipe/<int:pk>",
+         views.DeletePendingRecipe.as_view(), name="delete_draft"),
 ]
 
