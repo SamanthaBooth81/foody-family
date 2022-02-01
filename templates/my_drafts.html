@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:5 %}
+                {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row">
                 {% endif %}
@@ -55,7 +55,6 @@
                 {% endif %}
                 {% if page_obj.has_next %}
                 <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
                 {% endif %}
             </ul>
         </nav>

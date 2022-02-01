@@ -11,7 +11,7 @@ from .forms import RecipeForm
 
 
 class RecipeList(generic.ListView):
-    """View for the list of recipes posted"""
+    """View for the list of recipes posted by all users"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
@@ -42,7 +42,7 @@ class RecipeDetail(View):
 
 
 def AddRecipe(request):
-    """Allows user to add a recipe"""
+    """View for user to add a recipe"""
     recipe_form = RecipeForm(data=request.POST)
 
     if recipe_form.is_valid():
@@ -72,7 +72,7 @@ class UserPostedRecipes(generic.ListView):
 
 
 class ApprovalPendingRecipes(generic.ListView):
-    """View for the list of recipes posted"""
+    """View for the list of recipes pending"""
     model = Recipe
     template_name = 'my_drafts.html'
     paginate_by = 12
@@ -90,13 +90,14 @@ class UpdateRecipe(UpdateView):
 
 
 class DeleteRecipe(DeleteView):
+    """View to delete published recipies"""
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
 
 
-class UpdateDraftRecipe(UpdateView):
-    """View to update published recipies"""
+class UpdatePendingRecipe(UpdateView):
+    """View to update pending recipies"""
     model = Recipe
     form = RecipeForm()
     fields = ['title', 'preparation_length', 'cooking_length',
@@ -106,7 +107,8 @@ class UpdateDraftRecipe(UpdateView):
     success_url = reverse_lazy('my_pending_recipes')
 
 
-class DeleteDraftRecipe(DeleteView):
+class DeletePendingRecipe(DeleteView):
+    """View to delete pending recipies"""
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_pending_recipes')
