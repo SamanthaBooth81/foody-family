@@ -31,6 +31,11 @@
         <h2>Method</h2>
         <span>{{ recipe.instructions|safe }}</span>
     </div>
+    <hr>
+    <div>
+        <h2>Notes</h2>
+        <span>{{ recipe.excerpt|safe }}</span>
+    </div>
 </div>
 
 {%endblock%}
