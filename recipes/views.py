@@ -53,7 +53,6 @@ def AddRecipe(request):
             request, "Recipe submitted and waiting approval!")
         recipe.save()
     else:
-        messages.error
         return render(
             request,
             "add_recipe.html",

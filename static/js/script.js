@@ -1,9 +1,7 @@
-// var toastTrigger = document.getElementById('liveToastBtn')
-// var toastLiveExample = document.getElementById('liveToast')
-// if (toastTrigger) {
-//   toastTrigger.addEventListener('click', function () {
-//     var toast = new bootstrap.Toast(toastLiveExample)
+// Below from Code Institutes CodeStar project
 
-//     toast.show()
-//   })
-// }
+setTimeout(function () {
+    let messages = document.getElementById('msg');
+    let alert = new bootstrap.Alert(messages);
+    alert.close();
+}, 2500);
