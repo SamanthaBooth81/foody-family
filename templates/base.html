@@ -28,7 +28,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Foody Family</a>
+            <a class="navbar-brand header" href="{% url 'home' %}">Foody Family</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -36,25 +36,25 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    <li class="nav-item nav-style">
+                        <a class="nav-link active nav-style" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown nav-style">
                         <a class="nav-link dropdown-toggle welcome" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="welcome">Hi {{ user.username }}!</span>
+                            <span class="welcome-usr">Hi {{ user.username }}!</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'add_recipe' %}"><i class="fas fa-plus"></i>Add Recipe</a></li>
-                            <li><a class="dropdown-item" href="{% url 'my_posted_recipes' %}"><i class="fas fa-carrot"></i>My Posted Recipes</a></li>
-                            <li><a class="dropdown-item" href="{% url 'my_pending_recipes' %}"><i class="fas fa-ellipsis-h"></i>Recipes Pending Approval</a></li>
-                            <li><a class="dropdown-item" href="{% url 'change_password' %}"><i class="fas fa-unlock-alt"></i>Change Password</a></li>
+                            <li><a class="dropdown-item" href="{% url 'add_recipe' %}"><i class="fas fa-plus nav-icon"></i>Add Recipe</a></li>
+                            <li><a class="dropdown-item" href="{% url 'my_posted_recipes' %}"><i class="fas fa-carrot nav-icon"></i>My Posted Recipes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'my_pending_recipes' %}"><i class="fas fa-ellipsis-h nav-icon"></i>Recipes Pending Approval</a></li>
+                            <li><a class="dropdown-item" href="{% url 'change_password' %}"><i class="fas fa-unlock-alt nav-icon"></i>Change Password</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt nav-icon"></i>Logout</a></li>
                         </ul>
                     </li>
                     {% else %}
