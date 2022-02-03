@@ -94,6 +94,10 @@ h1 {
     object-fit: cover;
 }
 
+.recipe-title {
+    text-align: left;
+}
+
 .recipe-display {
     float: left;
 }
