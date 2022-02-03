@@ -69,8 +69,3 @@ def ChangePassword(request):
         return redirect('home')
 
     return render(request, 'accounts/change_password.html', {'form': form})
-
-
-def PasswordSuccess(request):
-    """Password Update Success Message"""
-    return render(request, 'accounts/password_success.html')
