@@ -41,7 +41,7 @@ DEBUG = development
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-HEROKU_HOSTNAME = ['foody-family.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['foody-family.herokuapp.com', 'localhost']
 
 
 # Application definition
