@@ -148,6 +148,11 @@ h1 {
     margin-top: 20px;
 }
 
+.add-btn:hover {
+    color: #A7490D;
+    background-color: ghostwhite;
+}
+
 /* Pagination Stylling */
 .paginate {
     border-radius: 5px;
@@ -185,6 +190,10 @@ h1 {
     font-size: 30px;
 }
 
+.social-links a:hover {
+    color: #A7490D;
+}
+
 /* Change Password Form Stylling */
 #change-pw {
     margin: 0 auto;
@@ -192,4 +201,5 @@ h1 {
     background-color: #ECECE2;
     padding: 40px;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
