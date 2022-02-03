@@ -27,6 +27,11 @@ body {
     color: #A7490D;
 }
 
+main {
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
 /* Nav stylling*/
 .nav-style {
     font-size: large;
@@ -44,7 +49,7 @@ body {
 /* homepage landing stylling */
 .home-img {
     background: url('https://res.cloudinary.com/sjb21/image/upload/v1642009399/static/landing-image_jaq8ob.jpg') no-repeat center center fixed;
-    min-height: 700px;
+    max-height: 500px;
     padding: 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -54,9 +59,9 @@ body {
 
 .title {
     color: white;
-    background: rgba(255, 255, 255, 0.199);
+    background: rgba(15, 15, 15, 0.233);
     text-align: center;
-    margin: 270px 140px;
+    margin: 150px 100px;
     align-items: center;
     padding: 30px;
     border-radius: 10px;
@@ -69,6 +74,7 @@ body {
 /* Headings stylling for all pages */
 h1 {
     text-align: center;
+    margin: 20px;
 }
 
 /* Recipe Card Stylling */
@@ -88,6 +94,10 @@ h1 {
 }
 
 /* recipe detail stylling */
+.recipe-heading {
+    height: 301px;
+    background-color: #ECECE2;
+}
 
 .details-img {
     max-height: 300px;
@@ -96,10 +106,15 @@ h1 {
 
 .recipe-title {
     text-align: left;
+    margin-left: 0;
 }
 
 .recipe-display {
     float: left;
+}
+
+.recipe-top {
+    margin-top: 3%;
 }
 
 .rec-detail {
@@ -113,20 +128,36 @@ h1 {
 .right-div {
     height: 300px;
     width: 75%;
-    background-color: #ECECE2;
 }
 
 .method {
     width: 75%;
     float: right;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .ingredients {
     width: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
+/* Add Recipe Stylling */
+.add-btn{
+    margin-top: 20px;
+}
+
+/* Pagination Stylling */
+.paginate {
+    border-radius: 5px;
+    color: #A7490D;
+    margin-top: 20px;
+}
+
+.paginate:hover {
+    color: #0b1726;
+}
 
 /* footer stylling */
 .footer {
@@ -152,4 +183,13 @@ h1 {
     padding: 20px;
     margin: 0;
     font-size: 30px;
+}
+
+/* Change Password Form Stylling */
+#change-pw {
+    margin: 0 auto;
+    width: 50%;
+    background-color: #ECECE2;
+    padding: 40px;
+    border-radius: 10px;
 }

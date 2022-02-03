@@ -2,38 +2,41 @@
 {% block title %}Foody Family | {{ recipe.title }}{% endblock %}
 {% block content %}
 
-
-<div class="card mb-3 recipe-display left-div">
-    {% if "placeholder" in recipe.featured_image.url %}
-    <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
-        alt="placeholder image" class="card-img-top details-img">
-    {% else %}
-    <img src="{{ recipe.featured_image.url }}" alt="recipe image" class="card-img-top details-img">
-    {% endif %}
-</div>
-<div class="recipe-display right-div">
-    <div class="card-body">
-        <h1 class="card-title recipe-title">{{ recipe.title }}</h1>
-        <h3 class="card-text">By {{ recipe.author }}</h3>
-        <span lass="card-text">
-            <div>
-                <small>
-                    <i class="far fa-clock"></i>Prep Time: {{ recipe.preparation_length }}
-                </small>
-            </div>
-            <div>
-                <small>
-                    <i class="far fa-clock"></i>Cook Time: {{ recipe.cooking_length }}
-                </small>
-            </div>
-            <div>
-                <small>
-                    <i class="far fa-clock"></i>Total: {{ recipe.total_length }}
-                </small>
-            </div>
-        </span>
+<div class="recipe-heading">
+    <div class="card mb-3 recipe-display left-div">
+        {% if "placeholder" in recipe.featured_image.url %}
+        <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
+            alt="placeholder image" class="card-img-top details-img">
+        {% else %}
+        <img src="{{ recipe.featured_image.url }}" alt="recipe image" class="card-img-top details-img">
+        {% endif %}
     </div>
+    <div class="recipe-display right-div">
+        <div class="card-body recipe-top">
+            <h1 class="card-title recipe-title">{{ recipe.title }}</h1>
+            <h3 class="card-text">By {{ recipe.author }}</h3>
+            <span lass="card-text">
+                <div>
+                    <small>
+                        <i class="far fa-clock"></i>Prep Time: {{ recipe.preparation_length }}
+                    </small>
+                </div>
+                <div>
+                    <small>
+                        <i class="far fa-clock"></i>Cook Time: {{ recipe.cooking_length }}
+                    </small>
+                </div>
+                <div>
+                    <small>
+                        <i class="far fa-clock"></i>Total: {{ recipe.total_length }}
+                    </small>
+                </div>
+            </span>
+        </div>
+    </div>
+
 </div>
+
 
 <div class="rec-detail">
     <div class="recipe-display left-div ingredients">
