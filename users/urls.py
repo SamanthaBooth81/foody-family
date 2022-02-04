@@ -7,19 +7,19 @@ from users import views as user_views
 
 urlpatterns = [
 
-    path('accounts/login/register',
+    path('register',
          user_views.RegisterUser, name='register'),
 
     # Django Auth - help from Hacker Shack Video in README for login path
-    path('accounts/login/',
+    path('login/',
          views.LoginView.as_view(template_name="accounts/login.html"),
          name='login'),
 
     # https://stackoverflow.com/questions/14021913/django-logout-not-working
     # to find below url path
-    path('accounts/logout/',
+    path('logout/',
          views.LogoutView.as_view(next_page='/'), name="logout"),
 
-    path('accounts/change_password',
+    path('change_password',
          user_views.ChangePassword, name='change_password'),
 ]
