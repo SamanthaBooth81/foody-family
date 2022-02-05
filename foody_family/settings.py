@@ -23,6 +23,7 @@ development = os.environ.get('DEVELOPMENT', False)
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Tells Django where the templates directory is
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'django.forms',
     'crispy_forms',
     'recipes',
     'users',
