@@ -101,6 +101,19 @@ h1 {
     margin-bottom: 10px;
 }
 
+.rec-card-title{
+    color: #A7490D;
+    text-decoration: none;
+}
+
+.rec-card-title:hover {
+    color: #0b1726;
+}
+
+a:link {
+    text-decoration: none;
+  }
+
 .card-icons {
     color: #0b1726;
     padding-right: 5px;
@@ -110,6 +123,10 @@ h1 {
     /* w3schools used to find object-fit property*/
     max-height: 191px;
     object-fit: cover;
+}
+
+.edit{
+    margin-right: 5px;
 }
 
 /* Recipe detail styling */
@@ -180,6 +197,28 @@ h1 {
     padding-top: 2%;
 }
 
+/* edit and delete button styling */
+.edit-icon, .del-icon {
+    margin-right: 5px;
+    /* margin-left: 17%; */
+}
+
+/* .edit-btn{
+    float: left;
+}
+
+.del-btn {
+    float: right;
+} */
+
+.edit, .del {
+    color: #0b1726;
+}
+
+.edit:hover, .del:hover {
+    color: #A7490D;
+}
+
 /* Button Styling */
 .all-btn {
     margin-top: 20px;
@@ -188,17 +227,6 @@ h1 {
 .all-btn:hover {
     color: #A7490D;
     background-color: ghostwhite;
-}
-
-/* Pagination Styling */
-.paginate {
-    border-radius: 5px;
-    color: #A7490D;
-    margin-top: 20px;
-}
-
-.paginate:hover {
-    color: #0b1726;
 }
 
 /* Footer styling */
