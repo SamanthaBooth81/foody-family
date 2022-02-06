@@ -17,18 +17,21 @@
             <h3 class="card-text">By {{ recipe.author }}</h3>
             <span lass="card-text">
                 <div>
+                    <i class="far fa-clock recipe-clock"></i>
                     <small>
-                        <i class="far fa-clock"></i>Prep Time: {{ recipe.preparation_length }}
+                        Prep Time: {{ recipe.preparation_length }}
                     </small>
                 </div>
                 <div>
+                    <i class="far fa-clock recipe-clock"></i>
                     <small>
-                        <i class="far fa-clock"></i>Cook Time: {{ recipe.cooking_length }}
+                        Cook Time: {{ recipe.cooking_length }}
                     </small>
                 </div>
                 <div>
+                    <i class="far fa-clock recipe-clock"></i>
                     <small>
-                        <i class="far fa-clock"></i>Total: {{ recipe.total_length }}
+                        Total: {{ recipe.total_length }}
                     </small>
                 </div>
             </span>
@@ -37,8 +40,7 @@
 
 </div>
 
-
-<div class="rec-detail">
+<div class="rec-detail recipe-detail">
     <div class="recipe-display left-div ingredients">
         <h2>Ingredients</h2>
         <span>{{ recipe.ingredients|safe }}</span>
@@ -52,7 +54,7 @@
 
 <div class="rec-detail excerpt">
     <hr>
-    <h2>Notes</h2>
+    <h2 class="excerpt-heading">Notes</h2>
     <span>{{ recipe.excerpt|safe }}</span>
 </div>
 

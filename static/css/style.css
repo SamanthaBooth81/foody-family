@@ -134,10 +134,11 @@ h1 {
 
 .recipe-top {
     margin-top: 3%;
+    padding-left: 30px;
 }
 
-.rec-detail {
-    clear: both;
+.recipe-clock {
+    padding-right: 5px;
 }
 
 .left-div {
@@ -147,6 +148,15 @@ h1 {
 .right-div {
     height: 300px;
     width: 65%;
+}
+
+.recipe-detail {
+    margin-top: 2%;
+}
+
+.rec-detail {
+    clear: both;
+    padding-top: 2%;
 }
 
 .method {
@@ -163,7 +173,11 @@ h1 {
 }
 
 .excerpt {
-    min-height: 150px;
+    min-height: 180px;
+}
+
+.excerpt-heading{
+    padding-top: 2%;
 }
 
 /* Button Styling */
