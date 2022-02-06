@@ -1,7 +1,7 @@
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Ribeye+Marrow&display=swap');
 
-/* Sticky Footer from https://css-tricks.com/couple-takes-sticky-footer/ */
+/* Sticky Footer - Code from https://css-tricks.com/couple-takes-sticky-footer/ */
 html,
 body {
     height: 100%;
@@ -27,12 +27,13 @@ body {
     color: #A7490D;
 }
 
+/* Margin Styling to entire site */
 main {
     margin-left: 7%;
     margin-right: 7%;
 }
 
-/* Nav stylling*/
+/* Nav styling*/
 .nav-style {
     font-size: large;
 }
@@ -46,7 +47,7 @@ main {
     color: #A7490D;
 }
 
-/* homepage landing stylling */
+/* Homepage landing styling */
 .home-img {
     background: url('https://res.cloudinary.com/sjb21/image/upload/v1642009399/static/landing-image_jaq8ob.jpg') no-repeat center center fixed;
     max-height: 500px;
@@ -71,13 +72,13 @@ main {
     font-family: 'Ribeye Marrow', cursive;
 }
 
-/* Headings stylling for all pages */
+/* Headings styling for all pages */
 h1 {
     text-align: center;
     margin: 20px;
 }
 
-/* Recipe Card Stylling */
+/* Recipe Card Styling */
 .card-position {
     margin-bottom: 10px;
 }
@@ -93,7 +94,7 @@ h1 {
     object-fit: cover;
 }
 
-/* recipe detail stylling */
+/* recipe detail styling */
 .recipe-heading {
     height: 301px;
     background-color: #ECECE2;
@@ -143,7 +144,7 @@ h1 {
     padding-right: 15px;
 }
 
-/* Add Recipe Stylling */
+/* Add Recipe Styling */
 .add-btn {
     margin-top: 20px;
 }
@@ -153,7 +154,7 @@ h1 {
     background-color: ghostwhite;
 }
 
-/* Pagination Stylling */
+/* Pagination Styling */
 .paginate {
     border-radius: 5px;
     color: #A7490D;
@@ -164,7 +165,7 @@ h1 {
     color: #0b1726;
 }
 
-/* footer stylling */
+/* Footer styling */
 .footer {
     background-color: #0b1726;
     margin-top: 25px;
@@ -194,7 +195,7 @@ h1 {
     color: #A7490D;
 }
 
-/* Change Password Form Stylling */
+/* Change Password Form Styling */
 #change-pw {
     margin: 0 auto;
     width: 50%;
@@ -204,6 +205,7 @@ h1 {
     margin-bottom: 30px;
 }
 
+/* Form Styling */
 .errorlist {
     display: none;
 }
