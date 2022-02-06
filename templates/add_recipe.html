@@ -6,12 +6,12 @@
 <!-- Add Recipe Form -->
 <h1>Add Recipe</h1>
 
-<form method="post" style="margin-top: 1.3em;">
+<form method="post" id="add-recipe">
   
   {% csrf_token %}
   {{ recipe_form | crispy }}
   
-  <button type="submit" value="Add Recipe" class="btn btn-dark add-btn">Post Recipe</button>
+  <button type="submit" value="Add Recipe" class="btn btn-dark all-btn">Post Recipe</button>
 
 </form>
 {% endblock %}

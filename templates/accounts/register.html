@@ -7,28 +7,32 @@
 </header>
 
 <!-- User Registration Form -->
-<form method="POST" action="" class="form">
+<form method="POST" action="" class="form accounts-forms">
     {% csrf_token %}
 
-    <label for="email">Email</label><br>
-    <input type="email" name="email">
-    <br>
-    <label for="username">Username</label><br>
-    <input type="username" name="username">
-    <br>
-    <label for="password1">Password</label><br>
-    <input type="password" name="password1">
-    <br>
-    <label for="password2">Repeat Password</label><br>
-    <input type="password" name="password2">
-    <br>
-
-    <button type="submit" class="btn btn-primary">Register</button>
-    
+    <div class="form-input-fields">
+        <label for="email">Email</label><br>
+        <input type="email" name="email" class="registration-input">
+    </div>
+    <div class="form-input-fields">
+        <label for="username">Username</label><br>
+        <input type="username" name="username" class="registration-input">
+    </div>
+    <div class="form-input-fields">
+        <label for="password1">Password</label><br>
+        <input type="password" name="password1" class="registration-input">
+    </div>
+    <div class="form-input-fields">
+        <label for="password2">Repeat Password</label><br>
+        <input type="password" name="password2" class="registration-input">
+    </div>
+    <div class="form-input-fields">
+        <button type="submit" class="btn btn-dark all-btn">Register</button>
+    </div>
     {{ form.errors }}
 
-    <p>Already have an account?
-        Please <a href="{% url 'login' %}">Login</a>
+    <p class="form-input-fields">Already have an account?
+        Please <a href="{% url 'login' %}" class="link-item">Login</a>!
     </p>
 </form>
 

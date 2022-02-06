@@ -7,7 +7,7 @@
     <h1>Login</h1>
 </header>
 
-<form method="POST" action="" class="form">
+<form method="POST" action="" class="form accounts-forms">
 
     <!--csrf_token is used to prevent hackers calling my webpage 
         from another site. How to create login page taken from Hacker
@@ -15,18 +15,26 @@
 
     {% csrf_token %}
 
-    <input id="username" name="username" type="username" Placeholder="Username" class="form-input form-control"
+    <div class="form-input-fields">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="username" class="form-input form-control" 
         id="inputUsername3">
+    </div>
 
-    <input id="password" name="password" type="password" placeholder="Password" class="form-input form-control"
+    <div class="form-input-fields">
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" class="form-input form-control"
         id="inputPassword3">
+    </div>
 
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <div class="form-input-fields">
+        <button type="submit" class="btn btn-dark all-btn">Sign in</button>
+    </div>
 
     {{ form.errors }}
 
     <p>Need an account?
-        Register <a href="{% url 'register' %}">here</a>!
+        Register <a href="{% url 'register' %}" class="link-item">here</a>!
     </p>
 
 </form>
