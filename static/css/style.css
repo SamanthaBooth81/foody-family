@@ -144,7 +144,7 @@ h1 {
 }
 
 /* Add Recipe Stylling */
-.add-btn{
+.add-btn {
     margin-top: 20px;
 }
 
@@ -202,4 +202,25 @@ h1 {
     padding: 40px;
     border-radius: 10px;
     margin-bottom: 30px;
+}
+
+.errorlist {
+    display: none;
+}
+
+#error_1_id_title,
+#error_1_id_preparation_length,
+#error_1_id_cooking_length,
+#error_1_id_total_length,
+#error_1_id_ingredients,
+#error_1_id_instructions {
+    display: none;
+}
+
+.form-control.is-invalid {
+    border-color: #ced4da;
+}
+
+#div_id_instructions input {
+    border: 1px solid #ced4da;
 }
