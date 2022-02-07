@@ -200,28 +200,24 @@ a:link {
 /* edit and delete button styling */
 .edit-icon, .del-icon {
     margin-right: 5px;
-    /* margin-left: 17%; */
 }
 
-/* .edit-btn{
-    float: left;
-}
-
-.del-btn {
-    float: right;
-} */
-
-.edit, .del {
+/* .edit, .del {
     color: #0b1726;
 }
 
 .edit:hover, .del:hover {
     color: #A7490D;
-}
+} */
 
 /* Button Styling */
 .all-btn {
     margin-top: 20px;
+}
+
+.edit:hover {
+    color: #A7490D;
+    background-color: ghostwhite;
 }
 
 .all-btn:hover {

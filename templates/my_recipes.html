@@ -20,6 +20,22 @@
                         <img src="{{ recipes.featured_image.url }}" alt="recipe image">
                         {% endif %}
                         <div class="card-body">
+                            <h5 class="card-title rec-card-title">{{ recipes.title }}</h5>
+                            <hr>
+                            <div class="card-text">
+                                <span class="edit-btn">
+                                    <a href="{% url 'recipe_detail' recipes.slug %}" class="btn btn-dark edit"><i
+                                        class="fas fa-pencil-alt edit-icon"></i>Edit</a>
+                                </span>
+                                <span class="del-btn">
+                                    <a href="{% url 'update_recipe' recipes.pk %}" class="btn btn-danger" class="del"><i
+                                        class="far fa-trash-alt del-icon"></i>Delete</a>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="card-body">
                             <a href="{% url 'recipe_detail' recipes.slug %}">
                                 <h5 class="card-title rec-card-title">{{ recipes.title }}</h5>
                             </a>
@@ -32,7 +48,7 @@
                                     <a href="{% url 'delete_recipe' recipes.pk %}" class="del"><i class="far fa-trash-alt del-icon"></i>Delete</a>
                                 </span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:4 %}
