@@ -5,12 +5,11 @@
 <h1>My Posted Recipes</h1>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-4 left">
+    <div class="row align-items-start">
+        <div class="col-md-12 mt-4 left">
             <div class="row">
                 {% for recipes in recipe_list %}
                 {% if user.id == recipes.author.id %}
-                {% if recipes.status == 1 %}
                 <div class="col-md-3">
                     <div class="card card-position" style="width: 18rem;">
                         {% if "placeholder" in recipes.featured_image.url %}
@@ -33,28 +32,11 @@
                                 </span>
                             </div>
                         </div>
-
-
-                        <!-- <div class="card-body">
-                            <a href="{% url 'recipe_detail' recipes.slug %}">
-                                <h5 class="card-title rec-card-title">{{ recipes.title }}</h5>
-                            </a>
-                            <div class="card-text edit-del">
-                                <hr>
-                                <span>
-                                    <a href="{% url 'update_recipe' recipes.pk %}" class="edit"><i class="fas fa-pencil-alt edit-icon"></i>Edit</a>
-                                </span>
-                                <span>
-                                    <a href="{% url 'delete_recipe' recipes.pk %}" class="del"><i class="far fa-trash-alt del-icon"></i>Delete</a>
-                                </span>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row">
-                {% endif %}
                 {% endif %}
                 {% endif %}
                 {% endfor %}

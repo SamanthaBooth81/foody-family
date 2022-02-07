@@ -97,6 +97,9 @@ h1 {
 }
 
 /* Recipe Card Styling */
+.card {
+    margin: 5px;
+}
 .card-position {
     margin-bottom: 10px;
 }
@@ -202,14 +205,6 @@ a:link {
     margin-right: 5px;
 }
 
-/* .edit, .del {
-    color: #0b1726;
-}
-
-.edit:hover, .del:hover {
-    color: #A7490D;
-} */
-
 /* Button Styling */
 .all-btn {
     margin-top: 20px;
@@ -296,4 +291,79 @@ a:link {
 #id_new_password1,
 #id_new_password2 {
     width: 100%;
+}
+
+/* Media Queries */
+/* Homepage */
+@media screen and (max-width: 280px){
+    /* .card {
+        max-width: 200px;
+    } */
+}
+@media screen and (max-width: 340px){
+    .header {
+        font-size: x-large;
+    }
+    .home-img{
+        width: 280px;
+        margin: 0 auto;
+    }
+    .title{
+        padding: 0;
+    }
+    .footer {
+        font-size: 15px;
+    }
+    .footer p {
+        padding-top: 10px;
+        margin: 0;
+    }
+    .footer a {
+        color: #ecece2;
+        padding: 5px;
+    }
+    .card {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .footer {
+        font-size: 12px;
+    }
+    .footer p {
+        padding-top: 15px;
+        margin: 0;
+    }
+    .footer a {
+        color: #ecece2;
+        padding: 2px;
+    }
+    .social-links {
+        color: #ecece2;
+        padding: 10px;
+        margin: 0;
+        font-size: 15px;
+    }
+    .title {
+        margin: 100px 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        max-width: 250px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .card {
+        max-width: 250px;
+    }
 }

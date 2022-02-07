@@ -66,6 +66,7 @@ def AddRecipe(request):
 class UserPostedRecipes(generic.ListView):
     """View for the list of recipes posted"""
     model = Recipe
+    queryset = Recipe.objects.filter(status=1)
     template_name = 'my_recipes.html'
     paginate_by = 12
 
@@ -73,6 +74,7 @@ class UserPostedRecipes(generic.ListView):
 class ApprovalPendingRecipes(generic.ListView):
     """View for the list of recipes pending"""
     model = Recipe
+    queryset = Recipe.objects.filter(status=0)
     template_name = 'my_drafts.html'
     paginate_by = 12
 
