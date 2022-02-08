@@ -17,4 +17,5 @@ urlpatterns = [
     path("my-recipes/delete-pending-recipe/<int:pk>",
          views.DeletePendingRecipe.as_view(), name="delete_draft"),
     path("<slug:slug>/", views.RecipeDetail.as_view(), name="recipe_detail"),
+    path("like/<slug:slug>/", views.RecipeLike.as_view(), name="recipe_like")
 ]

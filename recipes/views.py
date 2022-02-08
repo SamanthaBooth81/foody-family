@@ -1,11 +1,12 @@
 """Views for the different pages to be rendered"""
 from django.contrib.auth.models import User
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.generic import UpdateView, DeleteView
 from django.views import generic, View
 from django.utils.text import slugify
 from django.contrib import messages
 from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -40,6 +41,17 @@ class RecipeDetail(View):
             },
         )
 
+
+class RecipeLike(View):
+    
+    def post(self, request, slug, *args, **kwargs):
+        recipe = get_object_or_404(Recipe, slug=slug)
+        if recipe.likes.filter(id=request.user.id).exists():
+            recipe.likes.remove(request.user)
+        else:
+            recipe.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 def AddRecipe(request):
     """View for user to add a recipe"""

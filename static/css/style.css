@@ -161,6 +161,13 @@ a:link {
     padding-right: 5px;
 }
 
+.btn-like {
+    border: none;
+    background: transparent;
+    padding: 0;
+    padding-right: 5px;
+}
+
 .left-div {
     width: 30%;
 }
