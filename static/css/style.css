@@ -124,7 +124,7 @@ a:link {
 
 .recipe-card-img {
     /* w3schools used to find object-fit property*/
-    max-height: 191px;
+    max-height: 165px;
     object-fit: cover;
 }
 
@@ -262,7 +262,7 @@ a:link {
 
 .accounts-forms {
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
     background-color: #ECECE2;
     padding: 40px;
     border-radius: 10px;
@@ -272,7 +272,7 @@ a:link {
 /* Change Password Form Styling */
 #change-pw {
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
     background-color: #ECECE2;
     padding: 40px;
     border-radius: 10px;
@@ -294,22 +294,10 @@ a:link {
 }
 
 /* Media Queries */
-/* Homepage */
-@media screen and (max-width: 280px){
-    /* .card {
-        max-width: 200px;
-    } */
-}
 @media screen and (max-width: 340px){
+    /* All Pages */
     .header {
         font-size: x-large;
-    }
-    .home-img{
-        width: 280px;
-        margin: 0 auto;
-    }
-    .title{
-        padding: 0;
     }
     .footer {
         font-size: 15px;
@@ -322,8 +310,27 @@ a:link {
         color: #ecece2;
         padding: 5px;
     }
+
+    /* Homepage */
+    .home-img{
+        width: 280px;
+        margin: 0 auto;
+    }
+    .title{
+        padding: 0;
+    }
+
+    /* Recipe Card */
     .card {
         max-width: 250px;
+    }
+
+    /* Change password form */
+    .accounts-forms {
+        width: 90%;
+    }
+    #change-pw {
+        width: 100%;
     }
 }
 
@@ -348,11 +355,27 @@ a:link {
     .title {
         margin: 100px 50px;
     }
+
+    /* Change password form */
+    .accounts-forms {
+        width: 90%;
+    }
+    #change-pw {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .card {
         max-width: 250px;
+    }
+
+    /* Change password form */
+    .accounts-forms {
+        width: 90%;
+    }
+    #change-pw {
+        width: 90%;
     }
 }
 

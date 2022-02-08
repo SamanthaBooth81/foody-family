@@ -10,7 +10,7 @@
             <div class="row">
                 {% for recipes in recipe_list %}
                 {% if user.id == recipes.author.id %}
-                <div class="col-md-3">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card card-position" style="width: 18rem;">
                         {% if "placeholder" in recipes.featured_image.url %}
                         <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
@@ -34,10 +34,6 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
-            </div>
-            <div class="row">
-                {% endif %}
                 {% endif %}
                 {% endfor %}
             </div>
