@@ -79,7 +79,7 @@ h1 {
 }
 
 /* Add Recipe Form Styling */
-#error_1_id_title,
+/* #error_1_id_title,
 #error_1_id_preparation_length,
 #error_1_id_cooking_length,
 #error_1_id_total_length,
@@ -90,7 +90,7 @@ h1 {
 
 .form-control.is-invalid {
     border-color: #ced4da;
-}
+} */
 
 #div_id_instructions input {
     border: 1px solid #ced4da;

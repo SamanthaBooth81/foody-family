@@ -53,6 +53,7 @@ class RecipeLike(View):
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
+
 def AddRecipe(request):
     """View for user to add a recipe"""
     recipe_form = RecipeForm(data=request.POST)
@@ -65,6 +66,7 @@ def AddRecipe(request):
             request, "Recipe submitted and waiting approval!")
         recipe.save()
     else:
+        messages.error(request, 'Error')
         return render(
             request,
             "add_recipe.html",

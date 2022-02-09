@@ -1,1 +1,8 @@
-{% include "django/forms/widgets/input.html" %}
+<div>
+    {% include "django/forms/widgets/input.html" with widget=widget  %}
+    <button type="button" id="add_step">Add another</button>
+    <div id="step_list">
+       
+    </div>
+
+</div>

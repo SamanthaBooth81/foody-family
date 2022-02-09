@@ -6,11 +6,26 @@
 <!-- Add Recipe Form -->
 <h1>Add Recipe</h1>
 
+<!-- Below from Code Institutes CodeStar project -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      {% for message in messages %}
+      <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+        {{ message | safe }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div> -->
+
 <form method="post" id="add-recipe" class="add-recipe">
-  
+
   {% csrf_token %}
   {{ recipe_form | crispy }}
-  
+
+
   <button type="submit" value="Add Recipe" class="btn btn-dark all-btn">Post Recipe</button>
 
 </form>
