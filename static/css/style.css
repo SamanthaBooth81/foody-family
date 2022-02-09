@@ -109,13 +109,18 @@ h1 {
     margin-bottom: 10px;
 }
 
-.draft-rec-card-title, .rec-card-title{
+.draft-rec-card-title {
+    color: #0b1726;
+}
+
+.rec-card-title {
     color: #A7490D;
     text-decoration: none;
 }
 
 .rec-card-title:hover {
     color: #0b1726;
+    cursor: pointer;
 }
 
 a:link {
@@ -272,13 +277,13 @@ a:link {
     margin: 0 auto;
 }
 
-.login-img {
+.accounts-img {
     float: left;
     max-height: 600px;
     object-fit: cover;
 }
 
-.login-forms {
+.accounts-forms {
     float: left;
     height: 600px;
     width: 65%;
@@ -293,7 +298,7 @@ a:link {
     color: #A7490D;
 }
 
-.accounts-forms {
+.password-form {
     margin: 0 auto;
     width: 70%;
     background-color: #ECECE2;
