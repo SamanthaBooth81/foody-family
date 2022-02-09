@@ -6,7 +6,7 @@
 <!-- Add Recipe Form -->
 <h1>Add Recipe</h1>
 
-<form method="post" id="add-recipe">
+<form method="post" id="add-recipe" class="add-recipe">
   
   {% csrf_token %}
   {{ recipe_form | crispy }}

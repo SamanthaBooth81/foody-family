@@ -7,36 +7,40 @@
     <h1>Login</h1>
 </header>
 
-<form method="POST" action="" class="form accounts-forms">
-
-    <!--csrf_token is used to prevent hackers calling my webpage 
-        from another site. How to create login page taken from Hacker
-        Shack YouTube Channel. Link in README. -->
-
-    {% csrf_token %}
-
-    <div class="form-input-fields">
-    <label for="username">Username</label>
-    <input id="username" name="username" type="username" class="form-input form-control" 
-        id="inputUsername3">
+<div id="logging-in">
+    <div>
+        <img src="https://res.cloudinary.com/sjb21/image/upload/v1644420311/monika-grabkowska-TAj4X5-eRqE-unsplash-min_oopdwn.jpg"
+            alt="Oranges photo" class="login-img">
     </div>
+    <form method="POST" action="" class="form login-forms">
 
-    <div class="form-input-fields">
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" class="form-input form-control"
-        id="inputPassword3">
-    </div>
+        <!--csrf_token is used to prevent hackers calling my webpage 
+            from another site. How to create login page taken from Hacker
+            Shack YouTube Channel. Link in README. -->
 
-    <div class="form-input-fields">
-        <button type="submit" class="btn btn-dark all-btn">Sign in</button>
-    </div>
+        {% csrf_token %}
 
-    {{ form.errors }}
+        <div class="form-input-fields">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="username" class="form-input form-control" id="inputUsername3">
+        </div>
 
-    <p>Need an account?
-        Register <a href="{% url 'register' %}" class="link-item">here</a>!
-    </p>
+        <div class="form-input-fields">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" class="form-input form-control" id="inputPassword3">
+        </div>
 
-</form>
+        <div class="form-input-fields">
+            <button type="submit" class="btn btn-dark all-btn">Sign in</button>
+        </div>
+
+        {{ form.errors }}
+
+        <p>Need an account?
+            Register <a href="{% url 'register' %}" class="link-item">here</a>!
+        </p>
+
+    </form>
+</div>
 
 {% endblock %}

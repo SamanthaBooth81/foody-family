@@ -96,6 +96,11 @@ h1 {
     border: 1px solid #ced4da;
 }
 
+.add-recipe {
+    width: 80%;
+    margin: 0 auto;
+}
+
 /* Recipe Card Styling */
 .card {
     margin: 5px;
@@ -104,7 +109,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-.rec-card-title{
+.draft-rec-card-title, .rec-card-title{
     color: #A7490D;
     text-decoration: none;
 }
@@ -261,6 +266,27 @@ a:link {
 .registration-input {
     width: 100%;
 }
+
+/* Login Styling */
+#logging-in {
+    margin: 0 auto;
+}
+
+.login-img {
+    float: left;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.login-forms {
+    float: left;
+    height: 600px;
+    width: 65%;
+    background-color: #ECECE2;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
 
 /* Login and Registration Form Styling */
 .link-item:hover {
