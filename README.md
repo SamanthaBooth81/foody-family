@@ -230,11 +230,14 @@ I used the following websites to help with different areas of my project:
 ### Change Password
 - [Professional Cipher - How to Create a Change Password View | Django Tips #9](https://www.youtube.com/watch?v=00sdVcuYki0), used to help with the change password view.
 
-### Stylling
+### Add Recipe Function
+- [Stack Overflow Post](https://stackoverflow.com/questions/45892469/how-to-append-to-array-field-in-python-django), used to help with creating code to append method and ingredients arrays to the relevant fields in the Recipe Model. 
+
+### Styling
 - [Unsplash - Landing Image](https://unsplash.com/photos/DoUgSMezLp0)
 - [Logo Font - Google Fonts](https://fonts.google.com/specimen/Ribeye+Marrow?category=Display&preview.text=Foody%20Family&preview.text_type=custom#standard-styles)
 - [Unsplash - Recipe Placeholder Image](https://unsplash.com/photos/ezSFnAFi9hY)
-- [Font Awsome Heart Likes Icon](https://fontawesome.com/v5.15/icons/heart?style=solid)
+- [Font Awesome Heart Likes Icon](https://fontawesome.com/v5.15/icons/heart?style=solid)
 - [CSS object-fit property](https://www.w3schools.com/css/css3_object-fit.asp), used to fit recipe image correctly into the layout.
 - [CSS-Tricks - Flexbox Sticky Footer](https://css-tricks.com/couple-takes-sticky-footer/), for the sticky footer code.
 

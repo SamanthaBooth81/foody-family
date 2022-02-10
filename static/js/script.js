@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function add_instruction(event){
-        console.log('add');
         instructionId = 'instruction_' + instructionsCounter;
         new_instruction = '<div style="margin-top: 5px; margin-left: 15px;" id="' + instructionId + '"> <input type="text" name="instructions"> <button type="button" onClick="deleteInstruction(this)" class="delete_instruction" data-instruction-id="'+ instructionId +'">Delete</button></div>';
         instructionsCounter = instructionsCounter + 1;

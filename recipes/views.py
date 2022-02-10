@@ -23,6 +23,7 @@ class RecipeDetail(View):
     """View recipe details"""
 
     def get(self, request, slug, *args, **kwargs):
+        """Function to get the recipe details"""
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         liked = False
@@ -40,8 +41,10 @@ class RecipeDetail(View):
 
 
 class RecipeLike(View):
+    """View for the likes function"""
 
     def post(self, request, slug, *args, **kwargs):
+        """Likes function, display if user has/hasn't liked recipe"""
         recipe = get_object_or_404(Recipe, slug=slug)
         if recipe.likes.filter(id=request.user.id).exists():
             recipe.likes.remove(request.user)
@@ -53,14 +56,14 @@ class RecipeLike(View):
 
 def AddRecipe(request):
     """View for user to add a recipe"""
-    print(request.POST)
     recipe_form = RecipeForm(data=request.POST)
-    # instructions = []
-    # instruction = request.POST.getlist('instructions')
-    # instructions.append(instruction)
         
     if recipe_form.is_valid():
         recipe = recipe_form.save(commit=False)
+        """Post on Stack Overflow in README for appending array to field"""
+        recipe.instructions = []
+        instruction = request.POST.getlist('instructions')
+        recipe.instructions.append(instruction)
         recipe.author_id = request.user.id
         recipe.slug = slugify(recipe.title)
         messages.success(
