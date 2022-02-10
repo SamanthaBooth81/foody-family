@@ -57,6 +57,7 @@ class RecipeLike(View):
 def AddRecipe(request):
     """View for user to add a recipe"""
     recipe_form = RecipeForm(data=request.POST)
+    print(request.POST)
         
     if recipe_form.is_valid():
         recipe = recipe_form.save(commit=False)

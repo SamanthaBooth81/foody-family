@@ -66,7 +66,13 @@
 
     <div class="method">
         <h2>Method</h2>
-        <span>{{ recipe.instructions|safe }}</span>
+
+        <ol>
+            <li>{{ recipe.instructions|safe }}</li>
+        </ol>
+        <!-- {% for instruction in recipe.instructions %} -->
+        <!-- {% endfor %} -->
+        <!-- <span>{{ recipe.instructions|safe }}</span> -->
     </div>
 </div>
 
