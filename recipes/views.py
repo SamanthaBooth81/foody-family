@@ -111,6 +111,9 @@ class UpdateRecipe(UpdateView):
               'featured_image', 'excerpt', ]
     template_name = 'update_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
+    def form_valid(self, form):
+        messages.success(self.request, 'Recipe updated successfully!')
+        return super().form_valid(form)
 
 
 class DeleteRecipe(DeleteView):
@@ -118,6 +121,11 @@ class DeleteRecipe(DeleteView):
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
+    success_message = "Recipe permanently deleted."
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteRecipe, self).delete(request, *args, **kwargs)
 
 
 class UpdatePendingRecipe(UpdateView):
@@ -136,3 +144,4 @@ class DeletePendingRecipe(DeleteView):
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_pending_recipes')
+

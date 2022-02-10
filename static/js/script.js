@@ -27,4 +27,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
    
     document.getElementById('add_step').addEventListener('click', add_instruction);
+
 });
