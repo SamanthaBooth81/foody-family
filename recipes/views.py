@@ -25,8 +25,6 @@ class RecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
-        # comments = recipe.comments.filter
-        # (approved=True).order_by("-created_on")
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -36,14 +34,13 @@ class RecipeDetail(View):
             "recipe_detail.html",
             {
                 "recipe": recipe,
-                # "comments": comments,
                 "liked": liked
             },
         )
 
 
 class RecipeLike(View):
-    
+
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)
         if recipe.likes.filter(id=request.user.id).exists():
@@ -56,8 +53,12 @@ class RecipeLike(View):
 
 def AddRecipe(request):
     """View for user to add a recipe"""
+    print(request.POST)
     recipe_form = RecipeForm(data=request.POST)
-
+    # instructions = []
+    # instruction = request.POST.getlist('instructions')
+    # instructions.append(instruction)
+        
     if recipe_form.is_valid():
         recipe = recipe_form.save(commit=False)
         recipe.author_id = request.user.id
@@ -65,8 +66,8 @@ def AddRecipe(request):
         messages.success(
             request, "Recipe submitted and waiting approval!")
         recipe.save()
+        return redirect('home')
     else:
-        messages.error(request, 'Error')
         return render(
             request,
             "add_recipe.html",
@@ -74,7 +75,11 @@ def AddRecipe(request):
                 "recipe_form": recipe_form,
             },
         )
-    return redirect('home')
+    return render(request, "add_recipe.html",
+                  {
+                      "recipe_form": recipe_form,
+                  },
+                  )
 
 
 class UserPostedRecipes(generic.ListView):
@@ -94,7 +99,7 @@ class ApprovalPendingRecipes(generic.ListView):
 
 
 class UpdateRecipe(UpdateView):
-    """View to update published recipies"""
+    """View to update published recipes"""
     model = Recipe
     form = RecipeForm()
     fields = ['title', 'preparation_length', 'cooking_length',
@@ -105,14 +110,14 @@ class UpdateRecipe(UpdateView):
 
 
 class DeleteRecipe(DeleteView):
-    """View to delete published recipies"""
+    """View to delete published recipes"""
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
 
 
 class UpdatePendingRecipe(UpdateView):
-    """View to update pending recipies"""
+    """View to update pending recipes"""
     model = Recipe
     form = RecipeForm()
     fields = ['title', 'preparation_length', 'cooking_length',
@@ -123,7 +128,7 @@ class UpdatePendingRecipe(UpdateView):
 
 
 class DeletePendingRecipe(DeleteView):
-    """View to delete pending recipies"""
+    """View to delete pending recipes"""
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_pending_recipes')
