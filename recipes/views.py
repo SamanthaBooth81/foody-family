@@ -29,8 +29,9 @@ class RecipeDetail(View):
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
-        recipe.instructions = recipe.instructions.replace('[', '').replace(']', '').replace("'", '').split(',')
+
+        recipe.instructions = recipe.instructions.replace(
+            '[', '').replace(']', '').replace("'", '').split(',')
 
         return render(
             request,
@@ -63,8 +64,8 @@ def AddRecipe(request):
 
     if recipe_form.is_valid():
         recipe = recipe_form.save(commit=False)
-        """Post on Stack Overflow in README for appending array 
-        to recipe model along with guidance from my mentor"""
+        # Post on Stack Overflow in README for appending array
+        # to recipe model along with guidance from my mentor
         recipe.instructions = request.POST.getlist('instructions')
         recipe.author_id = request.user.id
         recipe.slug = slugify(recipe.title)
@@ -148,15 +149,17 @@ class UpdatePendingRecipe(UpdateView):
         messages.success(self.request, 'Recipe updated successfully!')
         return super().form_valid(form)
 
+
 class DeletePendingRecipe(DeleteView):
     """View to delete pending recipes"""
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_pending_recipes')
 
-     # Used Stack Overflow to help get this message showing
+    # Used Stack Overflow to help get this message showing
     success_message = "Recipe permanently deleted."
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
-        return super(DeleteRecipe, self).delete(request, *args, **kwargs)
+        return super(DeletePendingRecipe, self).delete(
+            request, *args, **kwargs)

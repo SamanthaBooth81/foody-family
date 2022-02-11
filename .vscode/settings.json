@@ -23,5 +23,25 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "Visual Studio Dark",
    "editor.defaultFormatter": "HookyQR.beautify",
-   "python.pythonPath": "/home/gitpod/.pyenv/versions/3.8.12/bin/python"
+   "python.pythonPath": "/home/gitpod/.pyenv/versions/3.8.12/bin/python",
+   "cSpell.words": [
+      "Balsamiq",
+      "Cloudinary",
+      "favourite",
+      "favourites",
+      "Flexbox",
+      "Foody",
+      "gitnore",
+      "gunicorn",
+      "herokuapp",
+      "minimise",
+      "Procfile",
+      "Pylot",
+      "staticfile",
+      "STATICFILES",
+      "Summernote",
+      "utilised",
+      "Wireframes",
+      "wsgi"
+   ]
 }

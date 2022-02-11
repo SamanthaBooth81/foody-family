@@ -10,7 +10,7 @@
 
 # About
 
-Foody Family is a recipe sharing website where users can view, like and comment on recipes and upload their own recipies to share with other users. This project was set up using a Postgresql database and built using Django. Along with Bootstrap to setup the basic layout and stylling. 
+Foody Family is a recipe sharing website where users can view, like and comment on recipes and upload their own recipes to share with other users. This project was set up using a Postgresql database and built using Django. Along with Bootstrap to setup the basic layout and styling. 
 
 # Table of Contents
 
@@ -39,7 +39,7 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 # User Experience
 ## User Stories
 ### Superuser / Admin
-- As a Superuser I can approve and manage the recipies uploaded by community members so that anything unsafe can be removed from the website. 
+- As a Superuser I can approve and manage the recipes uploaded by community members so that anything unsafe can be removed from the website. 
 - As a Superuser I can showcase my favourite recipe on the homepage so that other users can try them out. 
 - As a Superuser I can be contacted by all users so I can be made aware of any issues.
 
@@ -57,10 +57,10 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 - As a Community User I can save recipes to favourites so that I can easily find them again. 
 
 # Features
-- View Recipies
+- View Recipes
 - Create an account
-- Upload, edit and remove Recipies
-- Like, comment and save recipies
+- Upload, edit and remove Recipes
+- Like, comment and save Recipes
 
 
 # Features to be Implemented
@@ -100,9 +100,9 @@ All wireframes were created used [Balsamiq](https://balsamiq.com/)
 
 [GitPod](https://gitpod.io/workspaces) – Connected to GitHub, GitPod hosted the coding space, allowing the project to be built and then committed to the GitHub repository. 
 
-[Heroku](https://www.heroku.com/) - Connected to the GitHub repositiry, Heroku is a cloud application platform used to deploy this project so the backend language can be utilised/tested. 
+[Heroku](https://www.heroku.com/) - Connected to the GitHub repository, Heroku is a cloud application platform used to deploy this project so the backend language can be utilised/tested. 
 
-[Django](https://www.djangoproject.com/) - This framework was used to build the foundations of this project, reducing time spent geting the project setup and prevent re-writing existing code.
+[Django](https://www.djangoproject.com/) - This framework was used to build the foundations of this project, reducing time spent getting the project setup and prevent re-writing existing code.
 
 [Bootstrap](https://getbootstrap.com/) - Used to quickly add design to my website, Bootstrap focuses on mobile first design meaning this website is responsive across multiple devices ans screen sizes. 
 
@@ -120,7 +120,7 @@ The project follows the below logic:
 <img src="assets/images/logic_flow_chart.png" height="350px"> 
 
 
-I have manually tested the projecy by:
+I have manually tested the project by:
 - Adding multiple recipes to ensure:
     - The layout works as expected
     - The images displayed correctly, whether uploaded by the user or using the placeholder image instead
@@ -128,11 +128,11 @@ I have manually tested the projecy by:
 
 # Validator Testing
 
-The code was validated using [PEP8](http://pep8online.com/). No errors were retruned. 
+The code was validated using [PEP8](http://pep8online.com/). No errors were returned. 
 
 # Bugs Found 
 
-I encountered the following issues whilst builing this project:
+I encountered the following issues whilst building this project:
 - Summernote's text area boxes were not displaying as lists on the webpage. To fix this I added |safe to the code linking to those model fields which removed the tags and displayed them as the lists they are. 
 - My registration redirect wasn't redirecting as expected. To fix this I removed the URL from the 'form action' to make this an empty string instead. 
 - login error message showing __ all __ and then the message. To fix this I ....................
@@ -169,7 +169,7 @@ The env.py files is where the projects secret environment variables are stored. 
 
 9. Then, we need to replace the current insecure secret key with **os.environ.get('SECRET_KEY')**, that we set within the env.py file. 
 
-10. Once the secret key is replaced, scroll down to DATABASES to connect to the Postgres database. Comment out the current code and add the following python doctionary:
+10. Once the secret key is replaced, scroll down to DATABASES to connect to the Postgres database. Comment out the current code and add the following python dictionary:
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
@@ -196,7 +196,7 @@ DATABASES = {
 
 17. Now add our Heroku host name into allowed hosts in our settings.py file, APP_NAME.herokuapp.com, and then also add 'localhost' so the app can also run locally.
 
-18. Finally, to complete the first deployment set up of the skelleton app, create a Procfile so that Heroku knows how to run the project. Within this file add the following:
+18. Finally, to complete the first deployment set up of the skeleton app, create a Procfile so that Heroku knows how to run the project. Within this file add the following:
 web: gunicorn foody_family.wsgi
 Web tells Heroku to allow web traffic, whilst gunicorn is the server installed earlier, a web services gateway interface server (wsgi). This is a standard that allows Python services to integrate with web servers.
 
@@ -255,4 +255,4 @@ I used the following websites to help with different areas of my project:
 
 
 # Acknowledgments
-Thank you to all who encouraged and supported me as I created my first full stack website, especially to my mentor at The Code Institute for his guidance, patience, encouragement and constant support. Also a thank you to Tutor Support at the Code Institute for help with anything I found myself stuck on.  
+Thank you to all who encouraged and supported me as I created my first full stack website, especially to my mentor at Code Institute, Antonio, for his guidance, patience, encouragement and constant support. Also a thank you to Tutor Support at the Code Institute for help with anything I found myself stuck on.  
