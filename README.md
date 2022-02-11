@@ -224,14 +224,26 @@ I used the following websites to help with different areas of my project:
 - [Stack Overflow - Django logout not working](https://stackoverflow.com/questions/14021913/django-logout-not-working), to correct my url path for the logout function.
 - [Django - form.errors](https://docs.djangoproject.com/en/4.0/ref/forms/api/#django.forms.Form.errors), used to figure out how to use form.errors.
 - [Hacker Shack - Login Path](https://www.youtube.com/watch?v=Rz6racFuW_Q), used to help put the url path together for the login page.
-- [Stack Overflow - redirect() not redirecting](https://stackoverflow.com/questions/62667374/django-redirect-not-redirecting-appends-the-current-path-name-to-the-domai), to figure out why I wasn't being redirected after registering an account.
+- [Stack Overflow - redirect() not redirecting](https://stackoverflow.com/a/62678554), to figure out why I wasn't being redirected after registering an account.
 - [The Pylot - Create Advanced User Sign Up](https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m), used to help put together the registration view. 
 
 ### Change Password
 - [Professional Cipher - How to Create a Change Password View | Django Tips #9](https://www.youtube.com/watch?v=00sdVcuYki0), used to help with the change password view.
 
-### Add Recipe Function
-- [Stack Overflow Post](https://stackoverflow.com/questions/45892469/how-to-append-to-array-field-in-python-django), used to help with creating code to append method and ingredients arrays to the relevant fields in the Recipe Model. 
+### Add Recipe Functionality
+- [Stack Overflow Post](https://stackoverflow.com/a/67483341), used to help with creating code to append method and ingredients arrays to the relevant fields in the Recipe Model. 
+
+### Update Posted Recipe Functionality
+- [Stack Overflow](https://stackoverflow.com/a/67937708), to help with the success message once posted recipe was edited. 
+
+### Delete Posted Recipe Functionality
+- [Stack Overflow](https://stackoverflow.com/a/25325228), to help with success message once posted recipe had been deleted. 
+
+### Update Draft Recipe Functionality
+- [Stack Overflow](https://stackoverflow.com/a/67937708), to help with the success message once posted recipe was edited. 
+
+### Delete Draft Recipe Functionality
+- [Stack Overflow](https://stackoverflow.com/a/25325228), to help with success message once posted recipe had been deleted. 
 
 ### Styling
 - [Unsplash - Landing Image](https://unsplash.com/photos/DoUgSMezLp0)
@@ -243,4 +255,4 @@ I used the following websites to help with different areas of my project:
 
 
 # Acknowledgments
-Thank you to all who encouraged and supported me as I created my first full stack website, espcially to my mentor at The Code Institute for his guidance, patience and encouragement. Also a thank you to Tutor Support at the Code Institute for help with anything I found myself stuck on.  
+Thank you to all who encouraged and supported me as I created my first full stack website, especially to my mentor at The Code Institute for his guidance, patience, encouragement and constant support. Also a thank you to Tutor Support at the Code Institute for help with anything I found myself stuck on.  

@@ -68,11 +68,10 @@
         <h2>Method</h2>
 
         <ol>
-            <li>{{ recipe.instructions|safe }}</li>
+            {%for instruction in recipe.instructions%}
+                <li>{{ instruction|safe }}</li>
+            {% endfor %}
         </ol>
-        <!-- {% for instruction in recipe.instructions %} -->
-        <!-- {% endfor %} -->
-        <!-- <span>{{ recipe.instructions|safe }}</span> -->
     </div>
 </div>
 

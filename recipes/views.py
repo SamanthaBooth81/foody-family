@@ -29,6 +29,8 @@ class RecipeDetail(View):
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
+        
+        recipe.instructions = recipe.instructions.replace('[', '').replace(']', '').replace("'", '').split(',')
 
         return render(
             request,
@@ -58,13 +60,12 @@ def AddRecipe(request):
     """View for user to add a recipe"""
     recipe_form = RecipeForm(data=request.POST)
     print(request.POST)
-        
+
     if recipe_form.is_valid():
         recipe = recipe_form.save(commit=False)
-        """Post on Stack Overflow in README for appending array to field"""
-        recipe.instructions = []
-        instruction = request.POST.getlist('instructions')
-        recipe.instructions.append(instruction)
+        """Post on Stack Overflow in README for appending array 
+        to recipe model along with guidance from my mentor"""
+        recipe.instructions = request.POST.getlist('instructions')
         recipe.author_id = request.user.id
         recipe.slug = slugify(recipe.title)
         messages.success(
@@ -111,6 +112,8 @@ class UpdateRecipe(UpdateView):
               'featured_image', 'excerpt', ]
     template_name = 'update_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
+
+    # Used Stack Overflow to help get this message showing
     def form_valid(self, form):
         messages.success(self.request, 'Recipe updated successfully!')
         return super().form_valid(form)
@@ -121,6 +124,8 @@ class DeleteRecipe(DeleteView):
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
+
+    # Used Stack Overflow to help get this message showing
     success_message = "Recipe permanently deleted."
 
     def delete(self, request, *args, **kwargs):
@@ -138,6 +143,10 @@ class UpdatePendingRecipe(UpdateView):
     template_name = 'update_recipe.html'
     success_url = reverse_lazy('my_pending_recipes')
 
+    # Used Stack Overflow to help get this message showing
+    def form_valid(self, form):
+        messages.success(self.request, 'Recipe updated successfully!')
+        return super().form_valid(form)
 
 class DeletePendingRecipe(DeleteView):
     """View to delete pending recipes"""
@@ -145,3 +154,9 @@ class DeletePendingRecipe(DeleteView):
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_pending_recipes')
 
+     # Used Stack Overflow to help get this message showing
+    success_message = "Recipe permanently deleted."
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteRecipe, self).delete(request, *args, **kwargs)
