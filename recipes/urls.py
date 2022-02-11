@@ -8,6 +8,8 @@ urlpatterns = [
          views.UserPostedRecipes.as_view(), name="my_posted_recipes"),
     path("pending-approval/",
          views.ApprovalPendingRecipes.as_view(), name="my_pending_recipes"),
+    path("pending-approval/<int:pk>",
+         views.DraftRecipeDetail.as_view(), name="draft_recipe_detail"),
     path("my-recipes/update-recipe/<int:pk>",
          views.UpdateRecipe.as_view(), name="update_recipe"),
     path("my-recipes/delete-recipe/<int:pk>",

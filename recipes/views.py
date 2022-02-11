@@ -33,12 +33,38 @@ class RecipeDetail(View):
         recipe.instructions = recipe.instructions.replace(
             '[', '').replace(']', '').replace("'", '').split(',')
 
+        recipe.ingredients = recipe.ingredients.replace(
+            '[', '').replace(']', '').replace("'", '').split(',')
+
         return render(
             request,
             "recipe_detail.html",
             {
                 "recipe": recipe,
                 "liked": liked
+            },
+        )
+
+
+class DraftRecipeDetail(View):
+    """View pending approval recipe details"""
+
+    def get(self, request, slug, *args, **kwargs):
+        """Function to get the recipe details"""
+        queryset = Recipe.objects.filter(status=0)
+        recipe = get_object_or_404(queryset, slug=slug)
+
+        recipe.ingredients = recipe.ingredients.replace(
+            '[', '').replace(']', '').replace("'", '').split(',')
+
+        recipe.instructions = recipe.instructions.replace(
+            '[', '').replace(']', '').replace("'", '').split(',')
+
+        return render(
+            request,
+            "draft_recipe.html",
+            {
+                "recipe": recipe,
             },
         )
 
@@ -66,6 +92,7 @@ def AddRecipe(request):
         recipe = recipe_form.save(commit=False)
         # Post on Stack Overflow in README for appending array
         # to recipe model along with guidance from my mentor
+        recipe.ingredients = request.POST.getlist('ingredients')
         recipe.instructions = request.POST.getlist('instructions')
         recipe.author_id = request.user.id
         recipe.slug = slugify(recipe.title)

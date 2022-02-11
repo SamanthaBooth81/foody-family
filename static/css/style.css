@@ -79,6 +79,17 @@ h1 {
 }
 
 /* Add Recipe Form Styling */
+
+.add-ingredient {
+    margin-top: 5px; 
+    margin-left: 15px;
+}
+
+.add-instruction {
+    margin-top: 5px; 
+    margin-left: 15px;
+}
+
 /* #error_1_id_title,
 #error_1_id_preparation_length,
 #error_1_id_cooking_length,

@@ -61,7 +61,11 @@
 <div class="rec-detail recipe-detail">
     <div class="recipe-display left-div ingredients">
         <h2>Ingredients</h2>
-        <span>{{ recipe.ingredients|safe }}</span>
+        <ul>
+            {%for ingredient in recipe.ingredients%}
+            <li>{{ ingredient|safe }}</li>
+            {% endfor %}
+        </ul>
     </div>
 
     <div class="method">

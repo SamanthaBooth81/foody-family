@@ -34,7 +34,9 @@
                         <img src="{{ recipes.featured_image.url }}" alt="recipe image">
                         {% endif %}
                         <div class="card-body">
+                            <a href="{ %url 'draft_recipe_detail' recipes.slug %}">
                                 <h5 class="card-title draft-rec-card-title">{{ recipes.title }}</h5>
+                            </a>
                                 <hr>
                             <div class="card-text">
                                 <span class="edit-btn">
