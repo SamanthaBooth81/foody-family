@@ -137,17 +137,26 @@ class ApprovalPendingRecipes(generic.ListView):
 class UpdateRecipe(UpdateView):
     """View to update published recipes"""
     model = Recipe
-    form = RecipeForm()
-    fields = ['title', 'preparation_length', 'cooking_length',
-              'total_length', 'ingredients', 'instructions',
-              'featured_image', 'excerpt', ]
+    form_class = RecipeForm
     template_name = 'update_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
 
     # Used Stack Overflow to help get this message showing
     def form_valid(self, form):
+        request = self.request
         messages.success(self.request, 'Recipe updated successfully!')
-        return super().form_valid(form)
+        recipe = form.save(commit=False)
+        recipe.ingredients = request.POST.getlist('ingredients')
+        recipe.instructions = request.POST.getlist('instructions')
+        recipe.author_id = request.user.id
+        recipe.slug = slugify(recipe.title)
+        recipe.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+    def form_invalid(self, form):
+        """If the form is invalid, render the invalid form."""
+        print("form invalid")
+        return self.render_to_response(self.get_context_data(form=form))
 
 
 class DeleteRecipe(DeleteView):

@@ -1,8 +1,15 @@
+{%load static%}
 <div>
     {% include "django/forms/widgets/input.html" with widget=widget  %}
     <button type="button" id="add_step">Add another</button>
     <div id="step_list">
-       
+        {%for value in widget.extra_values%}
+            <div class="add-instruction" id="instruction_{{ forloop.counter0 }}"> 
+                <input type="text" name="instructions" value="{{value}}"> 
+                <button type="button" onclick="deleteInstruction(this)" class="delete_instruction" data-instruction-id="instruction_{{ forloop.counter0 }}">Delete</button>
+            </div>
+        {%endfor%}
     </div>
 
 </div>
+<script src="{% static 'js/widget.js' %}"></script>
