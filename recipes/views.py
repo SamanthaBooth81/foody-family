@@ -30,11 +30,11 @@ class RecipeDetail(View):
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        recipe.instructions = recipe.instructions.replace(
-            "['", '').replace("']", '').replace("']", '').replace(" '", '').split("',")
-
         recipe.ingredients = recipe.ingredients.replace(
             '[', '').replace('],', '').replace("'", '').split(',')
+
+        recipe.instructions = recipe.instructions.replace(
+            "['", '').replace("']", '').replace("']", '').replace(" '", '').split("',")
 
         return render(
             request,
@@ -48,6 +48,8 @@ class RecipeDetail(View):
 
 class DraftRecipeDetail(View):
     """View pending approval recipe details"""
+    model = Recipe
+    template_name = 'recipe_detail.html'
 
     def get(self, request, slug, *args, **kwargs):
         """Function to get the recipe details"""
@@ -65,6 +67,7 @@ class DraftRecipeDetail(View):
             "draft_recipe.html",
             {
                 "recipe": recipe,
+                "liked": liked,
             },
         )
 
