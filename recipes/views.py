@@ -31,10 +31,10 @@ class RecipeDetail(View):
             liked = True
 
         recipe.instructions = recipe.instructions.replace(
-            '[', '').replace(']', '').replace("'", '').split(',')
+            "['", '').replace("']", '').replace("']", '').replace(" '", '').split("',")
 
         recipe.ingredients = recipe.ingredients.replace(
-            '[', '').replace(']', '').replace("'", '').split(',')
+            '[', '').replace('],', '').replace("'", '').split(',')
 
         return render(
             request,
