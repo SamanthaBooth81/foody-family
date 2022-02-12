@@ -90,10 +90,6 @@ h1 {
     margin-left: 15px;
 }
 
-.method li {
-    padding: 10px;
-}
-
 #div_id_instructions input {
     border: 1px solid #ced4da;
 }
@@ -203,6 +199,10 @@ a:link {
     float: left;
     padding-left: 30px;
     padding-right: 15px;
+}
+
+.method li {
+    padding: 10px;
 }
 
 .ingredients {
