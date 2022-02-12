@@ -1,5 +1,10 @@
 function deleteIngredient(target) {
-    divId = target.getAttribute('data-ingredient-id')
+    divId = target.getAttribute('data-ingredient-id');
+    document.getElementById(divId).remove();
+}
+
+function deleteInstruction(target) {
+    divId = target.getAttribute('data-instruction-id');
     document.getElementById(divId).remove();
 }
 
@@ -19,15 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById('add_ingredients').addEventListener('click', add_ingredients);
 
-});
-
-function deleteInstruction(target) {
-    divId = target.getAttribute('data-instruction-id')
-    document.getElementById(divId).remove();
-}
-
-
-document.addEventListener("DOMContentLoaded", function () {
     let instructionsCounter = 0;
 
 
@@ -42,6 +38,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     document.getElementById('add_step').addEventListener('click', add_instruction);
-
 
 });

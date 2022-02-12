@@ -31,10 +31,11 @@ class RecipeDetail(View):
             liked = True
 
         recipe.ingredients = recipe.ingredients.replace(
-            '[', '').replace('],', '').replace("'", '').split(',')
+            '[', '').replace('],', '').replace("'", '').replace(']', '').split(',')
 
         recipe.instructions = recipe.instructions.replace(
-            "['", '').replace("']", '').replace("']", '').replace(" '", '').split("',")
+            "['", '').replace("']", '').replace(
+                "]", '').replace(" '", '').split("',")
 
         return render(
             request,
@@ -67,7 +68,6 @@ class DraftRecipeDetail(View):
             "draft_recipe.html",
             {
                 "recipe": recipe,
-                "liked": liked,
             },
         )
 
@@ -86,7 +86,7 @@ class RecipeLike(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-def AddRecipe(request):
+def add_recipe(request):
     """View for user to add a recipe"""
     recipe_form = RecipeForm(data=request.POST)
     print(request.POST)
@@ -141,7 +141,7 @@ class UpdateRecipe(UpdateView):
     template_name = 'update_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')
 
-    # Used Stack Overflow to help get this message showing
+    # Used Stack Overflow to help get success message showing
     def form_valid(self, form):
         request = self.request
         messages.success(self.request, 'Recipe updated successfully!')
@@ -176,17 +176,26 @@ class DeleteRecipe(DeleteView):
 class UpdatePendingRecipe(UpdateView):
     """View to update pending recipes"""
     model = Recipe
-    form = RecipeForm()
-    fields = ['title', 'preparation_length', 'cooking_length',
-              'total_length', 'ingredients', 'instructions',
-              'featured_image', 'excerpt', ]
+    form_class = RecipeForm
     template_name = 'update_recipe.html'
     success_url = reverse_lazy('my_pending_recipes')
 
-    # Used Stack Overflow to help get this message showing
+    # Used Stack Overflow to help get success message showing
     def form_valid(self, form):
+        request = self.request
         messages.success(self.request, 'Recipe updated successfully!')
-        return super().form_valid(form)
+        recipe = form.save(commit=False)
+        recipe.ingredients = request.POST.getlist('ingredients')
+        recipe.instructions = request.POST.getlist('instructions')
+        recipe.author_id = request.user.id
+        recipe.slug = slugify(recipe.title)
+        recipe.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+    def form_invalid(self, form):
+        """If the form is invalid, render the invalid form."""
+        print("form invalid")
+        return self.render_to_response(self.get_context_data(form=form))
 
 
 class DeletePendingRecipe(DeleteView):

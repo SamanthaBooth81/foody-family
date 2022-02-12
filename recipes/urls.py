@@ -1,9 +1,10 @@
+"""url paths for recipe pages"""
 from django.urls import path
 from . import views
 
 
 urlpatterns = [
-    path("add-recipe/", views.AddRecipe, name="add_recipe"),
+    path("add-recipe/", views.add_recipe, name="add_recipe"),
     path("my-recipes/",
          views.UserPostedRecipes.as_view(), name="my_posted_recipes"),
     path("pending-approval/",

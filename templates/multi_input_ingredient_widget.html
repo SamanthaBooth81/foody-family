@@ -4,13 +4,12 @@
     <button type="button" id="add_ingredients">Add Ingredient</button>
     <div id="ingredients_list">
         {%for value in widget.extra_values%}
-            <div class="add-ingredient" id="ingredient_{{ forloop.counter0 }}"> 
-                <input type="text" name="ingredients" value="{{value}}"> 
-                <button type="button" onclick="deleteIngredient(this)" class="delete_ingredient" data-ingredient-id="ingredient_{{ forloop.counter0 }}">Delete</button>
-            </div>
+        <div class="add-ingredient" id="ingredient_{{ forloop.counter0 }}">
+            <input type="text" name="ingredients" value="{{value}}">
+            <button type="button" onclick="deleteIngredient(this)" class="delete_ingredient"
+                data-ingredient-id="ingredient_{{ forloop.counter0 }}">Delete</button>
+        </div>
         {%endfor%}
-       
     </div>
-
 </div>
 <script src="{% static 'js/widget.js' %}"></script>
