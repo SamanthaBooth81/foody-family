@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let ingredientsCounter = 0;
 
     function add_ingredients(event) {
+        // help received from Code Institute tutor Sean with applying querySelector
         const ingredientsCount = document.querySelectorAll("#ingredients_list input").length;
         const ingredientsID = ingredientsCount + 1;
         ingredientId = 'ingredient_' + ingredientsID;
@@ -21,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function add_new_ingredient(event) {
-        const inputsCount = document.querySelectorAll("#ingredients_list input").length;
-        const startingID = inputsCount + 1;    
-        ingredientId = 'ingredient_' + startingID;
+        const ingredientsCount = document.querySelectorAll("#ingredients_list input").length;
+        const ingredientsID = ingredientsCount + 1;    
+        ingredientId = 'ingredient_' + ingredientsID;
         new_ingredient = '<div class="add-ingredient" id="' + ingredientId + '"> <input type="text" name="ingredients"> <button type="button" onClick="deleteIngredient(this)" class="delete_ingredient" data-ingredient-id="' + ingredientId + '">Delete</button></div>';
         ingredientsCounter = ingredientsCounter + 1;
         let newingredient = document.createElement('div');

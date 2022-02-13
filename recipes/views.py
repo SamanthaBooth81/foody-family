@@ -31,7 +31,8 @@ class RecipeDetail(View):
             liked = True
 
         recipe.ingredients = recipe.ingredients.replace(
-            '[', '').replace('],', '').replace("'", '').replace(']', '').split(',')
+            '[', '').replace('],', '').replace("'", '').replace(
+                ']', '').split(',')
 
         recipe.instructions = recipe.instructions.replace(
             "['", '').replace("']", '').replace(

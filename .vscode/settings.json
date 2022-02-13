@@ -35,6 +35,8 @@
       "gunicorn",
       "herokuapp",
       "minimise",
+      "newdiv",
+      "newingredient",
       "Procfile",
       "Pylot",
       "staticfile",
