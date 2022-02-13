@@ -2,7 +2,7 @@
 {% block title %}Foody Family | Add Recipe{% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
-
+{%load static%}
 <!-- Add Recipe Form -->
 <h1>Add Recipe</h1>
 
@@ -29,4 +29,6 @@
   <button type="submit" value="Add Recipe" class="btn btn-dark all-btn">Post Recipe</button>
 
 </form>
+
+<script src="{% static 'js/widget.js' %}"></script>
 {% endblock %}

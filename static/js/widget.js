@@ -3,32 +3,57 @@ function deleteIngredient(target) {
     document.getElementById(divId).remove();
 }
 
-function deleteInstruction(target) {
-    divId = target.getAttribute('data-instruction-id');
-    document.getElementById(divId).remove();
-}
 
 document.addEventListener("DOMContentLoaded", function () {
     let ingredientsCounter = 0;
 
-
     function add_ingredients(event) {
-        ingredientId = 'ingredient_' + ingredientsCounter;
+        const ingredientsCount = document.querySelectorAll("#ingredients_list input").length;
+        const ingredientsID = ingredientsCount + 1;
+        ingredientId = 'ingredient_' + ingredientsID;
         new_ingredient = '<div class="add-ingredient" id="' + ingredientId + '"> <input type="text" name="ingredients"> <button type="button" onClick="deleteIngredient(this)" class="delete_ingredient" data-ingredient-id="' + ingredientId + '">Delete</button></div>';
         ingredientsCounter = ingredientsCounter + 1;
         let newingredient = document.createElement('div');
         newingredient.innerHTML = new_ingredient;
         document.getElementById('ingredients_list').appendChild(newingredient);
+
+        console.log(newingredient)
     }
 
+    function add_new_ingredient(event) {
+        const inputsCount = document.querySelectorAll("#ingredients_list input").length;
+        const startingID = inputsCount + 1;    
+        ingredientId = 'ingredient_' + startingID;
+        new_ingredient = '<div class="add-ingredient" id="' + ingredientId + '"> <input type="text" name="ingredients"> <button type="button" onClick="deleteIngredient(this)" class="delete_ingredient" data-ingredient-id="' + ingredientId + '">Delete</button></div>';
+        ingredientsCounter = ingredientsCounter + 1;
+        let newingredient = document.createElement('div');
+        newingredient.innerHTML = new_ingredient;
+        document.getElementById('ingredients_list').appendChild(newingredient);
 
-    document.getElementById('add_ingredients').addEventListener('click', add_ingredients);
+        console.log(newingredient)
+    }
+    
+
+
+    document.getElementById('add_ingredients',).addEventListener('click', add_ingredients, add_new_ingredient);
+
+});
+
+function deleteInstruction(target) {
+    divId = target.getAttribute('data-instruction-id');
+    document.getElementById(divId).remove();
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
 
     let instructionsCounter = 0;
 
 
     function add_instruction(event) {
-        instructionId = 'instruction_' + instructionsCounter;
+        const instructionCount = document.querySelectorAll("#step_list input").length;
+        const ingredientID = instructionCount + 1; 
+        instructionId = 'instruction_' + ingredientID;
         new_instruction = '<div class="add-instruction" id="' + instructionId + '"> <input type="text" name="instructions"> <button type="button" onClick="deleteInstruction(this)" class="delete_instruction" data-instruction-id="' + instructionId + '">Delete</button></div>';
         instructionsCounter = instructionsCounter + 1;
         let newdiv = document.createElement('div');
@@ -36,7 +61,20 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('step_list').appendChild(newdiv);
     }
 
+    function add_new_instruction(event) {
+        const instructionCount = document.querySelectorAll("#step_list input").length;
+        const ingredientID = instructionCount + 1;    
+        ingredientId = 'ingredient_' + ingredientID;
+        new_ingredient = '<div class="add-ingredient" id="' + ingredientId + '"> <input type="text" name="ingredients"> <button type="button" onClick="deleteIngredient(this)" class="delete_ingredient" data-ingredient-id="' + ingredientId + '">Delete</button></div>';
+        ingredientsCounter = ingredientsCounter + 1;
+        let newingredient = document.createElement('div');
+        newingredient.innerHTML = new_ingredient;
+        document.getElementById('ingredients_list').appendChild(newingredient);
 
-    document.getElementById('add_step').addEventListener('click', add_instruction);
+        console.log(newingredient)
+    }
+
+
+    document.getElementById('add_step').addEventListener('click', add_instruction, add_new_instruction);
 
 });

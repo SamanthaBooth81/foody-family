@@ -2,6 +2,7 @@
 {% block title %}Foody Family | Edit Recipe{% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
+{%load static%}
 
 <h1>Edit {{ recipe.title }} Recipe</h1>
 
@@ -11,5 +12,7 @@
  
   <input type="submit" value="Update Recipe">
 </form>
+
+<script src="{% static 'js/widget.js' %}"></script>
 
 {% endblock %}

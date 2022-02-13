@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django import forms
 
 
-def LoginPage(request):
+def login_page(request):
     """User Login View"""
     # Code from Dennis Ivy YouTube Video, link in README, and amended slightly
     if request.method == 'POST':
@@ -28,7 +28,7 @@ def LoginPage(request):
     return render(request, 'accounts/login.html', context)
 
 
-def LogoutUser(request):
+def logout_user(request):
     """User Logout View"""
     # Used Django documentation for this view
     # https://docs.djangoproject.com/en/4.0/topics/auth/default/#how-to-log-a-user-out
@@ -36,7 +36,7 @@ def LogoutUser(request):
     return redirect('home')
 
 
-def RegisterUser(request):
+def register_user(request):
     """User Registration Form View.
     Used The Pylot article to help create this view.
     Link in README"""
@@ -49,7 +49,7 @@ def RegisterUser(request):
         password = form.cleaned_data.get('password1')
         user = authenticate(email=email, username=username, password=password)
         login(request, user)
-        messages.success(request, "Welcome {{ user.username }}!")
+        messages.success(request, "Welcome, you can now share your own wonderful recipes!")
         return redirect('home')
     else:
         form = UserCreationForm()
@@ -57,7 +57,7 @@ def RegisterUser(request):
     return render(request, 'accounts/register.html', {'form': form})
 
 
-def ChangePassword(request):
+def change_password(request):
     """Manage User Account to Change Password and Delete Account"""
     #  Used Professional Cipher Youtube video to help with the
     # change password view
