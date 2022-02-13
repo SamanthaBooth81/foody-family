@@ -18,21 +18,21 @@
             <span lass="card-text">
                 <div>
                     <i class="far fa-clock recipe-clock"></i>
-                    <small>
+                    <p class="timing">
                         Prep Time: {{ recipe.preparation_length }}
-                    </small>
+                    </p>
                 </div>
                 <div>
                     <i class="far fa-clock recipe-clock"></i>
-                    <small>
+                    <p class="timing">
                         Cook Time: {{ recipe.cooking_length }}
-                    </small>
+                    </p>
                 </div>
                 <div>
                     <i class="far fa-clock recipe-clock"></i>
-                    <small>
+                    <p class="timing">
                         Total: {{ recipe.total_length }}
-                    </small>
+                    </p>
                 </div>
                 <!--Code from Code Institute Blog Follow Along project-->
                 {% if user.is_authenticated %}

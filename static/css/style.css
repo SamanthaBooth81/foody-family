@@ -81,12 +81,12 @@ h1 {
 /* Add Recipe Form Styling */
 
 .add-ingredient {
-    margin-top: 5px; 
+    margin-top: 5px;
     margin-left: 15px;
 }
 
 .add-instruction {
-    margin-top: 5px; 
+    margin-top: 5px;
     margin-left: 15px;
 }
 
@@ -103,6 +103,7 @@ h1 {
 .card {
     margin: 5px;
 }
+
 .card-position {
     margin-bottom: 10px;
 }
@@ -123,7 +124,7 @@ h1 {
 
 a:link {
     text-decoration: none;
-  }
+}
 
 .card-icons {
     color: #0b1726;
@@ -136,7 +137,7 @@ a:link {
     object-fit: cover;
 }
 
-.edit{
+.edit {
     margin-right: 5px;
 }
 
@@ -167,6 +168,7 @@ a:link {
 
 .recipe-clock {
     padding-right: 5px;
+    float: left;
 }
 
 .btn-like {
@@ -178,6 +180,8 @@ a:link {
 
 .left-div {
     width: 30%;
+    margin: 0;
+    border: 0;
 }
 
 .right-div {
@@ -215,12 +219,13 @@ a:link {
     min-height: 180px;
 }
 
-.excerpt-heading{
+.excerpt-heading {
     padding-top: 2%;
 }
 
 /* edit and delete button styling */
-.edit-icon, .del-icon {
+.edit-icon,
+.del-icon {
     margin-right: 5px;
 }
 
@@ -319,7 +324,7 @@ a:link {
     margin-bottom: 30px;
 }
 
-.form-input-fields{
+.form-input-fields {
     margin: 10px;
 }
 
@@ -334,29 +339,44 @@ a:link {
 }
 
 /* Media Queries */
-@media screen and (max-width: 340px){
+@media screen and (max-width: 200px) {
+
+    /* Recipe detail - header styling */
+    .recipe-top {
+        margin-top: 3%;
+        padding-left: 10px;
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
     /* All Pages */
     .header {
         font-size: x-large;
     }
+
     .footer {
         font-size: 15px;
     }
+
     .footer p {
         padding-top: 10px;
         margin: 0;
     }
+
     .footer a {
         color: #ecece2;
         padding: 5px;
     }
 
     /* Homepage */
-    .home-img{
+    .home-img {
         width: 280px;
         margin: 0 auto;
     }
-    .title{
+
+    .title {
         padding: 0;
     }
 
@@ -369,29 +389,139 @@ a:link {
     .accounts-forms {
         width: 90%;
     }
+
     #change-pw {
         width: 100%;
     }
+
+    /* Recipe detail - header styling */
+    .recipe-heading {
+        height: 150px;
+        width: 100%;
+        background-color: #ECECE2;
+    }
+
+    .details-img {
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .right-div {
+        height: 150px;
+    }
+
+    .recipe-title {
+        font-size: medium;
+        margin-right: 0;
+    }
+
+    .recipe-title,
+    h1 {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .card-text {
+        font-size: small;
+    }
+
+    .timing {
+        font-size: xx-small;
+        margin: 0;
+    }
+
+    .recipe-top {
+        margin-top: 3%;
+        padding-left: 30px;
+        padding-top: 0;
+    }
+
+    .recipe-clock {
+        padding-right: 5px;
+        font-size: xx-small;
+    }
+
+    .btn-like {
+        border: none;
+        background: transparent;
+        padding: 0;
+        padding-right: 5px;
+        font-size: xx-small;
+    }
+
+    .text-secondary {
+        font-size: x-small;
+    }
+
+    /* Recipe Detail - Ingredients */
+    .recipe-detail {
+        margin-top: 2%;
+    }
+
+    /* Recipe Detail - Ingredients and Method div*/
+    .rec-detail {
+        padding-top: 2%;
+    }
+
+    /* Recipe Detail - Ingredients */
+    .ingredients {
+        float: left;
+        width: 100%;
+        padding-left: 0;
+        font-size: x-small;
+    }
+
+    .ingredients h2 {
+        font-size: medium;
+    }
+
+    /* Recipe Detail - Method/Instructions styling */
+    .method h2 {
+        font-size: medium;
+    }
+
+    .method {
+        padding-left: 0;
+        width: 100%;
+        font-size: x-small;
+    }
+
+    .method li {
+        padding: 10px;
+    }
+
+    /* Recipe Detail - Notes/Excerpt styling */
+    .excerpt-heading {
+        font-size: medium;
+    }
+
+    .excerpt span {
+        font-size: x-small;
+    }
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
     .footer {
         font-size: 12px;
     }
+
     .footer p {
         padding-top: 15px;
         margin: 0;
     }
+
     .footer a {
         color: #ecece2;
         padding: 2px;
     }
+
     .social-links {
         color: #ecece2;
         padding: 10px;
         margin: 0;
         font-size: 15px;
     }
+
     .title {
         margin: 100px 50px;
     }
@@ -400,6 +530,7 @@ a:link {
     .accounts-forms {
         width: 90%;
     }
+
     #change-pw {
         width: 90%;
     }
@@ -414,6 +545,7 @@ a:link {
     .accounts-forms {
         width: 90%;
     }
+
     #change-pw {
         width: 90%;
     }
