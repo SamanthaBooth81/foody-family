@@ -344,6 +344,12 @@ a:link {
     .card {
         max-width: 250px;
     }
+    .accounts-img{
+        height: 475px;
+    }
+    .accounts-forms{
+        height: 475px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -367,6 +373,17 @@ a:link {
     .btn-like {
         padding: 5px;
     }
+
+    /* Login and Registration Forms */
+    .accounts-img{
+        width: 30%;
+        height: 450px;
+    }
+    .accounts-forms{
+        width: 70%;
+        height: 450px;
+ 
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -381,6 +398,21 @@ a:link {
 
     #change-pw {
         width: 90%;
+    }
+
+    /* Login and Registration Forms */
+    .accounts-img{
+        width: 100%;
+        float: left;
+        height: 250px;
+    }
+    .accounts-forms{
+        width: 100%;
+        height: 475px;
+    }
+
+    .login-form {
+        height: 350px;
     }
 
     /* Recipe Details Page */
@@ -479,6 +511,25 @@ a:link {
         width: 90%;
     }
 
+    /* Login and Registration Forms*/
+    .accounts-img{
+        height: 200px;
+    }
+    .accounts-forms{
+        width: 100%;
+        padding: 10px;
+        height: 400px;
+    }
+
+    .login-form {
+        height: 275px;
+    } 
+
+   .accounts-forms input {
+        height: 30px;
+    }
+
+
     /* Recipe Detail Page */
     .recipe-heading {
         height: 150px;
@@ -495,8 +546,7 @@ a:link {
         height: 150px;
     }
 
-    .recipe-title,
-    h1 {
+    .recipe-title h1 {
         margin-bottom: 0;
         margin-top: 10px;
         font-size: medium;
@@ -623,11 +673,21 @@ a:link {
     }
 
     /* Change password form */
-    .accounts-forms {
-        width: 90%;
-    }
-
     #change-pw {
         width: 100%;
     }
+
+    /* Login and Registration Forms */
+
+    .accounts-img {
+        height: 150px;
+    }
+
+    .accounts-forms {
+        height: 425px
+    }
+
+    .login-form {
+        height: 300px;
+    } 
 }

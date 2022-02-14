@@ -12,7 +12,7 @@
         <img src="https://res.cloudinary.com/sjb21/image/upload/v1644420311/monika-grabkowska-TAj4X5-eRqE-unsplash-min_oopdwn.jpg"
             alt="Oranges photo" class="accounts-img">
     </div>
-    <form method="POST" action="" class="form accounts-forms">
+    <form method="POST" action="" class="form accounts-forms login-form">
 
         <!--csrf_token is used to prevent hackers calling my webpage 
             from another site. How to create login page taken from Hacker
@@ -36,7 +36,7 @@
 
         {{ form.errors }}
 
-        <p>Need an account?
+        <p class="form-input-fields">Need an account?
             Register <a href="{% url 'register' %}" class="link-item">here</a>!
         </p>
 
