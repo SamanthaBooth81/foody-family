@@ -17,26 +17,22 @@ document.addEventListener("DOMContentLoaded", function () {
         let newingredient = document.createElement('div');
         newingredient.innerHTML = new_ingredient;
         document.getElementById('ingredients_list').appendChild(newingredient);
-
-        console.log(newingredient)
     }
 
     function add_new_ingredient(event) {
         const ingredientsCount = document.querySelectorAll("#ingredients_list input").length;
-        const ingredientsID = ingredientsCount + 1;    
+        const ingredientsID = ingredientsCount + 1;
         ingredientId = 'ingredient_' + ingredientsID;
         new_ingredient = '<div class="add-ingredient" id="' + ingredientId + '"> <input type="text" name="ingredients"> <button type="button" onClick="deleteIngredient(this)" class="delete_ingredient" data-ingredient-id="' + ingredientId + '">Delete</button></div>';
         ingredientsCounter = ingredientsCounter + 1;
         let newingredient = document.createElement('div');
         newingredient.innerHTML = new_ingredient;
         document.getElementById('ingredients_list').appendChild(newingredient);
-
-        console.log(newingredient)
     }
-    
 
 
-    document.getElementById('add_ingredients',).addEventListener('click', add_ingredients, add_new_ingredient);
+
+    document.getElementById('add_ingredients', ).addEventListener('click', add_ingredients, add_new_ingredient);
 
 });
 
@@ -53,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function add_instruction(event) {
         const instructionCount = document.querySelectorAll("#step_list input").length;
-        const ingredientID = instructionCount + 1; 
+        const ingredientID = instructionCount + 1;
         instructionId = 'instruction_' + ingredientID;
         new_instruction = '<div class="add-instruction" id="' + instructionId + '"> <input type="text" name="instructions"> <button type="button" onClick="deleteInstruction(this)" class="delete_instruction" data-instruction-id="' + instructionId + '">Delete</button></div>';
         instructionsCounter = instructionsCounter + 1;
@@ -64,15 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function add_new_instruction(event) {
         const instructionCount = document.querySelectorAll("#step_list input").length;
-        const ingredientID = instructionCount + 1;    
+        const ingredientID = instructionCount + 1;
         ingredientId = 'ingredient_' + ingredientID;
         new_ingredient = '<div class="add-ingredient" id="' + ingredientId + '"> <input type="text" name="ingredients"> <button type="button" onClick="deleteIngredient(this)" class="delete_ingredient" data-ingredient-id="' + ingredientId + '">Delete</button></div>';
         ingredientsCounter = ingredientsCounter + 1;
         let newingredient = document.createElement('div');
         newingredient.innerHTML = new_ingredient;
         document.getElementById('ingredients_list').appendChild(newingredient);
-
-        console.log(newingredient)
     }
 
 
