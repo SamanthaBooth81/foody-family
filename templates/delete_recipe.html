@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block title %}Foody Family | Delete Recipe{% endblock %}
 {% block content %}
-{% load crispy_forms_tags %}
 
 <h1>Delete {{ recipe.title }} Recipe</h1>
 
-<div>
+<div class="delete-recipe">
     <form method="post">
         {% csrf_token %}
         <p>Are you sure you want to delete this recipe?</p>
-        <input type="submit" value="Delete Recipe">
+        <p>Deletion is permanent.</p>
+        <input type="submit" value="Delete Recipe" class="btn btn-danger">
+        <a href="{% url 'home' %}" class="btn btn-dark dlt-btn">Cancel</a>
     </form>
 </div>
 

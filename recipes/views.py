@@ -92,7 +92,6 @@ def add_recipe(request):
     recipe_form = RecipeForm(data=request.POST)
 
     if request.method == 'POST':
-        
 
         if recipe_form.is_valid():
             recipe = recipe_form.save(commit=False)
@@ -101,23 +100,23 @@ def add_recipe(request):
             recipe.ingredients = request.POST.getlist('ingredients')
             recipe.instructions = request.POST.getlist('instructions')
             recipe.author_id = request.user.id
-            # https://idlecoding.com/creating-custom-slugs-in-django/ 
+            # https://idlecoding.com/creating-custom-slugs-in-django/
             # used to create custom slug
-            recipe.slug = slugify('-'.join([recipe.title, 
-                                            str(recipe.author)]), 											
-                                            allow_unicode=False)
+            recipe.slug = slugify('-'.join([recipe.title,
+                                            str(recipe.author)]),
+                                  allow_unicode=False)
             messages.success(
-            request, "Recipe submitted and waiting approval!")
+                request, "Recipe submitted and waiting approval!")
             recipe.save()
             return redirect('home')
         else:
             messages.error(request, 'Fix the error')
             return render(request, "add_recipe.html",
-                      {
-                          "recipe_form": recipe_form,
-                      },
-                      )
-    
+                          {
+                              "recipe_form": recipe_form,
+                          },
+                          )
+
     else:
         return render(request, "add_recipe.html",
                       {

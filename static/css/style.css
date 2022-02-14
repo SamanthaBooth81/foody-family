@@ -141,6 +141,26 @@ a:link {
     margin-right: 5px;
 }
 
+/* Delete Recipe Styling */
+
+.delete-recipe {
+    background-color: #ECECE2;
+    margin: 0 auto;
+    padding: 40px;
+    width: 50%;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.dlt-btn {
+    margin: 5px;
+}
+
+.dlt-btn:hover {
+    color: #A7490D;
+    background-color: ghostwhite;
+}
+
 /* Recipe detail styling */
 .recipe-heading {
     height: 301px;
