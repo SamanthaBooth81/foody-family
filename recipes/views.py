@@ -156,13 +156,14 @@ class UpdateRecipe(UpdateView):
         recipe.ingredients = request.POST.getlist('ingredients')
         recipe.instructions = request.POST.getlist('instructions')
         recipe.author_id = request.user.id
-        recipe.slug = slugify(recipe.title)
+        recipe.slug = slugify('-'.join([recipe.title,
+                                        str(recipe.author)]),
+                              allow_unicode=False)
         recipe.save()
         return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid(self, form):
         """If the form is invalid, render the invalid form."""
-        print("form invalid")
         return self.render_to_response(self.get_context_data(form=form))
 
 
@@ -195,13 +196,14 @@ class UpdatePendingRecipe(UpdateView):
         recipe.ingredients = request.POST.getlist('ingredients')
         recipe.instructions = request.POST.getlist('instructions')
         recipe.author_id = request.user.id
-        recipe.slug = slugify(recipe.title)
+        recipe.slug = slugify('-'.join([recipe.title,
+                                        str(recipe.author)]),
+                              allow_unicode=False)
         recipe.save()
         return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid(self, form):
         """If the form is invalid, render the invalid form."""
-        print("form invalid")
         return self.render_to_response(self.get_context_data(form=form))
 
 
