@@ -57,15 +57,20 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 - As a Community User I can save recipes to favourites so that I can easily find them again. 
 
 # Features
-- View Recipes
-- Create an account
-- Upload, edit and remove Recipes
-- Like, comment and save Recipes
+- View Recipes - All Users
+- Create an account - All Users
+- Create, edit, read and delete all Recipes - Admin
+- Create, edit, read and delete own Recipes - User
+- Like Recipes
 
 
 # Features to be Implemented
 - Follow other users 
 - Search/Filter Options 
+- Save Recipes to favourites 
+- Comment on recipes
+- Contact Form
+- Newsletter and new recipe updates email subscription
 
 # Wireframes
 All wireframes were created used [Balsamiq](https://balsamiq.com/)

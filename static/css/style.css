@@ -601,6 +601,7 @@ a:link {
     .footer a {
         color: #ecece2;
         padding: 5px;
+<<<<<<< HEAD
     }
 
     /* Homepage */
@@ -613,6 +614,16 @@ a:link {
         margin-top: 5px;
     }
 
+=======
+    }
+
+    /* Homepage */
+    .home-img {
+        width: 280px;
+        margin: 0 auto;
+    }
+
+>>>>>>> b2669ddccff7d21136734856093d8bb2e879b166
     .title {
         padding: 0;
     }
