@@ -19,6 +19,7 @@ def login_page(request):
 
         if user.is_valid():
             login(request, user)
+            messages.success(request, 'Successfully logged in')
             return redirect('home')
         else:
             messages.info(request, 'Username or Password is incorrect')

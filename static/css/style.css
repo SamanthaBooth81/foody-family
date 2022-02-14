@@ -339,50 +339,135 @@ a:link {
 }
 
 /* Media Queries */
-@media screen and (max-width: 200px) {
 
-    /* Recipe detail - header styling */
-    .recipe-top {
-        margin-top: 3%;
-        padding-left: 10px;
-        padding-top: 0;
+@media screen and (max-width: 1200px) {
+    .card {
+        max-width: 250px;
     }
 }
 
-@media screen and (max-width: 340px) {
-
-    /* All Pages */
-    .header {
-        font-size: x-large;
+@media screen and (min-width: 768px) {
+    .card {
+        max-width: 250px;
     }
 
+    .details-img {
+        min-height: 300px;
+    }
+
+    .recipe-top {
+        margin-top: 0;
+
+    }
+
+    .recipe-clock {
+        padding: 5px;
+    }
+
+    .btn-like {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        max-width: 250px;
+    }
+
+    /* Change Password Form */
+    .accounts-forms {
+        width: 90%;
+    }
+
+    #change-pw {
+        width: 90%;
+    }
+
+    /* Recipe Details Page */
+    .details-img {
+        height: 200px;
+    }
+
+    .recipe-heading,  .right-div {
+        max-height: 200px;
+    }
+
+    .recipe-top {
+        margin-top: 0;
+    }
+
+    .recipe-title {
+        margin-right: 0;
+        font-size: large;
+    }
+
+    .card-text {
+        font-size: small;
+    }
+
+    .recipe-top {
+        margin-top: 3%;
+        padding-left: 15px;
+        padding-top: 0;
+    }
+
+    .timing {
+        font-size: small;
+        margin: 0;
+    }
+
+    .recipe-clock {
+        padding-right: 5px;
+        font-size: x-small;
+        padding-top: 5px;
+    }
+
+    .btn-like {
+        border: none;
+        background: transparent;
+        padding: 0;
+        padding-right: 5px;
+        font-size: x-small;
+    }
+
+    .text-secondary {
+        font-size: small;
+    }
+
+    .ingredients {
+        float: left;
+        width: 100%;
+    }
+
+    .method {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
     .footer {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .footer p {
-        padding-top: 10px;
+        padding-top: 15px;
         margin: 0;
     }
 
     .footer a {
         color: #ecece2;
-        padding: 5px;
+        padding: 2px;
     }
 
-    /* Homepage */
-    .home-img {
-        width: 280px;
-        margin: 0 auto;
+    .social-links {
+        color: #ecece2;
+        padding: 10px;
+        margin: 0;
+        font-size: 15px;
     }
 
     .title {
-        padding: 0;
-    }
-
-    /* Recipe Card */
-    .card {
-        max-width: 250px;
+        margin: 100px 50px;
     }
 
     /* Change password form */
@@ -391,10 +476,10 @@ a:link {
     }
 
     #change-pw {
-        width: 100%;
+        width: 90%;
     }
 
-    /* Recipe detail - header styling */
+    /* Recipe Detail Page */
     .recipe-heading {
         height: 150px;
         width: 100%;
@@ -402,7 +487,7 @@ a:link {
     }
 
     .details-img {
-        height: 150px;
+        max-height: 150px;
         object-fit: cover;
     }
 
@@ -410,15 +495,11 @@ a:link {
         height: 150px;
     }
 
-    .recipe-title {
-        font-size: medium;
-        margin-right: 0;
-    }
-
     .recipe-title,
     h1 {
         margin-bottom: 0;
         margin-top: 10px;
+        font-size: medium;
     }
 
     .card-text {
@@ -426,19 +507,20 @@ a:link {
     }
 
     .timing {
-        font-size: xx-small;
+        font-size: x-small;
         margin: 0;
     }
 
     .recipe-top {
         margin-top: 3%;
-        padding-left: 30px;
+        padding-left: 15px;
         padding-top: 0;
     }
 
     .recipe-clock {
         padding-right: 5px;
-        font-size: xx-small;
+        font-size: x-small;
+        padding-top: 3px;
     }
 
     .btn-like {
@@ -487,7 +569,7 @@ a:link {
     }
 
     .method li {
-        padding: 10px;
+        padding: 5px;
     }
 
     /* Recipe Detail - Notes/Excerpt styling */
@@ -500,43 +582,38 @@ a:link {
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 340px) {
+
+    /* All Pages */
+    .header {
+        font-size: x-large;
+    }
+
     .footer {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .footer p {
-        padding-top: 15px;
+        padding-top: 10px;
         margin: 0;
     }
 
     .footer a {
         color: #ecece2;
-        padding: 2px;
+        padding: 5px;
     }
 
-    .social-links {
-        color: #ecece2;
-        padding: 10px;
-        margin: 0;
-        font-size: 15px;
+    /* Homepage */
+    .home-img {
+        width: 280px;
+        margin: 0 auto;
     }
 
     .title {
-        margin: 100px 50px;
+        padding: 0;
     }
 
-    /* Change password form */
-    .accounts-forms {
-        width: 90%;
-    }
-
-    #change-pw {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 768px) {
+    /* Recipe Card */
     .card {
         max-width: 250px;
     }
@@ -547,18 +624,6 @@ a:link {
     }
 
     #change-pw {
-        width: 90%;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .card {
-        max-width: 250px;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .card {
-        max-width: 250px;
+        width: 100%;
     }
 }
