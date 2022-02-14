@@ -90,33 +90,36 @@ class RecipeLike(View):
 def add_recipe(request):
     """View for user to add a recipe"""
     recipe_form = RecipeForm(data=request.POST)
-    print(request.POST)
 
-    if recipe_form.is_valid():
-        recipe = recipe_form.save(commit=False)
-        # Post on Stack Overflow in README for appending array
-        # to recipe model along with guidance from my mentor
-        recipe.ingredients = request.POST.getlist('ingredients')
-        recipe.instructions = request.POST.getlist('instructions')
-        recipe.author_id = request.user.id
-        recipe.slug = slugify(recipe.title)
-        messages.success(
-            request, "Recipe submitted and waiting approval!")
-        recipe.save()
-        return redirect('home')
+    if request.method == 'POST':
+        
+
+        if recipe_form.is_valid():
+            recipe = recipe_form.save(commit=False)
+            # Post on Stack Overflow in README for appending array
+            # to recipe model along with guidance from my mentor
+            recipe.ingredients = request.POST.getlist('ingredients')
+            recipe.instructions = request.POST.getlist('instructions')
+            recipe.author_id = request.user.id
+            recipe.slug = slugify(recipe.title)
+            messages.success(
+                request, "Recipe submitted and waiting approval!")
+            recipe.save()
+            return redirect('home')
+        else:
+            messages.error(request, 'Fix the error')
+            return render(request, "add_recipe.html",
+                      {
+                          "recipe_form": recipe_form,
+                      },
+                      )
+    
     else:
-        return render(
-            request,
-            "add_recipe.html",
-            {
-                "recipe_form": recipe_form,
-            },
-        )
-    return render(request, "add_recipe.html",
-                  {
-                      "recipe_form": recipe_form,
-                  },
-                  )
+        return render(request, "add_recipe.html",
+                      {
+                          "recipe_form": recipe_form,
+                      },
+                      )
 
 
 class UserPostedRecipes(generic.ListView):

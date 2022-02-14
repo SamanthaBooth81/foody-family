@@ -609,6 +609,10 @@ a:link {
         margin: 0 auto;
     }
 
+    .app-messages {
+        margin-top: 5px;
+    }
+
     .title {
         padding: 0;
     }
