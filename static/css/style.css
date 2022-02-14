@@ -435,6 +435,11 @@ a:link {
         height: 350px;
     }
 
+     /* Delete Confirmation */
+     .delete-recipe {
+        width: 60%;
+    }
+
     /* Recipe Details Page */
     .details-img {
         height: 200px;
@@ -547,6 +552,11 @@ a:link {
 
    .accounts-forms input {
         height: 30px;
+    }
+
+     /* Delete Confirmation */
+     .delete-recipe {
+        width: 90%;
     }
 
 
@@ -709,5 +719,9 @@ a:link {
 
     .login-form {
         height: 300px;
-    } 
+    }
+     /* Delete Confirmation */
+     .delete-recipe {
+        text-align: center;
+    }
 }
