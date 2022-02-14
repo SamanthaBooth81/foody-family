@@ -101,9 +101,13 @@ def add_recipe(request):
             recipe.ingredients = request.POST.getlist('ingredients')
             recipe.instructions = request.POST.getlist('instructions')
             recipe.author_id = request.user.id
-            recipe.slug = slugify(recipe.title)
+            # https://idlecoding.com/creating-custom-slugs-in-django/ 
+            # used to create custom slug
+            recipe.slug = slugify('-'.join([recipe.title, 
+                                            str(recipe.author)]), 											
+                                            allow_unicode=False)
             messages.success(
-                request, "Recipe submitted and waiting approval!")
+            request, "Recipe submitted and waiting approval!")
             recipe.save()
             return redirect('home')
         else:
