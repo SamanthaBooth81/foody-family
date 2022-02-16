@@ -5,7 +5,7 @@
         {%for value in widget.extra_values%}
         <div class="add-ingredient" id="ingredient_{{ forloop.counter0 }}">
             <input type="text" name="ingredients" value="{{value}}">
-            <button type="button" onclick="deleteIngredient(this)" class="delete_ingredient btn btn-danger"
+            <button type="button" onclick="deleteIngredient(this)" class="delete_ingredient"
                 data-ingredient-id="ingredient_{{ forloop.counter0 }}">Delete</button>
         </div>
         {%endfor%}
