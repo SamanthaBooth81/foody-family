@@ -1,11 +1,11 @@
 <div>
-    {% include "django/forms/widgets/input.html" with widget=widget  %}
-    <button type="button" id="add_step">Add another</button>
+    {% include "django/forms/widgets/textarea.html" with widget=widget  %}
+    <button type="button" id="add_step">Add Instruction</button>
     <div id="step_list">
         {%for value in widget.extra_values%}
         <div class="add-instruction" id="instruction_{{ forloop.counter0 }}">
-            <input type="text" name="instructions" value="{{value}}">
-            <button type="button" onclick="deleteInstruction(this)" class="delete_instruction"
+            <textarea type="text" name="instructions" value="{{value}}" class="instructions"cols="30" rows="3"></textarea>
+            <button type="button" onclick="deleteInstruction(this)" class="delete_instruction btn btn-danger"
                 data-instruction-id="instruction_{{ forloop.counter0 }}">Delete</button>
         </div>
         {%endfor%}

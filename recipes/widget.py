@@ -20,7 +20,7 @@ class MultiInputIngredientWidget(forms.widgets.TextInput):
         return mark_safe(render_to_string(self.template_name, context=context))
 
 
-class MultiInputWidget(forms.widgets.TextInput):
+class MultiInputWidget(forms.widgets.Textarea):
     """allows user to create an instruction list"""
     template_name = 'multi_input_widget.html'
     instructions = 'instructions[]'

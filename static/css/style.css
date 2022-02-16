@@ -94,6 +94,40 @@ h1 {
     border: 1px solid #ced4da;
 }
 
+.add-recipe textarea {
+    width: 90%;
+}
+
+#add_ingredients,
+#add_step,
+.delete_ingredient,
+.delete_instruction {
+    background-color: #ECECE2;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 5px;
+}
+
+#add_ingredients:hover,
+#add_step:hover {
+    color: #ECECE2;
+    background-color: #A7490D;
+}
+
+.delete_ingredient,
+.delete_instruction {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.delete_ingredient:hover,
+.delete_instruction:hover {
+    background-color: crimson;
+    color: #ECECE2;
+}
+
+
 .add-recipe {
     width: 80%;
     margin: 0 auto;

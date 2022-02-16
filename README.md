@@ -238,6 +238,7 @@ I used the following websites to help with different areas of my project:
 ### Add Recipe Functionality
 - [Stack Overflow Post](https://stackoverflow.com/a/67483341), used to help with creating code to append method and ingredients arrays to the relevant fields in the Recipe Model. 
 - [Idle Coding Blog](https://idlecoding.com/creating-custom-slugs-in-django/), used to help create a custom slug using multiple fields in the database.
+- [Django Documentation](https://docs.djangoproject.com/en/4.0/ref/forms/widgets/#textarea), used to change the Instructions widget from an input field to a textarea field. 
 
 ### Update Posted Recipe Functionality
 - [Stack Overflow](https://stackoverflow.com/a/67937708), to help with the success message once posted recipe was edited. 
