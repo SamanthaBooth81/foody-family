@@ -1,8 +1,10 @@
 """Django Models of foody-family databases"""
+
 from django.db import models
 from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -37,24 +39,3 @@ class Recipe(models.Model):
     def number_of_likes(self):
         """Helper method, returns total count of likes on a recipe"""
         return self.likes.count()
-    
-    # def get_absolute_url(self):
-    #     return reverse('home')
-
-
-# class Comments(models.Model):
-#     """Django Model for comments database"""
-#     post = models.ForeignKey(
-#         Recipe, on_delete=models.CASCADE, related_name="comments")
-#     name = models.CharField(max_length=80, unique=True)
-#     email = models.EmailField()
-#     body = models.TimeField()
-#     created_on = models.BooleanField(default=True)
-#     approved = models.BooleanField(default=False)
-
-#     class Meta:
-#         """Orders posts by date created using ascending order"""
-#         ordering = ['created_on']
-
-#     def __str__(self):
-#         return f"Comment {self.body} by {self.name}"

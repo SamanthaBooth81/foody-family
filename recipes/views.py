@@ -97,6 +97,7 @@ def add_recipe(request):
             recipe = recipe_form.save(commit=False)
             # Post on Stack Overflow in README for appending array
             # to recipe model along with guidance from my mentor
+            recipe.featured_image = STATICFILES_STORAGE
             recipe.ingredients = request.POST.getlist('ingredients')
             recipe.instructions = request.POST.getlist('instructions')
             recipe.author_id = request.user.id
