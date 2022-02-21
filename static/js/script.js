@@ -1,7 +1,13 @@
 // Below from Code Institutes CodeStar project
-
-setTimeout(function () {
+document.addEventListener("DOMContentLoaded", function () {
     let messages = document.getElementById('msg');
-    let alert = new bootstrap.Alert(messages);
-    alert.close()
-}, 3000);
+
+    for (message in messages) {
+        if (messages) {
+            setTimeout(function () {
+                let alert = new bootstrap.Alert(messages);
+                alert.close()
+            }, 3000);
+        }
+    }
+})

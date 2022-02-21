@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 {% block title %}Foody Family{% endblock %}
-
 {% block content %}
+
+<!-- Below from Code Institutes CodeStar project -->
+{% if messages %}
+<div class="container app-messages">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
 
 <!-- Landing Page image with welcome message -->
 <heading>
@@ -15,20 +30,6 @@
         </div>
     </div>
 </heading>
-
-<!-- Below from Code Institutes CodeStar project -->
-<div class="container app-messages">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                {{ message | safe }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
 
 <!-- Recipe card, code taken from Bootstrap -->
 <div class="container-fluid">
@@ -85,4 +86,4 @@
     </div>
 </div>
 
-{%endblock%}
+{% endblock %}

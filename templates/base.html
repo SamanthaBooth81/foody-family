@@ -47,14 +47,19 @@
                             <span class="welcome-usr">Hi {{ user.username }}!</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'add_recipe' %}"><i class="fas fa-plus nav-icon"></i>Add Recipe</a></li>
-                            <li><a class="dropdown-item" href="{% url 'my_posted_recipes' %}"><i class="fas fa-carrot nav-icon"></i>My Posted Recipes</a></li>
-                            <li><a class="dropdown-item" href="{% url 'my_pending_recipes' %}"><i class="fas fa-ellipsis-h nav-icon"></i>Recipes Pending Approval</a></li>
-                            <li><a class="dropdown-item" href="{% url 'change_password' %}"><i class="fas fa-unlock-alt nav-icon"></i>Change Password</a></li>
+                            <li><a class="dropdown-item" href="{% url 'add_recipe' %}"><i
+                                        class="fas fa-plus nav-icon"></i>Add Recipe</a></li>
+                            <li><a class="dropdown-item" href="{% url 'my_posted_recipes' %}"><i
+                                        class="fas fa-carrot nav-icon"></i>My Posted Recipes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'my_pending_recipes' %}"><i
+                                        class="fas fa-ellipsis-h nav-icon"></i>Recipes Pending Approval</a></li>
+                            <li><a class="dropdown-item" href="{% url 'change_password' %}"><i
+                                        class="fas fa-unlock-alt nav-icon"></i>Change Password</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt nav-icon"></i>Logout</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}"><i
+                                        class="fas fa-sign-out-alt nav-icon"></i>Logout</a></li>
                         </ul>
                     </li>
                     {% else %}
