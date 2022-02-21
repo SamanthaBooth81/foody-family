@@ -19,10 +19,15 @@
   </div>
 </div>
 
-<form method="post">{% csrf_token %}
+{% load cloudinary %}
+
+<form method="post" action="" enctype="multipart/form-data">
+  
+  {% csrf_token %}
 
   {{ form | crispy }}
  
+  <br>
   <input type="submit" value="Update Recipe">
 </form>
 

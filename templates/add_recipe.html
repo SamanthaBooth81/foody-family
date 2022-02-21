@@ -22,7 +22,10 @@
   </div>
 </div>
 
-<form method="post" id="add-recipe" class="add-recipe">
+{% load cloudinary %}
+
+<form method="post" id="add-recipe" class="add-recipe" action="" enctype="multipart/form-data">
+
 
   {% csrf_token %}
   {{ recipe_form | crispy }}

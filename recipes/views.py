@@ -1,5 +1,4 @@
 """Views for the different pages to be rendered"""
-from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.generic import UpdateView, DeleteView
 from django.views import generic, View
@@ -89,15 +88,15 @@ class RecipeLike(View):
 
 def add_recipe(request):
     """View for user to add a recipe"""
-    recipe_form = RecipeForm(data=request.POST)
+    recipe_form = RecipeForm()
 
     if request.method == 'POST':
+        recipe_form = RecipeForm(request.POST, request.FILES)
 
         if recipe_form.is_valid():
             recipe = recipe_form.save(commit=False)
             # Post on Stack Overflow in README for appending array
             # to recipe model along with guidance from my mentor
-            recipe.featured_image = STATICFILES_STORAGE
             recipe.ingredients = request.POST.getlist('ingredients')
             recipe.instructions = request.POST.getlist('instructions')
             recipe.author_id = request.user.id
@@ -205,6 +204,7 @@ class UpdatePendingRecipe(UpdateView):
 
     def form_invalid(self, form):
         """If the form is invalid, render the invalid form."""
+        messages.error(self.request, 'Cannot Update Recipe')
         return self.render_to_response(self.get_context_data(form=form))
 
 
