@@ -200,7 +200,7 @@ a:link {
 }
 
 #delete-msg {
-    color: #ce1313;    
+    color: #ce1313;
 }
 
 /* Recipe detail styling */
@@ -412,10 +412,12 @@ a:link {
     .card {
         max-width: 250px;
     }
-    .accounts-img{
+
+    .accounts-img {
         height: 475px;
     }
-    .accounts-forms{
+
+    .accounts-forms {
         height: 475px;
     }
 }
@@ -443,14 +445,15 @@ a:link {
     }
 
     /* Login and Registration Forms */
-    .accounts-img{
+    .accounts-img {
         width: 30%;
         height: 450px;
     }
-    .accounts-forms{
+
+    .accounts-forms {
         width: 70%;
         height: 450px;
- 
+
     }
 }
 
@@ -469,12 +472,13 @@ a:link {
     }
 
     /* Login and Registration Forms */
-    .accounts-img{
+    .accounts-img {
         width: 100%;
         float: left;
         height: 250px;
     }
-    .accounts-forms{
+
+    .accounts-forms {
         width: 100%;
         height: 475px;
     }
@@ -483,8 +487,8 @@ a:link {
         height: 350px;
     }
 
-     /* Delete Confirmation */
-     .delete-recipe {
+    /* Delete Confirmation */
+    .delete-recipe {
         width: 60%;
     }
 
@@ -493,7 +497,8 @@ a:link {
         height: 200px;
     }
 
-    .recipe-heading,  .right-div {
+    .recipe-heading,
+    .right-div {
         max-height: 200px;
     }
 
@@ -585,10 +590,11 @@ a:link {
     }
 
     /* Login and Registration Forms*/
-    .accounts-img{
+    .accounts-img {
         height: 200px;
     }
-    .accounts-forms{
+
+    .accounts-forms {
         width: 100%;
         padding: 10px;
         height: 400px;
@@ -596,14 +602,14 @@ a:link {
 
     .login-form {
         height: 275px;
-    } 
+    }
 
-   .accounts-forms input {
+    .accounts-forms input {
         height: 30px;
     }
 
-     /* Delete Confirmation */
-     .delete-recipe {
+    /* Delete Confirmation */
+    .delete-recipe {
         width: 90%;
     }
 
@@ -708,6 +714,17 @@ a:link {
     .excerpt span {
         font-size: x-small;
     }
+
+    /* Recipe Card Styling */
+    .card {
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .rec-title {
+        margin: 0;
+        margin-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 340px) {
@@ -768,8 +785,9 @@ a:link {
     .login-form {
         height: 300px;
     }
-     /* Delete Confirmation */
-     .delete-recipe {
+
+    /* Delete Confirmation */
+    .delete-recipe {
         text-align: center;
     }
 }

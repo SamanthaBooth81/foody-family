@@ -22,9 +22,9 @@ class MultiInputIngredientWidget(forms.widgets.TextInput):
             values = value.replace('[', '').replace(
                 ']', '').replace("'", '').split(',')
             value = values.pop(0)
-        
+
         context = {'widget': {'name': 'ingredients', 'type': 'text',
-                            'value': value, 'extra_values': _value}}
+                              'value': value, 'extra_values': _value}}
         return mark_safe(render_to_string(self.template_name, context=context))
 
 
@@ -44,7 +44,7 @@ class MultiInputWidget(forms.widgets.Textarea):
             values = value.replace('[', '').replace(
                 ']', '').replace("'", '').split(',')
             value = values.pop(0)
-        
+
         context = {'widget': {'name': 'instructions', 'type': 'text',
-                            'value': value, 'extra_values': _value}}
+                              'value': value, 'extra_values': _value}}
         return mark_safe(render_to_string(self.template_name, context=context))
