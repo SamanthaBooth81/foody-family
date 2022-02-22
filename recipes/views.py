@@ -6,6 +6,7 @@ from django.utils.text import slugify
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -130,15 +131,15 @@ class UserPostedRecipes(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1)
     template_name = 'my_recipes.html'
-    paginate_by = 12
+    paginate_by = 14
 
 
 class ApprovalPendingRecipes(generic.ListView):
     """View for the list of recipes pending"""
     model = Recipe
+    paginate_by = 14
     queryset = Recipe.objects.filter(status=0)
     template_name = 'my_drafts.html'
-    paginate_by = 12
 
 
 class UpdateRecipe(UpdateView):
