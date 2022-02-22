@@ -285,6 +285,12 @@ a:link {
     padding-top: 2%;
 }
 
+/* Edit recipe styling */
+
+.update textarea {
+    width: 100%;
+}
+
 /* edit and delete button styling */
 .edit-icon,
 .del-icon {

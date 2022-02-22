@@ -4,7 +4,7 @@
     <div id="step_list">
         {%for value in widget.extra_values%}
         <div class="add-instruction" id="instruction_{{ forloop.counter0 }}">
-            <input type="text" name="instructions" value="{{value}}" class="instructions"cols="30" rows="3">
+            <textarea type="text" name="instructions" value="{{value}}" class="instructions" cols="30" rows="3">{{value}}</textarea>
             <button type="button" onclick="deleteInstruction(this)" class="delete_instruction"
                 data-instruction-id="instruction_{{ forloop.counter0 }}">Delete</button>
         </div>
