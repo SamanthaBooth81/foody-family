@@ -72,6 +72,10 @@ main {
     font-family: 'Ribeye Marrow', cursive;
 }
 
+.page {
+    margin: 10px;
+}
+
 /* Headings styling for all pages */
 h1 {
     text-align: center;
