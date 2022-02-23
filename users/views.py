@@ -1,11 +1,9 @@
 """Views for the different pages to be rendered"""
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
-from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
-from django.urls import reverse_lazy
-from django import forms
+from django.contrib.auth import (
+    authenticate, login, logout, update_session_auth_hash)
 
 
 def login_page(request):
@@ -43,15 +41,21 @@ def register_user(request):
     Link in README"""
 
     form = UserCreationForm(request.POST)
-    if form.is_valid():
-        form.save()
-        email = form.cleaned_data.get('email')
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password1')
-        user = authenticate(email=email, username=username, password=password)
-        login(request, user)
-        messages.success(request, "Welcome, you can now share your own wonderful recipes!")
-        return redirect('home')
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            email = form.cleaned_data.get('email')
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(
+                email=email, username=username, password=password)
+            login(request, user)
+            messages.success(
+                request, "Welcome, you can now share your own recipes!")
+            return redirect('home')
+        else:
+            messages.error(request, 'Form Error, please try again.')
+            form = UserCreationForm()
     else:
         form = UserCreationForm()
 
