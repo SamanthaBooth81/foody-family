@@ -1,5 +1,6 @@
+<!-- Ingredients Input Widget, used on Add Recipe and Update Recipe Pages -->
 <div>
-    {% include "django/forms/widgets/input.html" with widget=widget  %}
+    {% include "django/forms/widgets/input.html"%}
     <button type="button" id="add_ingredients">Add Ingredient</button>
     <div id="ingredients_list">
         {%for value in widget.extra_values%}

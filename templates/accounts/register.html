@@ -6,30 +6,46 @@
     <h1>Register</h1>
 </header>
 
+<!-- Below from Code Institutes CodeStar project to display messages at top of page. -->
+{% if messages %}
+<div class="container app-messages">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <!-- User Registration Form -->
 <div id="logging-in">
     <div>
         <img src="https://res.cloudinary.com/sjb21/image/upload/v1644420311/monika-grabkowska-TAj4X5-eRqE-unsplash-min_oopdwn.jpg"
-            alt="Oranges photo" class="accounts-img">
+            alt="Oranges placeholder image" class="accounts-img">
     </div>
     <form method="POST" action="" class="form accounts-forms">
         {% csrf_token %}
 
         <div class="form-input-fields">
             <label for="email">Email</label><br>
-            <input type="email" name="email" class="registration-input" required>
+            <input type="email" name="email" id="email" class="registration-input" required>
         </div>
         <div class="form-input-fields">
             <label for="username">Username</label><br>
-            <input type="username" name="username" class="registration-input" required>
+            <input type="text" name="username" id="username" class="registration-input" required>
         </div>
         <div class="form-input-fields">
             <label for="password1">Password</label><br>
-            <input type="password" name="password1" class="registration-input">
+            <input type="password" name="password1" id="password1" class="registration-input">
         </div>
         <div class="form-input-fields">
             <label for="password2">Repeat Password</label><br>
-            <input type="password" name="password2" class="registration-input" required>
+            <input type="password" name="password2" id="password2" class="registration-input" required>
         </div>
         <div class="form-input-fields">
             <button type="submit" class="btn btn-dark all-btn">Register</button>

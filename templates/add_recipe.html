@@ -3,10 +3,10 @@
 {% block content %}
 {% load crispy_forms_tags %}
 {%load static%}
-<!-- Add Recipe Form -->
+
 <h1>Add Recipe</h1>
 
-<!-- Below from Code Institutes CodeStar project -->
+<!-- Below from Code Institutes CodeStar project. Message to appear beneath page if one. -->
 {% if messages %}
 <div class="container">
   <div class="row">
@@ -22,7 +22,12 @@
 </div>
 {% endif %}
 
+<!-- load cloudinary allows user to upload their own images -->
+
 {% load cloudinary %}
+
+<!-- Add Recipe Form, can only be accessed if the user has an account.
+Form model, fields and widgets set in forms.py file in recipes app. -->
 
 <form method="post" id="add-recipe" class="add-recipe" action="" enctype="multipart/form-data">
 

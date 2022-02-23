@@ -2,7 +2,7 @@
 {% block title %}Foody Family{% endblock %}
 {% block content %}
 
-<!-- Below from Code Institutes CodeStar project -->
+<!-- Below from Code Institutes CodeStar project, display messages at top of page. -->
 {% if messages %}
 <div class="container app-messages">
     <div class="row">
@@ -19,19 +19,19 @@
 {% endif %}
 
 <!-- Landing Page image with welcome message -->
-<heading>
-    <div class="container-fluid home-img">
-        <div class="row">
-            <div class="col title">
-                <h1 class="welcome-title">Welcome to the Foody Family</h1>
-                <hr>
-                <p class="welcome-msg">Scroll down to find the perfect recipe!</p>
-            </div>
+
+<div class="container-fluid home-img">
+    <div class="row">
+        <div class="col title">
+            <h1 class="welcome-title">Welcome to the Foody Family</h1>
+            <hr>
+            <p class="welcome-msg">Scroll down to find the perfect recipe!</p>
         </div>
     </div>
-</heading>
+</div>
 
-<!-- Recipe card, code taken from Bootstrap -->
+
+<!-- Recipe cards, basic code taken from Bootstrap to list all posted and approved recipes -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-4 ">
@@ -45,7 +45,8 @@
                             <img src="https://res.cloudinary.com/sjb21/image/upload/v1642006351/static/placeholder_nrind0.jpg"
                                 class="card-img-top recipe-card-img" alt="placeholder image">
                             {% else %}
-                            <img src="{{ recipes.featured_image.url }}" alt="recipe image" class="card-img-top recipe-card-img">
+                            <img src="{{ recipes.featured_image.url }}" alt="recipe image"
+                                class="card-img-top recipe-card-img">
                             {% endif %}
                         </a>
                         <div class="card-body">
@@ -69,17 +70,19 @@
         </div>
     </div>
 
-    <!-- Site Pagination, maximum 12 recipes per page -->
+    <!-- Site Pagination, maximum 12 recipes per page. From Code Institute Codestar Follow Along Project -->
     <div>
         {% if is_paginated %}
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
                 {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-dark all-btn page">&laquo; Prev </a>
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-dark all-btn page">&laquo; Prev
+                    </a>
                 </li>
                 {% endif %}
                 {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-dark all-btn page"> Next &raquo;</a></li>
+                <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-dark all-btn page"> Next &raquo;</a>
+                </li>
 
                 {% endif %}
             </ul>

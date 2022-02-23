@@ -6,6 +6,8 @@
 
 <h1>Edit {{ recipe.title }} Recipe</h1>
 
+<!-- Below from Code Institutes CodeStar project to display messages at top of page. -->
+
 <div class="container app-messages">
   <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -19,7 +21,10 @@
   </div>
 </div>
 
+<!-- load cloudinary allows user to upload their own images -->
 {% load cloudinary %}
+
+<!-- Update Recipe form, can only be viewed by the user who's recipe it is. -->
 
 <form method="post" action="" enctype="multipart/form-data" class="update">
   

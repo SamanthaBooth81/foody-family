@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Foody Family | My Posted Recipes{% endblock %}
 {% block content %}
+<!-- Approved Recipes page, lists all of the users recipes that are approved by the admin. -->
 
 <h1>My Posted Recipes</h1>
 
-<!-- Below from Code Institutes CodeStar project -->
+<!-- Below from Code Institutes CodeStar project to display messages at top of page. -->
 {% if messages %}
 <div class="container app-messages">
     <div class="row">
@@ -20,6 +21,8 @@
 </div>
 {% endif %}
 
+<!-- Lists users approved/posted recipes for editing or deleting.
+Card code from Bootstrap -->
 <div class="container-fluid">
     <div class="row align-items-start">
         <div class="col-md-12 mt-4 left">
@@ -47,7 +50,7 @@
                                             class="fas fa-pencil-alt edit-icon"></i>Edit</a>
                                 </span>
                                 <span class="del-btn">
-                                    <a href="{% url 'delete_recipe' recipes.pk %}" class="btn btn-danger" class="del"><i
+                                    <a href="{% url 'delete_recipe' recipes.pk %}" class="btn btn-danger del"><i
                                             class="far fa-trash-alt del-icon"></i>Delete</a>
                                 </span>
                             </div>

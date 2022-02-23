@@ -2,6 +2,8 @@
 {% block title %}Foody Family | {{ recipe.title }}{% endblock %}
 {% block content %}
 
+<!-- Displays the full detail for the recipe, the user can also like the recipe on this page -->
+
 <div class="recipe-heading">
     <div class="card mb-3 recipe-display left-div">
         {% if "placeholder" in recipe.featured_image.url %}
@@ -13,9 +15,11 @@
     </div>
     <div class="recipe-display right-div">
         <div class="card-body recipe-top">
+            <!-- Author and Title -->
             <h1 class="card-title recipe-title">{{ recipe.title }}</h1>
             <h3 class="card-text">By {{ recipe.author }}</h3>
-            <span lass="card-text">
+            <div class="card-text">
+                <!-- Prep, Cook and Total Time -->
                 <div>
                     <i class="far fa-clock recipe-clock"></i>
                     <p class="timing">
@@ -34,7 +38,7 @@
                         Total: {{ recipe.total_length }}
                     </p>
                 </div>
-                <!--Code from Code Institute Blog Follow Along project-->
+                <!-- Like Recipe - Code from Code Institute Blog Follow Along project-->
                 {% if user.is_authenticated %}
                 <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
                     {% csrf_token %}
@@ -52,12 +56,12 @@
                 <span><i class="far fa-heart"></i></span>
                 {% endif %}
                 <span class="text-secondary">{{ recipe.number_of_likes }}</span>
-            </span>
+            </div>
         </div>
     </div>
-
 </div>
 
+<!-- Ingredients section -->
 <div class="rec-detail recipe-detail">
     <div class="recipe-display left-div ingredients">
         <h2>Ingredients</h2>
@@ -67,6 +71,8 @@
             {% endfor %}
         </ul>
     </div>
+
+    <!-- Instructions section -->
 
     <div class="method">
         <h2>Method</h2>
@@ -79,6 +85,7 @@
     </div>
 </div>
 
+<!-- Notes section -->
 <div class="rec-detail excerpt">
     <hr>
     <h2 class="excerpt-heading">Notes</h2>
