@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-// Below partially from Code Institutes CodeStar project
+// Below partially from Code Institutes CodeStar project to set timeout function for all messages
 document.addEventListener("DOMContentLoaded", function () {
     let messages = document.getElementById('msg');
 

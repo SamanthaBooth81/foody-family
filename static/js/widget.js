@@ -1,4 +1,4 @@
-
+// widgets for adding ingredients and deleting ingredient input elements
 
 function deleteIngredient(target) {
     divId = target.getAttribute('data-ingredient-id');
@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('add_ingredients', ).addEventListener('click', add_ingredients, add_new_ingredient);
 
 });
+
+// widgets for adding instructions and deleting instruction textarea elements
 
 function deleteInstruction(target) {
     divId = target.getAttribute('data-instruction-id');
