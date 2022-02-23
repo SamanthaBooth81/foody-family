@@ -32,7 +32,6 @@ FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
 DEBUG = development
 
 
@@ -63,7 +62,6 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
-# LOGOUT_REDIRECT_URL = 'home'
 
 # Below from Code Institutes CodeStar project
 MESSAGE_TAGS = {
@@ -101,7 +99,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ]
         },
-        
     },
 ]
 
