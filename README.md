@@ -133,7 +133,13 @@ I have manually tested the project by:
 
 # Validator Testing
 
-The code was validated using [PEP8](http://pep8online.com/). No errors were returned. 
+- The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/#textarea). No errors were returned for the html segments.
+- The CSS style sheet was validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input), no errors were returned.
+- The JavaScript files were run through [JSHint](https://jshint.com/). Received the following warning message - 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). This is a warning that browsers implementing versions of JS prior to es6 won't understand let. I added ***/* jshint esversion 6 */*** to the top of my JS pages to let jshint know that the minimum language version I am targeting is es6.
+
+- The code was validated using [PEP8](http://pep8online.com/). No errors were returned.
+
+- The finished project was also run through [Wave](https://wave.webaim.org/) to check for issues with contrast styling and html structure. A warning was raised for the Bootstrap cards as the title is a H1 element and then the Author is a H5 element but this is how Bootstrap has coded their Cards.
 
 # Bugs Found 
 
