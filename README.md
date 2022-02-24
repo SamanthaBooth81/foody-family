@@ -81,6 +81,11 @@ For the remainder of the project the font I have chosen is Baloo Thambi 2, also 
 
 <img src="static/assets/readme_images/Baloo-Thambi-2.png" width="180px">
 
+## Favicon 
+I created a basic Favicon for this project using [Canva](https://www.canva.com/). 
+
+<img src="static/assets/readme_images/favicon.png" height="150px">
+
 
 # Features to be Implemented
 - Follow other users 
