@@ -68,12 +68,13 @@ def change_password(request):
     # change password view
     form = PasswordChangeForm(user=request.user, data=request.POST)
 
-    if form.is_valid():
-        form.save()
-        messages.success(request, "Password Updated")
-        update_session_auth_hash(request, form.user)
-        return redirect('home')
-    else:
-        messages.error(request, "Incorrect Password or New Passwords do not match")
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Password Updated")
+            update_session_auth_hash(request, form.user)
+            return redirect('home')
+        else:
+            messages.error(request, "Incorrect Password or New Passwords do not match")
 
     return render(request, 'accounts/change_password.html', {'form': form})
