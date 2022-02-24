@@ -42,21 +42,15 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 ## User Stories
 ### Superuser / Admin
 - As a Superuser I can approve and manage the recipes uploaded by community members so that anything unsafe can be removed from the website. 
-- As a Superuser I can showcase my favourite recipe on the homepage so that other users can try them out. 
-- As a Superuser I can be contacted by all users so I can be made aware of any issues.
 
 ### General User
 - As a General User I can look through a paginated list of recipes so that I can select a recipe to try out.
-- As a General User I can search for a recipe so that I can minimise time searching for what I need. 
 - As a General User I can view an entire recipe so that I can learn new dishes.
-- As a General User I can contact the site owner so that if there is an issue they will be notified.
 
 ### Community User
-- As a Community User I can log into my own account so I can manage Username and Password information and delete my account.
-- As a Community User I create an account so that I can create, edit, update, and delete my own posts.
-- As a Community User I can follow other Community Users so I can find recipes from my favourite chefs.
+- As a Community User I can log into my own account so I can update my Password if necessary.
+- As a Community User I register an account so that I can create, update, and delete my own recipes.
 - As a Community User I can like recipes I have tried so that other users may be encouraged to try them. 
-- As a Community User I can save recipes to favourites so that I can easily find them again. 
 
 # Features
 - View Recipes - All Users
@@ -64,6 +58,8 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 - Create, edit, read and delete all Recipes - Admin
 - Create, edit, read and delete own Recipes - User
 - Like Recipes
+- Change Password
+- View Full Recipe Details
 
 ## Colour Scheme 
 
@@ -162,13 +158,91 @@ The project follows the below logic:
 
 <img src="assets/images/logic_flow_chart.png" height="350px"> 
 
+## Manual Testing by User Story
+### **Superuser / Admin**
+- As a Superuser I can approve and manage the recipes uploaded by community members so that anything unsafe can be removed from the website. 
 
-I have manually tested the project by:
-- Adding multiple recipes to ensure:
-    - The layout works as expected
-    - The images displayed correctly, whether uploaded by the user or using the placeholder image instead
-    - The recipe details were displaying the correct recipe chosen to be viewed 
+This was tested by uploading recipes via the website and viewing them in the Django Admin Recipe Page. If a recipe is pending approval it appears in the admin as a draft recipe, waiting to be changed to published if all ok. If any issues, the recipe can be deleted on the admin panel. 
 
+### **General User**
+- As a General User I can look through a paginated list of recipes so that I can select a recipe to try out.
+
+This was tested by ensuring all published recipes, by all authors, can be viewed on the homepage without logging in via comparing what is in the admin panel against what can be viewed on the homepage. 
+
+- As a General User I can view an entire recipe so that I can learn new dishes.
+
+This was tested by clicking either the recipe image or title to ensure the detail page loads and checking the title matches the title on the recipe card. This was further checked by viewing the details on the admin page compared to the websites recipe detail page to ensure they match. 
+
+Both the recipe card and the recipe details can be views without being logged in. 
+
+### **Community User**
+- As a Community User I can log into my own account so I can update my Password if necessary.
+
+This was tested by creating a non-admin account and changing the password via the change password page. This page is only visible if a user logged into their account. The user can only change their password if they input the correct current password. If a correct password or the new passwords do not match an error message is displayed to the user. 
+
+- As a Community User I register an account so that I can create, update, and delete my own recipes.
+
+This was tested by creating multiple accounts to ensure an error message appeared if the username was already taken or if passwords didn’t match.
+
+- As a Community User I can like recipes I have tried so that other users may be encouraged to try them. 
+
+This was tested by signing in as different users and liking recipes to see if the icon changed colour to indicated it had been liked/unliked and to check the total liked increased per recipe. 
+
+## General Manual Testing 
+**Add Recipe**
+- Adding multiple recipes of various sizes to ensure:
+    - Entire Recipe saved in the database, including all ingredients and instructions to be later displayed correctly in the recipe detail page.
+- Image Upload testing:
+    - Uploaded multiple recipes with and without an image to ensure any images uploaded were stored to Cloudinary, otherwise, the placeholder image was displayed. 
+- Duplicate Recipe Titles:
+    -   Checking an error message alerts the user of a duplicate title.
+    - Added the author name to the recipe detail slug to allow for slightly more flexibility with recipe titles.
+- Required Form Fields:
+    - Submitting empty recipe form to ensure all required fields are notifying the user if left empty.
+- Adding Ingredients and Instructions:
+    - Using Google Chromes Inspect to check all entries are given a unique ID for editing later.
+    - Clicking the add and delete buttons to make sure they add and remove the widgets. Double checking they are removed via the Recipe Detail page. 
+
+**Edit Recipe**
+- Retrieving the chosen recipe for editing:
+    - Match the recipe details from the details view with the edit view across multiple recipes.
+- Able to change and save changes to recipe:
+    - Making changes and raising error messages if inputs are invalid, fields are blank or title is not unique.
+    - Check changes are saved to the correct recipe by viewing the details after making changes. 
+
+**Delete Recipe**
+- Retrieving the chosen recipe to be deleted:
+    - Checking the list of recipes to ensure the correct recipe was deleted
+- Delete Confirmation:
+    - Ensuring there is a confirmation page for the user so the recipe isn't automatically deleted.
+    - Checked that although the delete button click, if not confirmed, the recipe is still on the recipe list (both the users list and homepage).
+
+**View Recipe List**
+- Visual check to see if only recipes that have been approved on the homepage. Checked against the Django Admin page. 
+- Checked to see if approved recipes by all users are displayed on the home page. Checked against the Django Admin page. 
+- Displays only the users posted recipes on the Posted Recipes Page. Checked the author of all recipes is the same on every recipe.
+- Displays only the pending approval recipes on the Recipes Pending Approval Page. Checked the author of all recipes is the same on every recipe.
+- Checked the placement of the recipe cards works on all screen sizes.
+- Checked total recipe cards per page is 12 and that the pagination appears if there are multiple pages by adding over 12 recipes both by 1 user and multiple users. These were deleted later when testing the delete recipe functionality.  
+- Checked the recipes are ordered by updated date by editing a recipe and checking it became the first recipe on the page. Also checked the order of the recipes in the admin to ensure it matched. 
+
+**View Recipe Detail**
+- Adding multiple recipes of various sizes to ensure:
+    - The layout works as expected, especially on mobile devices where the page layout is as a list. On larger devices Ingredients and Method list side by side.  
+    - The images displayed correctly, whether uploaded by the user or using the placeholder image instead.
+    - The recipe details were displaying the correct recipe chosen to be viewed.
+
+**Like Button in Details Page**
+- Checked it works for all users and increments number of likes both on recipe details page and recipe cards. 
+
+
+**User Registration**
+**User Login**
+**User Logout**
+**Change Password**
+
+
+I have also submitted my project for Peer Code Review on Code Institutes Slack Channel but received no feedback. 
 # Validator Testing
 
 - The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/#textarea). No errors were returned for the html segments.
@@ -183,9 +257,11 @@ I have manually tested the project by:
 
 I encountered the following issues whilst building this project:
 - Summernote's text area boxes were not displaying as lists on the webpage. To fix this I added |safe to the code linking to those model fields which removed the tags and displayed them as the lists they are. 
-- The above then created an issue when creating in the add and edit recipe pages to the app as I couldn't user the Summernote functionality on the webpage. To fix this I created two widgets using JavaScript that appended inputs into a list that was then split to be displayed to the user, giving each item it's own unique ID to enable a delete.
+- The above then created an issue when creating in the add and edit recipe pages to the app as I couldn't user the Summernote functionality on the webpage. To fix this I created two widgets using JavaScript that appended inputs into an array that was then split to be displayed as a list to the user, giving each item it's own unique ID to enable a delete.
 - My registration redirect wasn't redirecting as expected. To fix this I removed the URL from the 'form action' to make this an empty string instead. 
 - Login success and error message not showing. To fix this I changed my url path from Django's LoginView to load my own template. 
+- User image uploads weren't uploading to Cloudinary. To fix this I added {% load cloudinary %} above and enctype="multipart/form-data" to the add and update recipe forms.
+- Console Error for JavaScrip Message Timeout - alert.js:23 Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented'). To fix this I amended the timeout function in the script.js file to work only if there is a message present. 
 
 # Deployment 
 

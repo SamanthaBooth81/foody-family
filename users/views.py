@@ -54,7 +54,7 @@ def register_user(request):
                 request, "Welcome, you can now share your own recipes!")
             return redirect('home')
         else:
-            messages.error(request, 'Form Error, please try again.')
+            messages.error(request, 'Error, either passwords not a match or username taken.')
             form = UserCreationForm()
     else:
         form = UserCreationForm()
@@ -67,10 +67,13 @@ def change_password(request):
     #  Used Professional Cipher Youtube video to help with the
     # change password view
     form = PasswordChangeForm(user=request.user, data=request.POST)
+
     if form.is_valid():
         form.save()
         messages.success(request, "Password Updated")
         update_session_auth_hash(request, form.user)
         return redirect('home')
+    else:
+        messages.error(request, "Incorrect Password or New Passwords do not match")
 
     return render(request, 'accounts/change_password.html', {'form': form})
