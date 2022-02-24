@@ -1,5 +1,5 @@
 /* Google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Ribeye+Marrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Ribeye+Marrow&family=Roboto:wght@300&display=swap');
 
 /* Sticky Footer - Code from https://css-tricks.com/couple-takes-sticky-footer/ */
 html,
@@ -10,7 +10,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    font-family: 'Baloo Thambi 2', cursive;
+    font-family: 'Baloo Thambi 2', cursive, 'Roboto', sans-serif;;
 }
 
 .content {
@@ -22,7 +22,7 @@ body {
 }
 
 .header {
-    font-family: 'Ribeye Marrow', cursive;
+    font-family: 'Ribeye Marrow', cursive, 'Roboto', sans-serif;;
     font-size: xx-large;
     color: #A7490D;
 }

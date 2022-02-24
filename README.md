@@ -65,6 +65,22 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 - Create, edit, read and delete own Recipes - User
 - Like Recipes
 
+## Colour Scheme 
+
+The colour scheme for the project was put together using [Adobe Color](https://color.adobe.com/create/image) by uploading the landing page image. The colour scheme decided is:
+
+<img src="static/assets/readme_images/color-choice.png" width="500px">
+
+## Font Choice
+
+For the Foody Family Logo I chose to use Ribeye Marrow with Roboto as a fallback font. 
+
+<img src="static/assets/readme_images/ribeye-marrow.png" width="200px">
+
+For the remainder of the project the font I have chosen is Baloo Thambi 2, also with a fallback font of Roboto. 
+
+<img src="static/assets/readme_images/Baloo-Thambi-2.png" width="180px">
+
 
 # Features to be Implemented
 - Follow other users 
