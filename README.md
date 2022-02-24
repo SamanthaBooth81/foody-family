@@ -76,20 +76,7 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 
 # Wireframes
 All wireframes were created used [Balsamiq](https://balsamiq.com/)
-
-### Homepage
-
-### Registration, Login, Logout
-
-### Recipe Details
-
-### Manage Account
-
-### Profile
-
-### Add Recipe
-
-### Recipe Management 
+[Wireframes can be viewed here](static/assets/documents/Wireframes.pdf)
 
 # Structure
 I have kept the structure simple to not crowd the user with information. The homepage contains all of the recipes that are approved by the superuser/admin, which is also paginated therefore limits the recipe cards to 12 per page. 
