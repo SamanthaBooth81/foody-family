@@ -233,12 +233,24 @@ This was tested by signing in as different users and liking recipes to see if th
     - The recipe details were displaying the correct recipe chosen to be viewed.
 
 **Like Button in Details Page**
-- Checked it works for all users and increments number of likes both on recipe details page and recipe cards. 
-
+- Checked it works for all users and increments number of likes both on recipe details page and recipe cards by asking friends and family to create accounts to help test and by creating multiple accounts myself.
 
 **User Registration**
+- Raising error messages if Username already exists or passwords do not match. 
+    - Checked this by trying to create users with the same username and also by creating users with a unqiue username and unmatching passwords. Error message appears at top of page.
+
 **User Login**
+- Raising error messages if Username or Password incorrect
+    I checked this by intentionally inputting incorrect data to see if the error message worked. Error message appears at top of page.
+- Navbar displaying welcome message to the user upon logging in.
+    - When a user logs in you will see messahe: *Hi username!* with a chevron next to it containing the additional pages available to registered users. 
+- Access to personal recipe posts, both published and pending approval.
+    - Navigated to each page to check if list of recipes matches what is in the database for the user. 
+
 **User Logout**
+- Removes access to additional functionality, only access to view recipes listed on the homepage. 
+    - Tested by copying link to posted recipes page. All users still have access but cannot see anything as there is no user authentication. This is the same with the add recipes form but if the user attempts to post a recipe they will get a Server Error 500 as they aren't logged in to link the recipe to them. 
+
 **Change Password**
 
 
