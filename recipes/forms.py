@@ -14,6 +14,6 @@ class RecipeForm(forms.ModelForm):
                   'featured_image', 'excerpt',)
 
         widgets = {
-            'ingredients': MultiInputIngredientWidget(),
+            'ingredients': MultiInputIngredientWidget(), 
             'instructions': MultiInputWidget(),
         }

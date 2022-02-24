@@ -1,6 +1,6 @@
 <!-- Instructions Input Widget, used on Add Recipe and Update Recipe Pages -->
 <div>
-    {% include "django/forms/widgets/textarea.html" %}
+    {% include "django/forms/widgets/textarea.html" with widget=widget %}
     <button type="button" id="add_step">Add Instruction</button>
     <div id="step_list">
         {% for value in widget.extra_values %}
