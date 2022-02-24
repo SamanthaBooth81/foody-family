@@ -1,6 +1,6 @@
 <h1 align="center">Foody Family</h1>
 
-<img src="static/assets/readme_images/responsive-img.png" height="400px">
+<img src="assets/readme_images/responsive-img.png" height="400px">
 
 ### **Live Site**
 [Foody Family Repository](https://foody-family.herokuapp.com/)
@@ -65,22 +65,22 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 
 The colour scheme for the project was put together using [Adobe Color](https://color.adobe.com/create/image) by uploading the landing page image. The colour scheme decided is:
 
-<img src="static/assets/readme_images/color-choice.png" width="500px">
+<img src="assets/readme_images/color-choice.png" width="500px">
 
 ## Font Choice
 
 For the Foody Family Logo I chose to use Ribeye Marrow with Roboto as a fallback font. 
 
-<img src="static/assets/readme_images/ribeye-marrow.png" width="200px">
+<img src="assets/readme_images/ribeye-marrow.png" width="200px">
 
 For the remainder of the project the font I have chosen is Baloo Thambi 2, also with a fallback font of Roboto. 
 
-<img src="static/assets/readme_images/Baloo-Thambi-2.png" width="180px">
+<img src="assets/readme_images/Baloo-Thambi-2.png" width="180px">
 
 ## Favicon 
 I created a basic Favicon for this project using [Canva](https://www.canva.com/). 
 
-<img src="static/assets/readme_images/favicon.png" height="150px">
+<img src="assets/readme_images/favicon.png" height="150px">
 
 
 # Features to be Implemented
@@ -94,7 +94,7 @@ I created a basic Favicon for this project using [Canva](https://www.canva.com/)
 # Wireframes
 All wireframes were created used [Balsamiq](https://balsamiq.com/)
 
-Foody Family Wireframes for Mobiles, Tablets and Desktop devices can be viewed [here](static/assets/documents/Wireframes.pdf).
+Foody Family Wireframes for Mobiles, Tablets and Desktop devices can be viewed [here](assets/documents/Wireframes.pdf).
 
 # Structure
 I have kept the structure simple to not crowd the user with information. The homepage contains all of the recipes that are approved by the superuser/admin, which is also paginated therefore limits the recipe cards to 12 per page. 
@@ -118,7 +118,7 @@ For this I project I used Django's User model to store registration information 
 
 For the user to be able to upload their oen recipes I have created the below Recipe Model:
 
-<img src="static/assets/readme_images/recipe-model.png" width="500px">
+<img src="assets/readme_images/recipe-model.png" width="500px">
 
 All fields are required apart from Author - which is based on the user who is currently logged in, Featured Image - which uses a placeholder if no image is uploaded and Excerpt - which is for the user to add any additional notes if required. 
 # Technologies Used
