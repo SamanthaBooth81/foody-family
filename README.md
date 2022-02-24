@@ -22,6 +22,8 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 
 [Wireframes](#wireframes)
 
+[Databases](#databases)
+
 [Technologies Used](#technologies-used)
 
 [Testing](#testing)
@@ -89,6 +91,31 @@ All wireframes were created used [Balsamiq](https://balsamiq.com/)
 
 ### Recipe Management 
 
+# Structure
+I have kept the structure simple to not crowd the user with information. The homepage contains all of the recipes that are approved by the superuser/admin, which is also paginated therefore limits the recipe cards to 12 per page. 
+
+The website is made of two apps:
+1. Recipes
+2. Users
+
+All visitors to the site can view recipes, however a user must register/login to have access to:
+- Add Recipe
+- Recipes Pending Approval (lists the users recipes not approved yet for editing or deleting)
+- Posted Recipes (lists the users recipes approved tie view, edit or deleting)
+- Change Password (Allows the user to change their password if there is a security issue)
+## Databases
+
+### User
+
+For this I project I used Django's User model to store registration information allowing the users to create an account. Once an account has been created the user is able to create, update and delete their own recipes on the site. 
+
+### Recipes
+
+For the user to be able to upload their oen recipes I have created the below Recipe Model:
+
+<img src="static/assets/readme_images/recipe-model.png" width="500px">
+
+All fields are required apart from Author - which is based on the user who is currently logged in, Featured Image - which uses a placeholder if no image is uploaded and Excerpt - which is for the user to add any additional notes if required. 
 # Technologies Used
 
 ## Languages Used
@@ -98,6 +125,8 @@ All wireframes were created used [Balsamiq](https://balsamiq.com/)
 [CSS](https://en.wikipedia.org/wiki/CSS)
 
 [Python](https://www.python.org/)
+
+[JavaScript](https://www.javascript.com/)
 
 ## Frameworks, Libraries and Programmes Used 
 
