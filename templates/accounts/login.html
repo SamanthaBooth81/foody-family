@@ -6,7 +6,26 @@
 <header>
     <h1>Login</h1>
 </header>
+
+<!-- Below from Code Institutes CodeStar project to display messages at top of page. -->
+{% if messages %}
+<div class="container app-messages">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
 <!-- User Login Form with option to register an account -->
+
 <div id="logging-in">
     <div>
         <img src="https://res.cloudinary.com/sjb21/image/upload/v1644420311/monika-grabkowska-TAj4X5-eRqE-unsplash-min_oopdwn.jpg"
@@ -32,8 +51,6 @@
         <div class="form-input-fields">
             <button type="submit" class="btn btn-dark all-btn">Sign in</button>
         </div>
-
-        {{ form.errors }}
 
         <p class="form-input-fields">Need an account?
             Register <a href="{% url 'register' %}" class="link-item">here</a>!

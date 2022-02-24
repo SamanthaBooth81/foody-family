@@ -183,8 +183,9 @@ I have manually tested the project by:
 
 I encountered the following issues whilst building this project:
 - Summernote's text area boxes were not displaying as lists on the webpage. To fix this I added |safe to the code linking to those model fields which removed the tags and displayed them as the lists they are. 
+- The above then created an issue when creating in the add and edit recipe pages to the app as I couldn't user the Summernote functionality on the webpage. To fix this I created two widgets using JavaScript that appended inputs into a list that was then split to be displayed to the user, giving each item it's own unique ID to enable a delete.
 - My registration redirect wasn't redirecting as expected. To fix this I removed the URL from the 'form action' to make this an empty string instead. 
-- login error message showing __ all __ and then the message. To fix this I ....................
+- Login success and error message not showing. To fix this I changed my url path from Django's LoginView to load my own template. 
 
 # Deployment 
 
@@ -283,7 +284,7 @@ I used the following websites to help with different areas of my project:
 - [Stack Overflow Post](https://stackoverflow.com/a/67483341), used to help with creating code to append method and ingredients arrays to the relevant fields in the Recipe Model. 
 - [Idle Coding Blog](https://idlecoding.com/creating-custom-slugs-in-django/), used to help create a custom slug using multiple fields in the database.
 - [Django Documentation](https://docs.djangoproject.com/en/4.0/ref/forms/widgets/#textarea), used to change the Instructions widget from an input field to a textarea field. 
--[Cloudinary Documentation](https://cloudinary.com/documentation/django_image_and_video_upload), to allow users with an account to upload images.
+- [Cloudinary Documentation](https://cloudinary.com/documentation/django_image_and_video_upload), to allow users with an account to upload images.
 
 ### Update Posted Recipe Functionality
 - [Stack Overflow](https://stackoverflow.com/a/67937708), to help with the success message once posted recipe was edited. 
