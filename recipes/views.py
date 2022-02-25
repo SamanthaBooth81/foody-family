@@ -91,32 +91,45 @@ def add_recipe(request):
     recipe_form = RecipeForm()
 
     if request.method == 'POST':
+        model=Recipe()
+        results = Recipe.objects.filter(
+            author=request.user, title=request.POST.get('title'))
         recipe_form = RecipeForm(request.POST, request.FILES)
+        print('Form valid?', recipe_form.is_valid())
+        print('results count:', results.count())
 
         if recipe_form.is_valid():
-            recipe = recipe_form.save(commit=False)
-            # Post on Stack Overflow in README for appending array
-            # to recipe model along with guidance from my mentor
-            recipe.ingredients = request.POST.getlist('ingredients')
-            recipe.instructions = request.POST.getlist('instructions')
-            recipe.author_id = request.user.id
-            # https://idlecoding.com/creating-custom-slugs-in-django/
-            # used to create custom slug
-            recipe.slug = slugify('-'.join([recipe.title,
-                                            str(recipe.author)]),
-                                  allow_unicode=False)
-            messages.success(
-                request, "Recipe submitted and waiting approval!")
-            recipe.save()
-            return redirect('home')
+            
+            if results.count() > 0:
+                messages.error(request, 'Duplicate Title!')
+                return render(request, "add_recipe.html",
+                              {
+                                  "recipe_form": RecipeForm(),
+                              },
+                              )
+            else:
+                recipe = recipe_form.save(commit=False)
+                # Post on Stack Overflow in README for appending array
+                # to recipe model along with guidance from my mentor
+                recipe.ingredients = request.POST.getlist('ingredients')
+                recipe.instructions = request.POST.getlist('instructions')
+                recipe.author = request.user
+                # https://idlecoding.com/creating-custom-slugs-in-django/
+                # used to create custom slug
+                recipe.slug = slugify('-'.join([recipe.title,
+                                                str(recipe.author)]),
+                                      allow_unicode=False)
+                messages.success(
+                    request, "Recipe submitted and waiting approval!")
+                recipe.save()
+                return redirect('home')
         else:
-            messages.error(request, 'Fix the error')
+            messages.error(request, 'Please complete all required fields')
             return render(request, "add_recipe.html",
                           {
                               "recipe_form": recipe_form,
                           },
                           )
-
     else:
         return render(request, "add_recipe.html",
                       {
@@ -198,7 +211,7 @@ class UpdatePendingRecipe(UpdateView):
         recipe.author_id = request.user.id
         recipe.slug = slugify('-'.join([recipe.title,
                                         str(recipe.author)]),
-                              allow_unicode=False)
+                            allow_unicode=False)
         recipe.save()
         return HttpResponseRedirect(self.get_success_url())
 

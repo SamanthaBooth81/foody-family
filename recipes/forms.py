@@ -17,3 +17,5 @@ class RecipeForm(forms.ModelForm):
             'ingredients': MultiInputIngredientWidget(), 
             'instructions': MultiInputWidget(),
         }
+
+    

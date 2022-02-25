@@ -14,16 +14,13 @@ class MultiInputIngredientWidget(forms.widgets.TextInput):
     def render(self, name, value, attrs=None, renderer=None):
         values = []
         if value:
-
-            # evaluate string as list
             values = ast.literal_eval(value)
-
             values = value.replace('[', '').replace(
                 ']', '').replace("'", '').split(',')
             value = values.pop(0)
-
         context = {'widget': {'name': 'ingredients', 'type': 'text',
                               'value': value, 'extra_values': values}}
+
         return mark_safe(render_to_string(self.template_name, context=context))
 
 
@@ -35,14 +32,10 @@ class MultiInputWidget(forms.widgets.Textarea):
     def render(self, name, value, attrs=None, renderer=None):
         values = []
         if value:
-
-            # evaluate string as list
             values = ast.literal_eval(value)
-
             values = value.replace('[', '').replace(
                 ']', '').replace("'", '').split(',')
             value = values.pop(0)
-
         context = {'widget': {'name': 'instructions', 'type': 'text',
                               'value': value, 'extra_values': values}}
         return mark_safe(render_to_string(self.template_name, context=context))
