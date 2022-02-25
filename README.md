@@ -243,7 +243,7 @@ This was tested by signing in as different users and liking recipes to see if th
 - Raising error messages if Username or Password incorrect
     I checked this by intentionally inputting incorrect data to see if the error message worked. Error message appears at top of page.
 - Navbar displaying welcome message to the user upon logging in.
-    - When a user logs in you will see messahe: *Hi username!* with a chevron next to it containing the additional pages available to registered users. 
+    - When a user logs in you will see message: *Hi username!* with a chevron next to it containing the additional pages available to registered users. 
 - Access to personal recipe posts, both published and pending approval.
     - Navigated to each page to check if list of recipes matches what is in the database for the user. 
 
@@ -252,9 +252,13 @@ This was tested by signing in as different users and liking recipes to see if th
     - Tested by copying link to posted recipes page. All users still have access but cannot see anything as there is no user authentication. This is the same with the add recipes form but if the user attempts to post a recipe they will get a Server Error 500 as they aren't logged in to link the recipe to them. 
 
 **Change Password**
+- Able to change the user password.
+    - Tested by changing the passwords for multiple users and logging in and out to ensure it worked.
+- Error raised if incorrect current password input or if the new password entered twice doesn't match.
+    - Tested by intentionally creating password errors and checking the page displays the message as it should. I then changed the password correctly to make sure these errors didn't cause an issue with correctly inputting passwords.
 
-
-I have also submitted my project for Peer Code Review on Code Institutes Slack Channel but received no feedback. 
+**Peer Code Review**
+I have also submitted my project for Peer Code Review on Code Institutes Slack Channel and received some feedback to style the add ingredient and instruction buttons to make them more visible and make the error message display the issue. I have amended the error message to notify the user to complete all required fields, whereas before the request was to fix the error and I have added a darker colour to the buttons to make them more visible. 
 # Validator Testing
 
 - The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/#textarea). No errors were returned for the html segments.
