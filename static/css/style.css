@@ -226,6 +226,7 @@ a:link {
 .recipe-top {
     margin-top: 3%;
     padding-left: 30px;
+    width: 100%;
 }
 
 .recipe-clock {
@@ -248,7 +249,7 @@ a:link {
 
 .right-div {
     height: 300px;
-    width: 65%;
+    width: 70%;
 }
 
 .recipe-detail {
@@ -427,6 +428,8 @@ a:link {
         max-width: 250px;
     }
 
+    /* Recipe Details */
+
     .details-img {
         min-height: 300px;
     }
@@ -444,6 +447,14 @@ a:link {
         padding: 5px;
     }
 
+    .timing {
+        margin-bottom: 8px;
+    }
+
+    .recipe-title {
+        margin-top: 8px;
+    }
+
     /* Login and Registration Forms */
     .accounts-img {
         width: 30%;
@@ -457,7 +468,7 @@ a:link {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .card {
         max-width: 250px;
     }
@@ -651,6 +662,18 @@ a:link {
         padding-top: 0;
     }
 
+    .recipe-top h1 {
+        font-size: medium;
+    }
+
+    .card-title {
+        margin-top: 5px;
+    }
+
+    .recipe-top {
+        margin-top: 0;
+    }
+
     .recipe-clock {
         padding-right: 5px;
         font-size: x-small;
@@ -790,4 +813,38 @@ a:link {
     .delete-recipe {
         text-align: center;
     }
+
+    /* Recipe Detail */
+    .recipe-top h1 {
+        font-size: small;
+    }
+
+    .card-text {
+        font-size: x-small;
+    }
+
+    .timing {
+        font-size: xx-small;
+    }
+}
+
+@media screen and (max-width: 200px) {
+
+        /* Recipe Detail */
+        .recipe-top h1 {
+            font-size: x-small;
+        }
+    
+        .card-text {
+            font-size: xx-small;
+        }
+    
+        .recipe-clock {
+            font-size: xx-small;
+        }
+
+        .card-title,
+        .card-text {
+            margin: 1px;
+        }
 }
