@@ -237,7 +237,7 @@ This was tested by signing in as different users and liking recipes to see if th
 
 **User Registration**
 - Raising error messages if Username already exists or passwords do not match. 
-    - Checked this by trying to create users with the same username and also by creating users with a unqiue username and unmatching passwords. Error message appears at top of page.
+    - Checked this by trying to create users with the same username and also by creating users with a unique username and unequal passwords. Error message appears at top of page.
 
 **User Login**
 - Raising error messages if Username or Password incorrect
@@ -287,11 +287,11 @@ See the following steps to deploy below:
 
 1. Login to Heroku and Create a New App.
 
-<img src="assets/images/heroku_deployment_1.png" height="120px"> 
+<img src="assets/readme_images/heroku_deployment_1.png" height="120px"> 
 
 2. Give the App a name, it must be unique, and select a region. 
 
-<img src="assets/images/heroku_deployment_2.png" height="180px"> 
+<img src="assets/readme_images/heroku_deployment_2.png" height="180px"> 
 
 3. Click on 'Create App'. This will take you to a page where you can deploy your project. 
 
@@ -299,7 +299,7 @@ See the following steps to deploy below:
 
 5. Click on the 'Settings' tab at the top of the page. The following steps must be completed before deployment.
 
-<img src="assets/images/heroku_deployment_3.png" height="180px"> 
+<img src="assets/readme_images/heroku_deployment_3.png" height="180px"> 
 
 6. Scroll down to Config Vars (also known as Environment Variables) and click 'Reveal Config Vars'. Here the database URL is stored, it is the connection to the database, so this must be copied and stored within env.py file within the same directory as the manage.py file. 
 
@@ -345,15 +345,22 @@ Web tells Heroku to allow web traffic, whilst gunicorn is the server installed e
 
 19. Now, go to the 'Deploy' section on Heroku. Find the 'Deployment Method' section and choose GitHub. Then, connected to the relevant GitHub Repository by searching the repository name and clicking 'Connect'.
 
-<img src="assets/images/heroku_deployment_6.png" height="120px"> 
+<img src="assets/readme_images/heroku_deployment_6.png" height="120px"> 
 
-<img src="assets/images/heroku_deployment_6a.png" width="800px"> 
+<img src="assets/readme_images/heroku_deployment_6a.png" width="800px"> 
 
-20. Scroll down to the Automatic and Manual Deploys sections. I have enabled Automatic Deploys as I want my project to automatically redeploy if push any changes back into my repository. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
+20. Scroll down to the Automatic and Manual Deploys sections. I then clicked 'Deploy Branch' in the Manual Deploy section and waited as Heroku installed all dependencies and deployed my code. 
 
-<img src="assets/images/heroku_deployment_7.png" height="180px"> 
+<img src="assets/readme_images/heroku_deployment_7.png" height="180px"> 
 
 21. Once the project is finished deploying, click 'view' to see the newly deployed project. 
+
+22. Before deploying the final draft of your project you must: 
+- Remove staticcollect=1 from congifvars within Heroku 
+- Ensure DEBUG is set to false in settings.py file or 
+- Set it to development with: *development = os.environ.get('DEVELOPMENT', False)* above it.
+
+23. To deploy re-do steps 19 - 21, minus reconnect your GitHub account as it should still be connected to your App. 
 
 # Credit
 ## Content 
