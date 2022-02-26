@@ -3,14 +3,14 @@
 <img src="assets/readme_images/responsive-img.png" height="400px">
 
 ### **Live Site**
-[Foody Family Repository](https://foody-family.herokuapp.com/)
+[Foody Family Repository](https://github.com/SamanthaBooth81/foody-family)
 
 ### **Repository:**
-[Foody Family Live Site](https://github.com/SamanthaBooth81/foody-family)
+[Foody Family Live Site](https://foody-family.herokuapp.com/)
 
 # About
 
-Foody Family is a recipe sharing website where users can view and like recipes and also upload their own to share with other users. This project was set up using a Postgresql database and built using Django. Along with Bootstrap to setup the basic layout and styling. JavaScript was use to create the multiple input widgets on the add recipe pages. 
+Foody Family is a recipe sharing website where users can view and like recipes and also upload their own to share with other users. This project was set up using a Postgresql database and built using Django. Along with Bootstrap to setup the basic layout and styling, JavaScript was use to create the multiple input widgets on the add recipe pages. 
 
 # Table of Contents
 
@@ -41,15 +41,15 @@ Foody Family is a recipe sharing website where users can view and like recipes a
 # User Experience
 ## User Stories
 ### Superuser / Admin
-- As a Superuser I can approve and manage the recipes uploaded by community members so that anything unsafe can be removed from the website. 
+- As a Superuser I can approve and manage the recipes uploaded by community members so that anything unsafe/unkind can be removed from the website. 
 
 ### General User
 - As a General User I can look through a paginated list of recipes so that I can select a recipe to try out.
-- As a General User I can view an entire recipe so that I can learn new dishes.
+- As a General User I can view an entire recipe so that I can learn how to cook new dishes.
 
 ### Community User
-- As a Community User I can log into my own account so I can update my Password if necessary.
 - As a Community User I register an account so that I can create, update, and delete my own recipes.
+- As a Community User I can log into my own account and I can update my Password if necessary.
 - As a Community User I can like recipes I have tried so that other users may be encouraged to try them. 
 
 # Features
@@ -171,7 +171,7 @@ For this I project I used Django's User model to store registration information 
 
 ### Recipes
 
-For the user to be able to upload their oen recipes I have created the below Recipe Model:
+For the user to be able to upload their own recipes I have created the below Recipe Model:
 
 <img src="assets/readme_images/recipe-model.png" width="500px">
 
@@ -198,6 +198,10 @@ All fields are required apart from Author - which is based on the user who is cu
 
 [Django](https://www.djangoproject.com/) - This framework was used to build the foundations of this project, reducing time spent getting the project setup and prevent re-writing existing code.
 
+[Gunicorn](https://gunicorn.org/) - Gunicorn is a pure-Python HTTP server for WSGI applications. It allows you to run any Python application concurrently by running multiple Python processes within a single dyno. It provides a perfect balance of performance, flexibility, and configuration simplicity.
+
+[Dj Database URL](https://pypi.org/project/dj-database-url/) - This allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+
 [Bootstrap](https://getbootstrap.com/) - Used to quickly add design to my website, Bootstrap focuses on mobile first design meaning this website is responsive across multiple devices ans screen sizes. 
 
 [Cloudinary](https://cloudinary.com/?utm_source=google&utm_medium=cpc&utm_campaign=Rbrand&utm_content=492438439811&utm_term=cloudinary&gclid=Cj0KCQiAt8WOBhDbARIsANQLp96hTerzfFJ_P9lX0tEYEdtM3tSsYB6fhw-x3wQxOO0oc4hXm-A2ZBUaAptIEALw_wcB) - Used to store images online for the recipe posts. 
@@ -206,13 +210,6 @@ All fields are required apart from Author - which is based on the user who is cu
 
 
 # Testing
-
-## Functionality 
-
-The project follows the below logic: 
-
-<img src="assets/images/logic_flow_chart.png" height="350px"> 
-
 ## Manual Testing by User Story
 ### **Superuser / Admin**
 - As a Superuser I can approve and manage the recipes uploaded by community members so that anything unsafe can be removed from the website. 
@@ -228,12 +225,12 @@ This was tested by ensuring all published recipes, by all authors, can be viewed
 
 This was tested by clicking either the recipe image or title to ensure the detail page loads and checking the title matches the title on the recipe card. This was further checked by viewing the details on the admin page compared to the websites recipe detail page to ensure they match. 
 
-Both the recipe card and the recipe details can be views without being logged in. 
+Both the recipe card and the recipe details can be viewed without being logged in. 
 
 ### **Community User**
 - As a Community User I can log into my own account so I can update my Password if necessary.
 
-This was tested by creating a non-admin account and changing the password via the change password page. This page is only visible if a user logged into their account. The user can only change their password if they input the correct current password. If a correct password or the new passwords do not match an error message is displayed to the user. 
+This was tested by creating additional accounts and changing the password via the change password page for multiple users including the admin. This page is only visible if a user logged into their account. The user can only change their password if they input the correct current password. If a correct password or the new passwords do not match an error message is displayed to the user. 
 
 - As a Community User I register an account so that I can create, update, and delete my own recipes.
 
@@ -241,7 +238,7 @@ This was tested by creating multiple accounts to ensure an error message appeare
 
 - As a Community User I can like recipes I have tried so that other users may be encouraged to try them. 
 
-This was tested by signing in as different users and liking recipes to see if the icon changed colour to indicated it had been liked/unliked and to check the total liked increased per recipe. 
+This was tested by signing in as different users and liking recipes to see if the icon changed colour to indicated it had been liked/unliked and to check the total number of likes increased per recipe. 
 
 ## General Manual Testing 
 **Add Recipe**
@@ -412,10 +409,10 @@ Web tells Heroku to allow web traffic, whilst gunicorn is the server installed e
 
 22. Before deploying the final draft of your project you must: 
 - Remove staticcollect=1 from congifvars within Heroku 
-- Ensure DEBUG is set to false in settings.py file or 
-- Set it to development with: *development = os.environ.get('DEVELOPMENT', False)* above it.
+- Ensure DEBUG is set to false in settings.py file or:
+    - Set DEBUG to development with: *development = os.environ.get('DEVELOPMENT', False)* above it.
 
-23. To deploy re-do steps 19 - 21, minus reconnect your GitHub account as it should still be connected to your App. 
+23. To deploy re-do steps 19 - 21, minus reconnecting your GitHub account as it should still be connected to your App. 
 
 # Credit
 ## Content 
@@ -480,4 +477,4 @@ I used the following websites to help with different areas of my project:
 
 
 # Acknowledgments
-Thank you to all who encouraged and supported me as I created my first full stack website, especially to my mentor at Code Institute, Antonio, for his guidance, patience, encouragement and constant support. Also a thank you to Tutor Support at the Code Institute for help with anything I found myself stuck on.  
+Thank you to all who encouraged and supported me as I created my first full stack website, especially to my mentor at Code Institute, Antonio, for his guidance, patience, encouragement and constant support, particularly with the Add Recipe Widgets. Also a massive thank you to Tutor Support at the Code Institute for never giving up on the difficult issues I found myself stuck on.  
