@@ -10,7 +10,7 @@
 
 # About
 
-Foody Family is a recipe sharing website where users can view, like and comment on recipes and upload their own recipes to share with other users. This project was set up using a Postgresql database and built using Django. Along with Bootstrap to setup the basic layout and styling. 
+Foody Family is a recipe sharing website where users can view and like recipes and also upload their own to share with other users. This project was set up using a Postgresql database and built using Django. Along with Bootstrap to setup the basic layout and styling. JavaScript was use to create the multiple input widgets on the add recipe pages. 
 
 # Table of Contents
 
@@ -53,13 +53,68 @@ Foody Family is a recipe sharing website where users can view, like and comment 
 - As a Community User I can like recipes I have tried so that other users may be encouraged to try them. 
 
 # Features
-- View Recipes - All Users
+- Landing Image - All Users
+
+<img src="assets/readme_images/nav-landing.png" width="50%">
+
+- Navbar - All Users 
+
+<img src="assets/readme_images/nav-all.png" width="50%">
+
+- Navbar - Community Users 
+
+<img src="assets/readme_images/navbar.png" width="50%">
+
+- View All Recipe cards - All Users
+
+<img src="assets/readme_images/home-recipelist.png" width="50%">
+
 - Create an account - All Users
-- Create, edit, read and delete all Recipes - Admin
-- Create, edit, read and delete own Recipes - User
-- Like Recipes
-- Change Password
-- View Full Recipe Details
+
+<img src="assets/readme_images/register.png" width="50%">
+
+- Login - Community User 
+
+<img src="assets/readme_images/login.png" width="50%">
+
+- Change Password - Community User
+
+<img src="assets/readme_images/change-pw.png" width="50%">
+
+- Create, edit, read and delete all Recipes - Admin & Community User
+
+<img src="assets/readme_images/add.png" width="50%">
+
+<img src="assets/readme_images/edit.png" width="50%">
+
+<img src="assets/readme_images/edit-del.png" width="50%">
+
+<img src="assets/readme_images/del.png" width="50%">
+
+- View User's Posted Recipe Card (for editing/deleting) - Community User
+
+<img src="assets/readme_images/user-posted.png" width="50%">
+
+- View User's Pending Recipe Card (for editing/deleting) - Community User
+
+<img src="assets/readme_images/user-pending.png" width="50%">
+
+- View Number of like - All Users
+
+<img src="assets/readme_images/total-likes.png" width="50%">
+
+- Like Recipes - Community Users
+
+<img src="assets/readme_images/like.png" width="50%">
+
+- View Full Recipe Details - All Users
+
+<img src="assets/readme_images/detail.png" width="50%">
+
+
+- Footer - All Users
+
+<img src="assets/readme_images/footer.png" width="50%">
 
 ## Colour Scheme 
 
