@@ -91,15 +91,13 @@ def add_recipe(request):
     recipe_form = RecipeForm()
 
     if request.method == 'POST':
-        model=Recipe()
+        model = Recipe()
         results = Recipe.objects.filter(
             author=request.user, title=request.POST.get('title'))
         recipe_form = RecipeForm(request.POST, request.FILES)
-        print('Form valid?', recipe_form.is_valid())
-        print('results count:', results.count())
 
         if recipe_form.is_valid():
-            
+
             if results.count() > 0:
                 messages.error(request, 'Duplicate Title!')
                 return render(request, "add_recipe.html",
@@ -168,10 +166,7 @@ class UpdateRecipe(UpdateView):
         recipe = form.save(commit=False)
         recipe.ingredients = request.POST.getlist('ingredients')
         recipe.instructions = request.POST.getlist('instructions')
-        recipe.author_id = request.user.id
-        recipe.slug = slugify('-'.join([recipe.title,
-                                        str(recipe.author)]),
-                              allow_unicode=False)
+        recipe.author = request.user
         recipe.save()
         return HttpResponseRedirect(self.get_success_url())
 
@@ -201,19 +196,34 @@ class UpdatePendingRecipe(UpdateView):
     template_name = 'update_recipe.html'
     success_url = reverse_lazy('my_pending_recipes')
 
+    def get_context_data(self, **kwargs):
+        context = super(UpdatePendingRecipe, self).get_context_data(**kwargs)
+        print(context)
+        return context
+
     # Used Stack Overflow to help get success message showing
     def form_valid(self, form):
         request = self.request
-        messages.success(self.request, 'Recipe updated successfully!')
-        recipe = form.save(commit=False)
-        recipe.ingredients = request.POST.getlist('ingredients')
-        recipe.instructions = request.POST.getlist('instructions')
-        recipe.author_id = request.user.id
-        recipe.slug = slugify('-'.join([recipe.title,
-                                        str(recipe.author)]),
-                            allow_unicode=False)
-        recipe.save()
-        return HttpResponseRedirect(self.get_success_url())
+        results = Recipe.objects.filter(
+            author=request.user, title=request.POST.get('title'))
+        recipe_form = RecipeForm()
+
+        if results.count() > 0:
+            request = self.request
+            messages.error(self.request, "Duplicate Recipe Title!")
+            return render(request, 'update_recipe.html', {"form":recipe_form})
+        else:
+            messages.success(self.request, 'Recipe updated successfully!')
+            recipe = form.save(commit=False)
+            recipe.ingredients = request.POST.getlist('ingredients')
+            recipe.instructions = request.POST.getlist('instructions')
+            recipe.author = request.user
+            recipe.author_id = request.user.id
+            recipe.slug = slugify('-'.join([recipe.title,
+                                            str(recipe.author)]),
+                                  allow_unicode=False)
+            recipe.save()
+            return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid(self, form):
         """If the form is invalid, render the invalid form."""
