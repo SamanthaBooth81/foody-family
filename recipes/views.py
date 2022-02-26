@@ -177,6 +177,7 @@ class UpdateRecipe(UpdateView):
 
 class DeleteRecipe(DeleteView):
     """View to delete published recipes"""
+    # Used Codemy YouTube video to help with delete view
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy('my_posted_recipes')

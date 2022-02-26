@@ -430,6 +430,9 @@ I used the following websites to help with different areas of my project:
 - [Hacker Shack - Login Path](https://www.youtube.com/watch?v=Rz6racFuW_Q), used to help put the url path together for the login page.
 - [Stack Overflow - redirect() not redirecting](https://stackoverflow.com/a/62678554), to figure out why I wasn't being redirected after registering an account.
 - [The Pylot - Create Advanced User Sign Up](https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m), used to help put together the registration view. 
+-[How to create user sign up view](https://simpleisbetterthancomplex.com/tutorial/2017/02/18/how-to-create-user-sign-up-view.html#basic-sign-up), help with registration view.
+-[Advanced User Sign Up View](https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m,), help with registration view.
+- [Django Forms API](https://docs.djangoproject.com/en/4.0/ref/forms/api/), general reading on Django Forms, not to write specific code.
 
 ### Change Password
 - [Professional Cipher - How to Create a Change Password View | Django Tips #9](https://www.youtube.com/watch?v=00sdVcuYki0), used to help with the change password view.
@@ -452,6 +455,20 @@ I used the following websites to help with different areas of my project:
 ### Delete Draft Recipe Functionality
 - [Stack Overflow](https://stackoverflow.com/a/25325228), to help with success message once posted recipe had been deleted. 
 
+### Add Recipe Form
+- [Authenticating Add Recipe Form](https://forum.djangoproject.com/t/automatically-get-user-id-to-assignate-to-form-when-submitting/5333/7), used to check if the user is authenticated when submitting a new recipe to add them as the author in the Recipe database.
+- [Slugify Text](http://www.learningaboutelectronics.com/Articles/How-to-slugify-text-in-Python.php), for how to slugify the recipe title and author to create a unique slug with some flexibility across users.
+-[Create Recipes with a Form](https://www.python-academy.com/download/django_intro_2017/recipe_form.html), to help understand how to put together the add_recipe view. 
+- [Django Widgets](https://docs.djangoproject.com/en/4.0/ref/forms/widgets/#customizing-widget-instances), general reading for ingredients and instructions multi input widgets.
+- [Django add images to Cloudinary](https://www.youtube.com/watch?v=1T6G7Znrbfg), used to help upload images from the user to cloudinary.
+
+### Edit Recipe Form 
+[Determine correct user to edit post](https://www.youtube.com/watch?v=Y1Us5jVT07E), used to help structure code so that page can only be viewed if user is authenticated.
+[Codemy - Update and Edit Blog Post](https://www.youtube.com/watch?v=J7xaESAddDQ), help with the update urls for pending and posted recipes. 
+
+### Delete Recipe
+[Codemy - Delete a Blog Post](https://www.youtube.com/watch?v=8NPOwmtupiI), used to help create the delete view and html code to delete recipe.
+
 ### Styling
 - [Unsplash - Landing Image](https://unsplash.com/photos/DoUgSMezLp0)
 - [Logo Font - Google Fonts](https://fonts.google.com/specimen/Ribeye+Marrow?category=Display&preview.text=Foody%20Family&preview.text_type=custom#standard-styles)
@@ -459,6 +476,7 @@ I used the following websites to help with different areas of my project:
 - [Font Awesome Heart Likes Icon](https://fontawesome.com/v5.15/icons/heart?style=solid)
 - [CSS object-fit property](https://www.w3schools.com/css/css3_object-fit.asp), used to fit recipe image correctly into the layout.
 - [CSS-Tricks - Flexbox Sticky Footer](https://css-tricks.com/couple-takes-sticky-footer/), for the sticky footer code.
+- [Unsplash - Login and Register form images](https://unsplash.com/photos/TAj4X5-eRqE)
 
 
 # Acknowledgments
