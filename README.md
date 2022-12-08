@@ -3,10 +3,10 @@
 <img src="assets/readme_images/responsive-img.png" height="400px">
 
 ### **Live Site**
-[Foody Family Repository](https://foody-family.onrender.com)
+[Foody Family Repository](https://github.com/SamanthaBooth81/foody-family)
 
 ### **Repository:**
-[Foody Family Live Site](https://foody-family.herokuapp.com/)
+[Foody Family Live Site]([https://foody-family.herokuapp.com/](https://render.com/))
 
 # About
 
