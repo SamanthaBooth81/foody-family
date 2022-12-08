@@ -2,10 +2,10 @@
 
 <img src="assets/readme_images/responsive-img.png" height="400px">
 
-### **Live Site**
+### **Repository:**
 [Foody Family Repository](https://github.com/SamanthaBooth81/foody-family)
 
-### **Repository:**
+### **Live Site**
 [Foody Family Live Site](https://foody-family.onrender.com)
 
 # About
