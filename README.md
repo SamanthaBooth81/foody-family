@@ -6,7 +6,7 @@
 [Foody Family Repository](https://github.com/SamanthaBooth81/foody-family)
 
 ### **Repository:**
-[Foody Family Live Site]([https://foody-family.herokuapp.com/](https://render.com/))
+[Foody Family Live Site](https://foody-family.onrender.com)
 
 # About
 
