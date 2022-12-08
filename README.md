@@ -3,7 +3,7 @@
 <img src="assets/readme_images/responsive-img.png" height="400px">
 
 ### **Live Site**
-[Foody Family Repository](https://github.com/SamanthaBooth81/foody-family)
+[Foody Family Repository](https://foody-family.onrender.com)
 
 ### **Repository:**
 [Foody Family Live Site](https://foody-family.herokuapp.com/)
@@ -332,6 +332,10 @@ I encountered the following issues whilst building this project:
 - Console Error for JavaScrip Message Timeout - alert.js:23 Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented'). To fix this I amended the timeout function in the script.js file to work only if there is a message present. 
 
 # Deployment 
+
+This project was redeployed using [Render](https://render.com/) as Heroku's free plan was removed. The steps followed were provided by Code Institute.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 This project was deployed using Heroku. Some of the steps in this deployment process are used to get the bare minimum of this project up and running prior to adding functionality. 
 
